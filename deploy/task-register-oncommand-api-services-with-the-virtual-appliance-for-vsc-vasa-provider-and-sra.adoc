@@ -1,0 +1,47 @@
+---
+permalink: deploy/task-register-oncommand-api-services-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: virtual, volume, datastores, registering, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 'Si vous utilisez ONTAP 9.6 ou une version antérieure, le tableau de bord vvol ne peut afficher les détails des datastores VMware Virtual volumes (vvols) et des machines virtuelles que si vous vous êtes inscrit pour VASA Provider afin d"obtenir les données des rapports vvols VM et datastore.' 
+---
+= Enregistrez-vous avec l'appliance virtuelle pour VSC, VASA Provider et SRA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous utilisez ONTAP 9.6 ou une version antérieure, le tableau de bord vvol ne peut afficher les détails des datastores VMware Virtual volumes (vvols) et des machines virtuelles que si vous vous êtes inscrit pour VASA Provider afin d'obtenir les données des rapports vvols VM et datastore.
+
+Vous devez avoir téléchargé 2.1 ou une version ultérieure à partir de .
+
+[NOTE]
+====
+Le tableau de bord vVol affiche des indicateurs de performance uniquement lorsque les datastores SAN vvols et les machines virtuelles sont configurés avec ONTAP 9.3 ou version ultérieure.
+
+====
+.Étapes
+. Dans la page d'accueil * de Virtual Storage Console (VSC), cliquez sur *Paramètres*.
+. Cliquez sur *gérer l'extension* dans l'onglet *Paramètres d'administration*.
+. Utilisez le curseur *Enregistrer les services API OnCommand* pour activer .
+. Entrez l'adresse IP, le port de service et les informations d'identification pour .
++
+Vous pouvez également utiliser la boîte de dialogue *Manage VASA Provider Extensions* pour les modifications suivantes :
+
++
+** Pour mettre à jour l'enregistrement en cas de modification des informations d'identification.
+** Pour annuler l'enregistrement lorsque vous n'avez plus besoin du tableau de bord vVol.
++
+Vous devez décocher la case *Enregistrer les services API OnCommand* pour supprimer l'enregistrement pour le fournisseur VASA.
+
+
+
+. Cliquez sur *appliquer*.
++
+Le tableau de bord vVol affiche les mesures pour les datastores ONTAP 9.6 ou SAN vVol antérieurs uniquement après l'enregistrement de.
+
+
+
+*Informations connexes*
+
+https://mysupport.netapp.com/site/["Support NetApp"^]

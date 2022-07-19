@@ -1,0 +1,25 @@
+---
+permalink: manage/reference-vasa-provider-storage-provider-status-show-offline-in-vcenter-gui.html 
+sidebar: sidebar 
+keywords: vasa, provider, status, shows, as, Offline, in, vcenter, server, gui, 
+summary: 'L"état de VASA Provider pour ONTAP peut s"afficher comme étant "hors ligne" dans l"interface graphique du serveur vCenter après le redémarrage du service VASA Provider.' 
+---
+= L'état de VASA Provider s'affiche sous la forme d'un état « hors ligne » dans l'interface graphique de vCenter Server
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'état de VASA Provider pour ONTAP peut s'afficher sous « hors ligne » dans l'interface utilisateur du serveur vCenter après le redémarrage du service VASA Provider.
+
+
+
+== Solution de contournement
+
+. Vérifiez l'état de VASA Provider depuis l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA), et assurez-vous que VASA Provider est actif.
+. Dans la page VSC de vCenter Server, vérifiez que VASA Provider est activé en accédant au menu:Configuration[Manage Extensions].
+. Sur le serveur vCenter, vérifiez `/var/log/vmware/vmware-sps/sps.log` Fichier pour toute erreur de connexion avec VASA Provider.
+. En cas d'erreur, redémarrez le service « vmware-sps ».
+

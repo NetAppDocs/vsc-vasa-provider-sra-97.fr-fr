@@ -1,0 +1,41 @@
+---
+permalink: manage/task-edit-a-vvol-datastore.html 
+sidebar: sidebar 
+keywords: editing, a, vvols, datastore, 
+summary: 'Vous pouvez modifier un datastore VMware Virtual volumes (vvols) existant pour modifier le profil de capacité de stockage par défaut. Le profil de capacité de stockage par défaut est principalement utilisé pour Swap vvols.' 
+---
+= Modifiez un datastore vVols
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier un datastore VMware Virtual volumes (vvols) existant pour modifier le profil de capacité de stockage par défaut. Le profil de capacité de stockage par défaut est principalement utilisé pour Swap vvols.
+
+.Étapes
+. Sur la page vSphere client, cliquez sur *hôtes et clusters*.
+. Cliquez avec le bouton droit sur le datastore, puis sélectionnez menu :NetApp VSC[Modifier les propriétés du datastore vvol].
++
+La boîte de dialogue Modifier les propriétés du datastore vVol s'affiche.
+
+. Apportez les modifications requises.
++
+Vous pouvez modifier le profil de capacité de stockage par défaut pour le datastore vvols en sélectionnant un nouveau profil dans la liste déroulante de la boîte de dialogue Modifier le datastore vVol. Vous pouvez également modifier le nom et la description du datastore vVols.
+
++
+[NOTE]
+====
+Vous ne pouvez pas modifier le serveur vCenter dans lequel se trouve le datastore vVols.
+
+====
+. Lorsque vous avez effectué vos modifications, cliquez sur *OK*.
++
+Une boîte de message vous demande si vous souhaitez mettre à jour le datastore vVvols.
+
+. Cliquez sur *OK* pour appliquer vos modifications.
++
+Un message de réussite apparaît pour informer que le datastore vVvols a été mis à jour.
+
+

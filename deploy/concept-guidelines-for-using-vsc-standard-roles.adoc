@@ -1,0 +1,40 @@
+---
+permalink: deploy/concept-guidelines-for-using-vsc-standard-roles.html 
+sidebar: sidebar 
+keywords: guidelines, using, VSC standard roles 
+summary: Lorsque vous utilisez les rôles standard de Virtual Storage Console pour VMware vSphere, vous devez suivre certaines instructions. 
+---
+= Instructions d'utilisation des rôles standard VSC
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque vous utilisez les rôles standard de Virtual Storage Console pour VMware vSphere, vous devez suivre certaines instructions.
+
+Vous ne devez pas modifier directement les rôles standard. Si vous le faites, VSC remplacera vos modifications à chaque fois que vous mettez à niveau VSC. À chaque mise à niveau de VSC, le programme d'installation met à jour les définitions de rôles standard. Vous êtes ainsi assuré que les rôles sont à jour pour votre version de VSC et pour toutes les versions prises en charge de vCenter Server.
+
+Vous pouvez toutefois utiliser les rôles standard pour créer des rôles adaptés à votre environnement. Pour ce faire, vous devez copier le rôle standard VSC, puis modifier le rôle copié. En créant un nouveau rôle, vous pouvez le conserver même lorsque vous redémarrez ou mettez à niveau le service Windows VSC.
+
+Les rôles standard de VSC comme vous le souhaitez peuvent être utilisés comme suit :
+
+* Utilisation des rôles standard VSC pour toutes les tâches VSC.
++
+Dans ce scénario, les rôles standard fournissent tous les privilèges dont l'utilisateur a besoin pour effectuer les tâches VSC.
+
+* Associer des rôles pour développer les tâches qu'un utilisateur peut effectuer.
++
+Si les rôles standard VSC fournissent une granularité trop importante pour votre environnement, vous pouvez développer les rôles en créant des groupes de niveau supérieur contenant plusieurs rôles.
+
++
+Si un utilisateur doit effectuer d'autres tâches non VSC qui nécessitent des privilèges vCenter Server natifs supplémentaires, vous pouvez créer un rôle qui fournit ces privilèges et l'ajouter au groupe également.
+
+* Créer des rôles plus précis.
++
+Si votre entreprise exige que vous implémentiez des rôles plus restrictifs que les rôles VSC standard, vous pouvez utiliser les rôles VSC pour créer de nouveaux rôles.
+
++
+Dans ce cas, vous clonez les rôles VSC nécessaires, puis modifiez le rôle cloné de sorte que celui-ci dispose uniquement des privilèges dont l'utilisateur a besoin.
+
+

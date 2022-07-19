@@ -1,0 +1,37 @@
+---
+permalink: manage/task-configure-folder-mappings.html 
+sidebar: sidebar 
+keywords: configuring, folder, mappings, 
+summary: Vous devez mapper vos dossiers sur le site protégé et sur le site de restauration pour permettre la communication entre eux. 
+---
+= Configurer les mappages de dossiers
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez mapper vos dossiers sur le site protégé et sur le site de restauration pour permettre la communication entre eux.
+
+Vous devez avoir connecté les sites protégés et de restauration.
+
+.Étapes
+. Connectez-vous à vCenter Server, puis cliquez sur le menu :site Recovery[sites].
+. Sélectionnez votre site protégé, puis cliquez sur *gérer*.
+. Dans l'onglet gérer, sélectionnez *mappages de dossiers*.
+. Cliquez sur le boutonimage:../media/new-folder-mappings.gif[""] pour créer un nouveau mappage de dossier.
++
+L'assistant de création de mappage de dossier s'affiche.
+
+. Dans l'assistant *Créer un mappage de dossier*, effectuez les opérations suivantes :
++
+.. Sélectionnez *préparer automatiquement les mappages pour les dossiers avec des noms de correspondance*, puis cliquez sur *Suivant*.
+.. Sélectionnez les objets de centre de données requis pour les sites protégés et de reprise, puis cliquez sur *Ajouter des mappages*.
+.. Cliquez sur *Suivant* une fois les mappages créés.
+.. Sélectionnez l'objet utilisé précédemment pour créer un mappage inversé, puis cliquez sur *Terminer*.
+
+
+
+
+La page *mappages de dossiers* affiche les ressources du site protégé et les ressources du site de reprise. Vous pouvez suivre les mêmes étapes pour les autres réseaux de votre environnement.

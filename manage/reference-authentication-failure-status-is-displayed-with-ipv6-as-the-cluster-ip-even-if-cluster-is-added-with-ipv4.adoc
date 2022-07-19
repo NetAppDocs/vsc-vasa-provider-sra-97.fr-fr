@@ -1,0 +1,38 @@
+---
+permalink: manage/reference-authentication-failure-status-is-displayed-with-ipv6-as-the-cluster-ip-even-if-cluster-is-added-with-ipv4.html 
+sidebar: sidebar 
+keywords: authentication, failure, for,, storage system, troubleshooting, error, 
+summary: 'L"ajout d"un système de stockage avec IPv4 entraîne une erreur d"authentification avec l"état IPv6 dans la grille du système de stockage' 
+---
+= L'ajout d'un système de stockage avec IPv4 entraîne une erreur d'authentification avec l'état IPv6 dans la grille du système de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Problème
+
+La grille du système de stockage affiche l'état d'échec d'authentification avec l'adresse IPv6 pour un système de stockage, même si le système de stockage est ajouté avec l'adresse IPv4.
+
+
+
+== Cause
+
+Lorsque vous avez un système de stockage à double pile avec des LIF IPv4 et IPv6 et que vous ajoutez un système de stockage avec LIF IPv4, puis pendant le processus de détection périodique, VSC peut également détecter la LIF IPv6. Cette détection IPv6 échoue et erreur d'authentification, car la LIF IPv6 n'est pas ajoutée de façon explicite. Cette erreur n'a aucun impact sur les opérations effectuées sur le système de stockage.
+
+
+
+== Action corrective
+
+Vous devez effectuer les opérations suivantes :
+
+. Dans la page d'accueil de VSC, cliquez sur *Storage Systems*.
+. Cliquez sur le système de stockage dont l'état est inconnu avec l'adresse IPv6.
+. Définissez l'adresse IP sur IPv4 à l'aide des informations d'identification par défaut.
+. Cliquez sur *Retour à la liste*, puis sur *REDÉCOUVRIR TOUT*.
++
+L'entrée IPv6 obsolète de la liste des systèmes de stockage est supprimée et le système de stockage est détecté sans erreur d'authentification.
+
+

@@ -1,0 +1,67 @@
+---
+permalink: manage/task-monitor-vvols-datastores-and-virtual-machines-using-vvols-dashboard.html 
+sidebar: sidebar 
+keywords: monitoring, vvols, datastores, virtual, machines, using, the, vVol, dashboard, 
+summary: 'Vous pouvez surveiller les performances et afficher les cinq principaux datastores SAN VMware Virtual volumes (vvols) dans votre vCenter Server en fonction des paramètres que vous sélectionnez à l"aide du tableau de bord vVol de l"appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA).' 
+---
+= Surveillez les datastores vvols et les machines virtuelles à l'aide du tableau de bord vVol
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez surveiller les performances et afficher les cinq principaux datastores SAN VMware Virtual volumes (vvols) dans votre vCenter Server en fonction des paramètres que vous sélectionnez à l'aide du tableau de bord vVol de l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA).
+
+.Avant de commencer
+* Vous devez avoir activé les services d'API OnCommand 2.1 ou version ultérieure si vous utilisez ONTAP 9.6 ou version antérieure.
++
+Il n'est pas nécessaire d'enregistrer des services d'API OnCommand avec VASA Provider pour obtenir les détails de SAN vvols datastore ou SAN vvols VM datastore pour ONTAP 9.7.
+
++
+https://mysupport.netapp.com/site/["Support NetApp"^]
+
+* Vous devez utiliser ONTAP 9.3 ou version ultérieure pour votre système de stockage.
+
+
+link:reference-verify-vvol-dashboard-data-requirements.html["Exigences relatives aux données du tableau de bord vvol"]
+
+Les données IOPS fournies par ONTAP sont arrondies et affichées sur le tableau de bord vvol. Il peut y avoir une différence entre la valeur d'IOPS réelle fournie par ONTAP et la valeur d'IOPS affichée sur le tableau de bord vvol.
+
+[NOTE]
+====
+* Si vous enregistrez des services d'API OnCommand pour la première fois, vous pouvez afficher toutes les données de metrics de performance pour les datastores SAN vvols dans le tableau de bord vvol uniquement au bout de 15 à 30 minutes.
+* Les données du tableau de bord vvol sont régulièrement actualisées, à un intervalle de 10 minutes.
+* Si vous avez ajouté, modifié ou supprimé un système de stockage de votre instance vCenter Server, vous ne remarquerez peut-être pas de changement dans les données du tableau de bord vvols pendant un certain temps.
++
+Car il faut du temps pour obtenir les metrics à jour à partir de ONTAP avec les services d'API OnCommand.
+
+* La valeur d'IOPS totale affichée dans le portlet *Présentation* du tableau de bord vVol n'est pas une valeur cumulée de la valeur d'IOPS de lecture et de la valeur d'écriture.
++
+Les IOPS de lecture, les IOPS d'écriture et le nombre total d'IOPS sont des metrics distincts fournis par les services d'API OnCommand. En cas de différence entre la valeur IOPS totale et la valeur IOPS cumulée (valeur IOPS en lecture + valeur IOPS en écriture) fournie par les services d'API OnCommand, la même différence est observée dans les valeurs IOPS du tableau de bord vvol.
+
+
+
+====
+.Étapes
+. Dans la page d'accueil de vSphere client, cliquez sur *Virtual Storage Console*.
+. Sélectionnez le serveur vCenter requis à l'aide du menu déroulant *serveur vCenter* pour afficher les datastores.
+. Cliquez sur *vVol Dashboard*.
++
+Le portlet *datastores* fournit les informations suivantes :
+
++
+** Nombre de datastores vvols gérés par VASA Provider dans votre instance vCenter Server
+** Les cinq principaux datastores vvols d'après l'utilisation des ressources et les paramètres de performance, vous pouvez modifier la liste des datastores en fonction de l'espace utilisé, d'IOPS, ou de latence, et dans l'ordre requis.
+
+
+. Affichez les détails des machines virtuelles à l'aide du portlet machines virtuelles *.
++
+Le portlet *Virtual machines* fournit les informations suivantes :
+
++
+** Nombre de machines virtuelles utilisant des datastores ONTAP dans votre serveur vCenter
+** Les cinq meilleures machines virtuelles basées sur les IOPS, la latence, le débit, la capacité engagée, la disponibilité Et espace logique vous pouvez personnaliser la manière dont les cinq principales machines virtuelles sont répertoriées dans le tableau de bord vVol.
+
+
+

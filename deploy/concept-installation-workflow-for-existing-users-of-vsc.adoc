@@ -1,0 +1,61 @@
+---
+permalink: deploy/concept-installation-workflow-for-existing-users-of-vsc.html 
+sidebar: sidebar 
+keywords: deployment, workflow, existing, users, vsc, vasa, provider, sra, 
+summary: 'Les versions 9.7 et ultérieures de l"appliance virtuelle pour VSC, VASA Provider et SRA prennent en charge la mise à niveau directe vers la dernière version.' 
+---
+= Workflow de déploiement pour les utilisateurs existants de VSC, VASA Provider et SRA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les versions 9.7 et ultérieures de l'appliance virtuelle pour VSC, VASA Provider et SRA prennent en charge la mise à niveau directe vers la dernière version.
+
+Les versions précédentes d'applications individuelles, telles que VSC, VASA Provider et SRA, utilisent un processus de mise à niveau différent. Si VSC, VASA Provider ou SRA est installé, vous devez effectuer les opérations suivantes :
+
+. Déployez la dernière version de l'appliance virtuelle pour VSC, VASA Provider et SRA.
+. Migrer toutes les données de configuration existantes.
++
+Les données de configuration incluent des informations d'identification du système de stockage et des préférences disponibles dans le `kaminoprefs.xml` et `vscPreferences.xml` fichiers.
+
+
+
+link:reference-configure-the-vsc-preferences-files.html["Configurez les fichiers de préférences VSC"^]
+
+Dans de nombreux cas, vous n'avez peut-être pas besoin de migrer les données de configuration. Toutefois, si vous avez déjà personnalisé les fichiers de préférences, vous pouvez les vérifier et apporter des modifications similaires à l'appliance virtuelle nouvellement déployée. Vous pouvez effectuer l'une des opérations suivantes :
+
+* Utiliser https://mysupport.netapp.com/tools/index.html["Utilitaire d'importation pour SnapCenter et Virtual Storage Console"^] Pour migrer les identifiants du système de stockage depuis VSC 6.X et SRA 4.X vers le nouveau déploiement.
+* Ajoutez les systèmes de stockage à l'appliance virtuelle nouvellement déployée et spécifiez les identifiants au fur et à mesure de leur ajout.
+
+
+Si vous effectuez une mise à niveau à partir de VASA Provider 6.X, vous devez annuler l'enregistrement de VASA Provider avant la mise à niveau. Pour plus de détails, consultez la documentation de la version actuelle.
+
+Si vous effectuez également une mise à niveau depuis SRA 4.0 ou version antérieure :
+
+* Si vous utilisez SRA 4.0P1, vous devez d'abord effectuer une mise à niveau vers SRA9.6 et seulement vous pouvez effectuer une mise à niveau sur place de SRA 9.6 vers la dernière version.
++
+link:task-upgrade-to-the-9-7-1-virtual-appliance-for-vsc-vasa-provider-and-sra.html["Effectuez la mise à niveau vers l'appliance virtuelle 9.7.1 pour VSC, VASA Provider et SRA"^]
+
+* Si vous utilisez SRA 2.1 ou 3.0, notez d'abord les informations de configuration du site existant.
++
+_Guide d'installation et de configuration de Storage Replication adapter 4.0 pour ONTAP_ contient les instructions détaillées dans la section « Présentation de la mise à niveau ». Ces versions de SRA sont également utilisées du fournisseur VASA. Vous devez donc annuler l'enregistrement de VASA Provider, puis déployer la dernière version de l'appliance virtuelle pour VSC, VASA Provider et SRA. Version précédente du serveur (`.ova`) peut être supprimé une fois la mise à niveau terminée.
+
+
+
+Pour toute mise à niveau SRA, le logiciel SRA (l'adaptateur sur le serveur site Recovery Manager, installé par le `.msi` Le fichier) doit être supprimé du serveur site Recovery Manager. Vous pouvez utiliser le panneau de configuration du système Windows pour désinstaller le logiciel, puis installer le dernier logiciel SRA sur le serveur SRA à l'aide de `.msi` fichier.
+
+Si vous disposez de VASA Provider, après la mise à niveau à partir d'une configuration existante, vous devez configurer la taille de mémoire de votre appliance virtuelle pour qu'elle soit de 12 Go à l'aide de `Edit Settings` option. Vous devez également modifier la réservation de mémoire virtuelle. La machine virtuelle doit être mise hors tension pour modifier la taille de la mémoire.
+
+L'appliance virtuelle pour VSC, VASA Provider et SRA n'est pas prise en charge pour une mise à niveau directe depuis toute version antérieure à la version 9.7. Nous vous recommandons tout d'abord de mettre à niveau votre configuration existante vers la version 9.7 de l'appliance virtuelle pour VSC, VASA Provider et SRA avant de procéder à une mise à niveau vers une version ultérieure.
+
+Si vous allez déployer la dernière version de l'appliance virtuelle, vous devez vous reporter à la rubrique « exigences de déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA ». La rubrique « mise à niveau vers la version 9.6 de l'appliance virtuelle pour VSC, VASA Provider et SRA » indique comment effectuer une mise à niveau sur place.
+
+*Informations connexes*
+
+https://mysupport.netapp.com/tools/info/ECMLP2840096I.html?productID=62135&pcfContentID=ECMLP2840096["NetApp ToolChest : utilitaire d'importation NetApp pour SnapCenter et Virtual Storage Console"^]
+
+link:concept-requirements-for-deploying-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html["Conditions requises pour le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA"^]
+
+link:task-upgrade-to-the-9-7-1-virtual-appliance-for-vsc-vasa-provider-and-sra.html["Effectuez la mise à niveau vers l'appliance virtuelle 9.7.1 pour VSC, VASA Provider et SRA"^]

@@ -1,0 +1,36 @@
+---
+permalink: manage/task-configure-vm-storage-policies.html 
+sidebar: sidebar 
+keywords: configuring, vm, storage, policies, 
+summary: 'Il est recommandé de configurer des stratégies de stockage de machines virtuelles pour gérer les machines virtuelles qui sont configurées sur le datastore vvols et pour activer des services tels que la réplication pour les disques virtuels. Pour les datastores classiques, il est facultatif d"utiliser ces règles de stockage de machines virtuelles.' 
+---
+= Configurer les règles de stockage des VM
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il est recommandé de configurer des stratégies de stockage de machines virtuelles pour gérer les machines virtuelles qui sont configurées sur le datastore vvols et pour activer des services tels que la réplication pour les disques virtuels. Pour les datastores classiques, il est facultatif d'utiliser ces règles de stockage de machines virtuelles.
+
+Le client web vSphere fournit des règles de stockage par défaut. Mais vous pouvez créer des stratégies et les affecter aux machines virtuelles.
+
+.Étapes
+. Sur la page vSphere client, cliquez sur Menu:Menu[règles et profils].
+. Cliquez sur Menu:règles de stockage VM[Créer une stratégie de stockage VM].
+. Dans la page Créer une stratégie de stockage VM, fournissez les informations suivantes :
++
+.. Entrez un nom et une description pour la politique de stockage de VM.
+.. Sélectionnez *Activer les règles pour le stockage « NetApp clustered Data ONTAP.VP.vvol »*.
+.. Sélectionnez le profil de capacité de stockage requis dans l'onglet *placement*.
+.. Sélectionnez l'option *Custom* pour activer la réplication.
+.. Cliquez sur *ADD RULE* pour sélectionner la réplication *asynchrone* et *SnapMirror Schedule* requis, puis cliquez sur *NEXT*.
+.. Vérifiez les datastores compatibles répertoriés, puis cliquez sur *NEXT* dans l'onglet *Storage Compatibility*.
++
+Pour les datastores vvols disposant de volumes FlexVol de protection des données, il n'est pas possible de procéder à une vérification des datastores compatibles.
+
+
+
+. Vérifiez la sélection de votre stratégie de stockage VM dans l'onglet *Revue et fin*, puis cliquez sur *Terminer*.
+

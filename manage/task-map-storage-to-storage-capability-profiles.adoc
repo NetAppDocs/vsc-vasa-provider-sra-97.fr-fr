@@ -1,0 +1,48 @@
+---
+permalink: manage/task-map-storage-to-storage-capability-profiles.html 
+sidebar: sidebar 
+keywords: mapping, datastores, to, storage, capability, profiles, 
+summary: 'Vous pouvez mapper les datastores associés à VASA Provider pour ONTAP vers les profils de fonctionnalité de stockage. Vous pouvez affecter un profil à un datastore qui n"est pas associé à un profil de capacité de stockage.' 
+---
+= Mappage des datastores sur les profils de capacité de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez mapper les datastores associés à VASA Provider pour ONTAP vers les profils de fonctionnalité de stockage. Vous pouvez affecter un profil à un datastore qui n'est pas associé à un profil de capacité de stockage.
+
+.Avant de commencer
+* Vous devez avoir enregistré votre instance VASA Provider sur Virtual Storage Console pour VMware vSphere.
+* Virtual Storage Console (VSC) doit déjà avoir découvert votre système de stockage.
+
+
+Vous pouvez associer un data store traditionnel à un profil de fonctionnalité de stockage ou modifier le profil de fonctionnalité de stockage associé à un datastore. Vasa Provider _not_ affiche les datastores de volume virtuel (VVol) sur la page *Storage Adressages*. Tous les datastores cités dans cette tâche sont des datastores classiques.
+
+.Étapes
+. Dans la page VSC *Home*, cliquez sur *Storage Mapping*.
++
+À partir de la page *Storage Mapping*, vous pouvez déterminer les informations suivantes :
+
++
+** Serveur vCenter associé au datastore
+** Combien de profils correspondent au datastore
++
+La page *Storage Mapping* affiche uniquement les datastores traditionnels. Cette page n'affiche aucun datastore VVol ou datastores qtree.
+
+** Indique si le datastore est actuellement associé à un profil
++
+Un datastore peut correspondre à plusieurs profils, mais un datastore ne peut être associé qu'à un seul profil.
+
+** Indique si le datastore est conforme au profil qui lui est associé
+
+
+. Pour mapper un profil de capacité de stockage à un datastore ou pour modifier le profil existant d'un datastore, sélectionnez le datastore.
++
+Pour localiser des datastores spécifiques ou d'autres informations sur la page *mappage de stockage*, vous pouvez entrer un nom ou une chaîne partielle dans la zone de recherche. VSC affiche les résultats de la recherche dans une boîte de dialogue. Pour revenir à l'affichage complet, vous devez supprimer le texte de la zone de recherche, puis cliquer sur *entrée*.
+
+. Dans le menu *actions*, sélectionnez *affecter profil correspondant*.
+. Sélectionnez le profil que vous souhaitez mapper au datastore dans la liste des profils correspondants fournis dans la boîte de dialogue *affecter le profil au datastore*, puis cliquez sur *OK* pour mapper le profil sélectionné au datastore.
+. Actualisez l'écran pour vérifier la nouvelle affectation.
+

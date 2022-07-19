@@ -1,0 +1,113 @@
+---
+permalink: deploy/reference-considerations-for-deploying-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: considerations, requirements, deploying, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 'Avant de déployer l"appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA), il est recommandé de planifier votre déploiement et de décider comment configurer VSC, VASA Provider et SRA dans votre environnement.' 
+---
+= Considérations et conditions requises pour le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Avant de déployer l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA), il est recommandé de planifier votre déploiement et de décider comment configurer VSC, VASA Provider et SRA dans votre environnement.
+
+Le tableau ci-dessous présente les éléments à prendre en compte avant de déployer l'appliance virtuelle pour VSC, VASA Provider et SRA.
+
+[cols="1a,1a"]
+|===
+| Considérations | Description 
+
+
+ a| 
+Déploiement initial de l'appliance virtuelle pour VSC, VASA Provider et SRA
+ a| 
+Le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA installe automatiquement les fonctionnalités VSC. link:concept-deploy-or-upgrade-ontap-tools.html["Le déploiement ou la mise à niveau de VSC, VASA Provider et SRA"^]
+
+link:concept-installation-workflow-for-new-users.html["Workflow de déploiement pour les nouveaux utilisateurs de l'appliance virtuelle VSC, VASA Provider et SRA"^]
+
+
+
+ a| 
+Mise à niveau depuis un déploiement VSC existant
+ a| 
+La procédure de mise à niveau depuis un déploiement existant de VSC vers l'appliance virtuelle pour VSC, VASA Provider et SRA dépend de la version de VSC et si vous avez déployé VSC, VASA Provider et SRA. La section flux de travail de déploiement et mise à niveau contient plus d'informations. link:concept-installation-workflow-for-existing-users-of-vsc.html["Workflow de déploiement pour les utilisateurs existants de VSC, VASA Provider et SRA"^]
+
+Meilleures pratiques avant la mise à niveau :
+
+* Vous devez enregistrer des informations sur les systèmes de stockage utilisés et leurs identifiants.
++
+Après la mise à niveau, vérifiez que tous les systèmes de stockage ont été automatiquement découverts et qu'ils disposent des informations d'identification appropriées.
+
+* Si vous avez modifié l'un des rôles VSC standard, vous devez copier ces rôles pour enregistrer vos modifications.
++
+À chaque redémarrage du service VSC, la fonction VSC remplace les rôles standard par défaut.
+
+
+
+
+
+ a| 
+Régénération d'un certificat SSL pour VSC
+ a| 
+Le certificat SSL est automatiquement généré lorsque vous déployez l'appliance virtuelle pour VSC, VASA Provider et SRA. Vous devrez peut-être régénérer le certificat SSL pour créer un certificat spécifique au site. link:task-regenerate-an-ssl-certificate-for-vsc.html["Régénérer un certificat SSL pour"^]
+
+
+
+ a| 
+Définition des valeurs du serveur VMware ESXi
+ a| 
+Bien que la plupart des valeurs de votre serveur ESXi soient définies par défaut, il est recommandé de vérifier les valeurs. Ces valeurs sont basées sur des tests internes. Selon votre environnement, vous devrez peut-être modifier certaines valeurs pour améliorer les performances.
+
+* link:task-configure-esx-server-multipathing-and-timeout-settings.html["Configurer les paramètres de chemins d'accès multiples et de délai d'attente du serveur ESXi"^]
+* link:reference-esx-host-values-set-by-vsc-for-vmware-vsphere.html["Valeurs de l'hôte ESXi définies à l'aide de Virtual Storage Console pour VMware vSphere"^]
+
+
+
+
+ a| 
+Valeurs de temporisation du système d'exploitation invité
+ a| 
+Les scripts d'expiration du délai d'attente du système d'exploitation invité (OS invité) définissent les valeurs d'expiration du délai d'E/S SCSI pour les systèmes d'exploitation invités Linux, Solaris et Windows pris en charge pour fournir un comportement de basculement correct.
+
+|===
+Le tableau ci-dessous présente les éléments nécessaires à la configuration de l'appliance virtuelle pour VSC, VASA Provider et SRA.
+
+[cols="1a,1a"]
+|===
+| Considérations | Description 
+
+
+ a| 
+Exigences du contrôle d'accès basé sur des rôles (RBAC)
+ a| 
+VSC prend en charge le RBAC de vCenter Server et le RBAC de ONTAP. Le compte utilisé pour enregistrer VSC sur vCenter Server (à l'aide de `_https_://<appliance_ip>:8143/Register.html`) Doit être un administrateur vCenter Server (affecté à l'administrateur vCenter Server ou au rôle d'administrateur). Si vous prévoyez d'exécuter VSC en tant qu'administrateur, vous devez disposer de tous les privilèges et autorisations requis pour toutes les tâches.
+
+Si votre entreprise exige que vous restreignez l'accès aux objets vSphere, vous pouvez créer et attribuer des rôles VSC standard aux utilisateurs pour répondre aux exigences de vCenter Server.
+
+Vous pouvez créer les rôles ONTAP recommandés en utilisant ONTAP System Manager à l'aide du fichier JSON fourni avec l'appliance virtuelle pour VSC, VASA Provider et SRA.
+
+Si un utilisateur tente d'effectuer une tâche sans les privilèges et autorisations appropriés, les options de tâche sont grisées.
+
+* link:concept-standard-roles-packaged-with-virtual-appliance-for-vsc-vp-and-sra.html["Rôles standard regroupés avec l'appliance virtuelle pour VSC, VASA Provider et SRA"^]
+* link:concept-recommended-ontap-roles-when-using-vsc-for-vmware-vsphere.html["Rôles ONTAP recommandés lors de l'utilisation de VSC pour VMware vSphere"^]
+
+
+
+
+ a| 
+Version ONTAP
+ a| 
+Vos systèmes de stockage doivent exécuter ONTAP 9.1, 9.3, 9.5, 9.6 ou 9.7.
+
+
+
+ a| 
+Profils de capacité de stockage
+ a| 
+Pour utiliser des profils de capacité de stockage ou configurer des alarmes, vous devez activer VASA Provider pour ONTAP. Une fois VASA Provider activé, vous pouvez configurer les datastores VMware Virtual volumes (vvols). Vous pouvez également créer et gérer des profils et des alarmes de capacité de stockage.
+
+Les alarmes vous avertissent lorsqu'un volume ou un agrégat est à presque pleine capacité ou lorsqu'un datastore n'est plus conforme au profil de capacité de stockage associé.
+
+|===

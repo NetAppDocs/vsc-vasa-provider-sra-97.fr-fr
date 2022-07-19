@@ -1,0 +1,48 @@
+---
+permalink: deploy/task-refresh-the-storage-system-display.html 
+sidebar: sidebar 
+keywords: refreshing, the, storage, system, display, 
+summary: 'La fonction de mise à jour proposée par Virtual Storage Console pour VMware vSphere permet d"actualiser les informations relatives aux systèmes de stockage et de forcer Virtual Storage Console (VSC) à détecter les systèmes de stockage.' 
+---
+= Actualiser l'affichage du système de stockage
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La fonction de mise à jour proposée par Virtual Storage Console pour VMware vSphere permet d'actualiser les informations relatives aux systèmes de stockage et de forcer Virtual Storage Console (VSC) à détecter les systèmes de stockage.
+
+L'option « reneuf » est utile si vous avez modifié les identifiants par défaut des systèmes de stockage après avoir reçu une erreur d'authentification. Vous devez toujours effectuer une mise à jour si vous avez modifié les informations d'identification du système de stockage après que le système de stockage ait signalé un « État d'échec d'authentification ». Lors de l'opération de mise à jour, VSC tente de se connecter au système de stockage à l'aide des nouvelles informations d'identification.
+
+Selon la configuration de votre système, cette tâche peut prendre un certain temps.
+
+.Étapes
+. Sur la page client VMware vSphere *Home*, cliquez sur *Storage Systems*.
+. Lancer la mise à jour :
++
+[cols="1a,1a"]
+|===
+| Si cet emplacement est... | Cliquez sur... 
+
+
+ a| 
+Virtual Storage Console
+ a| 
+L'icône *REDÉCOUVRIR TOUT*.
+
+
+
+ a| 
+Data Center
+ a| 
+Cliquez avec le bouton droit de la souris sur le data Center, puis cliquez sur menu :NetApp VSC [mettre à jour l'hôte et les données de stockage].
+
+|===
+. Dans la boîte de dialogue *mettre à jour l'hôte et les données de stockage*, cliquez sur *OK*.
++
+La détection peut prendre quelques minutes selon le nombre d'hôtes et de systèmes de stockage de votre centre de données. Cette opération de détection fonctionne en arrière-plan.
+
+. Cliquez sur *OK* dans la boîte de dialogue *succès*.
+

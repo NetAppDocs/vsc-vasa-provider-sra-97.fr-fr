@@ -1,0 +1,20 @@
+---
+permalink: deploy/reference-uninstall-does-not-remove-standard-vsc-roles.html 
+sidebar: sidebar 
+keywords: uninstall, does, not, remove, standard, vsc, roles, 
+summary: 'Lorsque vous désinstallez Virtual Storage Console pour VMware vSphere (VSC), les rôles VSC standard restent inchangés. Cela est normal et n"affecte pas les performances de VSC ni la capacité à effectuer une mise à niveau vers une nouvelle version de VSC. Vous pouvez supprimer ces rôles manuellement, si nécessaire.' 
+---
+= La désinstallation ne supprime pas les rôles VSC standard
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque vous désinstallez Virtual Storage Console pour VMware vSphere (VSC), les rôles VSC standard restent inchangés. Cela est normal et n'affecte pas les performances de VSC ni la capacité à effectuer une mise à niveau vers une nouvelle version de VSC. Vous pouvez supprimer ces rôles manuellement, si nécessaire.
+
+Bien que l'opération de désinstallation ne supprime pas les rôles VSC, l'opération de désinstallation supprime les noms localisés correspondant aux privilèges VSC spécifiques et leur ajoute le préfixe suivant : « XXX manquant privilège ». Par exemple, si vous ouvrez la boîte de dialogue vSphere *Edit Role* après avoir installé VSC, vous verrez les privilèges spécifiques à VSC répertoriés comme.
+
+Ce comportement se produit car vCenter Server ne fournit pas d'option permettant de supprimer des privilèges.
+
+Lorsque vous réinstallez VSC ou effectuez une mise à niveau vers une version plus récente de VSC, tous les rôles standard VSC et tous les privilèges spécifiques à VSC sont restaurés.

@@ -1,0 +1,37 @@
+---
+permalink: manage/task-configure-network-mappings.html 
+sidebar: sidebar 
+keywords: configuring, network, mappings, 
+summary: Vous devez mapper vos réseaux sur le site protégé et le site de reprise pour permettre la communication entre eux. 
+---
+= Configurer les mappages du réseau
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez mapper vos réseaux sur le site protégé et le site de reprise pour permettre la communication entre eux.
+
+Vous devez avoir connecté les sites protégés et de restauration.
+
+.Étapes
+. Connectez-vous à vCenter Server et cliquez sur le menu :site Recovery[sites].
+. Sélectionnez votre site protégé, puis cliquez sur *gérer*.
+. Dans l'onglet gérer, sélectionnez *mappages réseau*.
+. Cliquez sur le bouton image:../media/new-network-mappings.gif[""] pour créer un nouveau mappage réseau.
++
+L'assistant de création de mappage réseau s'affiche.
+
+. Dans l'assistant de création de mappage réseau, effectuez les opérations suivantes :
++
+.. Sélectionnez *préparer automatiquement les mappages pour les réseaux avec des noms correspondants*, puis cliquez sur *Suivant*.
+.. Sélectionnez les objets de centre de données requis pour les sites protégés et de reprise, puis cliquez sur *Ajouter des mappages*.
+.. Cliquez sur *Suivant* une fois les mappages créés.
+.. Sélectionnez l'objet utilisé précédemment pour créer un mappage inversé, puis cliquez sur *Terminer*.
+
+
+
+
+La page Network mappings affiche les ressources du site protégé et les ressources du site de reprise. Vous pouvez suivre les mêmes étapes pour les autres réseaux de votre environnement.

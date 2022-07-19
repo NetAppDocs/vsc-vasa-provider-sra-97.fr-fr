@@ -1,0 +1,31 @@
+---
+permalink: manage/reference-edit-vm-storage-policies-after-upgrade-throws-error-message.html 
+sidebar: sidebar 
+keywords: vasa, provider, issue, while, editing, VM, Storage, policies, after, upgrade, 
+summary: 'Après la mise à niveau depuis la version 7.0 de l"appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA) vers la dernière version de l"appliance virtuelle pour VSC, VASA Provider, De plus, SRA, si vous tentez de modifier une stratégie de stockage de machine virtuelle existante avant de configurer des profils de capacité de stockage, le message d"erreur suivant peut s"afficher : les valeurs sont incorrectes ou manquantes ci-dessous.' 
+---
+= Problème lors de la modification des stratégies de stockage de VM après mise à niveau
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après la mise à niveau depuis la version 7.0 de l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA) vers la dernière version de l'appliance virtuelle pour VSC, VASA Provider, De plus, SRA, si vous tentez de modifier une stratégie de stockage de machine virtuelle existante avant de configurer des profils de capacité de stockage, le message d'erreur suivant peut s'afficher : `There are incorrect or missing values below`.
+
+
+
+== Cause
+
+Cette erreur peut s'afficher si vous n'avez pas créé de nouveaux profils de capacité de stockage.
+
+
+
+== Action corrective
+
+Vous devez effectuer les opérations suivantes :
+
+. Arrêtez la modification de la stratégie de stockage de VM.
+. Créer un nouveau profil de capacité de stockage.
+. Modifiez la stratégie de stockage requise pour les machines virtuelles.
+

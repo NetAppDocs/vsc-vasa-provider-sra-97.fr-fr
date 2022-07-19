@@ -1,0 +1,29 @@
+---
+permalink: manage/task-resize-datastores.html 
+sidebar: sidebar 
+keywords: resizing, datastores, 
+summary: 'Le redimensionnement d"un datastore vous permet d"augmenter ou de réduire le stockage de vos fichiers de machine virtuelle. Vous devrez peut-être modifier la taille d"un datastore en fonction de l"évolution des besoins de votre infrastructure.' 
+---
+= Redimensionner les datastores
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le redimensionnement d'un datastore vous permet d'augmenter ou de réduire le stockage de vos fichiers de machine virtuelle. Vous devrez peut-être modifier la taille d'un datastore en fonction de l'évolution des besoins de votre infrastructure.
+
+Si vous souhaitez que VSC redimensionne le volume contenant lors de la redimensionnement du datastore VMFS, vous ne devez pas utiliser l'option *Use existing volume* sous *Storage attributes* (attributs de stockage*) lors du premier provisionnement du datastore VMFS, mais plutôt le laisser créer automatiquement un nouveau volume pour chaque datastore.
+
+Vous pouvez augmenter ou réduire la taille d'un datastore NFS. Vous ne pouvez augmenter la taille d'un datastore VMFS que.
+
+.Étapes
+. Dans la page client vSphere *Home*, cliquez sur *hôtes et clusters*.
+. Dans le volet de navigation, sélectionnez le centre de données qui contient le datastore.
+. Cliquez avec le bouton droit sur le datastore et sélectionnez menu :NetApp VSC[Resize].
+. Dans la boîte de dialogue *Redimensionner*, spécifiez une nouvelle taille pour le datastore, puis cliquez sur *OK*.
++
+Vous pouvez exécuter l'option *REDÉCOUVRIR TOUT* du menu *Storage Systems* pour mettre à jour manuellement la liste de stockage sous Storage Systems et Dashboard, ou attendre la prochaine actualisation programmée.
+
+

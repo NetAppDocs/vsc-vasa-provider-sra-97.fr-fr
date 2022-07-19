@@ -1,0 +1,29 @@
+---
+permalink: manage/reference-failover-in-progress-status-is-reported-inappropriately-for-sra.html 
+sidebar: sidebar 
+keywords: incorrect, status, failover, in, Progress, is, reported, for, SRA, in, SRM, 
+summary: 'L"état incorrect « basculement en cours » est signalé pour SRA dans SRM' 
+---
+= L'état incorrect « basculement en cours » est signalé pour SRA dans SRM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Problème
+
+VMware site Recovery Manager (SRM) affiche l'état du périphérique en tant que « en cours » pour le nouveau périphérique SnapMirror.
+
+
+
+== Cause
+
+Ce problème survient en raison de la présence d'une entrée portant le même nom de périphérique que le périphérique nouvellement créé dans le `/opt/netapp/vpserver/conf/devices.txt` fichier.
+
+
+
+== Action corrective
+
+Vous devez supprimer manuellement les entrées correspondant au périphérique que vous venez de créer à partir des sites (site A et site B) situés à `/opt/netapp/vpserver/conf/devices.txt` et réexécuter la détection des périphériques. Une fois la détection terminée, les périphériques affichent l'état correct.

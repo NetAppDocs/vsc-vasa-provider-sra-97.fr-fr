@@ -1,0 +1,42 @@
+---
+permalink: manage/task-pair-protected-and-recovery-sites.html 
+sidebar: sidebar 
+keywords: pairing, protected, recovery, sites, 
+summary: 'Vous devez coupler les sites protégés et de reprise créés à l"aide de votre client vSphere pour activer Storage Replication adapter (SRA) pour découvrir les systèmes de stockage.' 
+---
+= Protection par paires et sites de reprise après incident
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez coupler les sites protégés et de reprise créés à l'aide de votre client vSphere pour activer Storage Replication adapter (SRA) pour découvrir les systèmes de stockage.
+
+.Avant de commencer
+* Vous devez avoir installé site Recovery Manager (SRM) sur les sites protégés et de reprise.
+* Vous devez avoir installé SRA sur les sites protégés et de reprise.
+
+
+Les configurations « fan-out » SnapMirror sont celles où un volume source est répliqué vers deux destinations différentes. Ces opérations créent un problème lors de la restauration lorsque SRM a besoin de restaurer la machine virtuelle à partir de la destination.
+
+[NOTE]
+====
+Storage Replication adapter (SRA) ne prend pas en charge les configurations SnapMirror « Fan-Out ».
+
+====
+.Étapes
+. Double-cliquez sur *site Recovery* sur la page d'accueil de vSphere client, puis cliquez sur *sites*.
+. Cliquez sur menu:objets[actions > paire de sites].
+. Dans la boîte de dialogue *pair site Recovery Manager Servers*, entrez l'adresse du contrôleur des services de plate-forme du site protégé, puis cliquez sur *Suivant*.
+. Dans la section *Select vCenter Server*, procédez comme suit :
++
+.. Vérifiez que le serveur vCenter du site protégé apparaît comme candidat correspondant au couplage.
+.. Entrez les informations d'identification administrateur SSO, puis cliquez sur *Terminer*.
+
+
+. Si vous y êtes invité, cliquez sur *Oui* pour accepter les certificats de sécurité.
+
+
+Les sites protégés et de restauration s'affichent dans la boîte de dialogue objets.

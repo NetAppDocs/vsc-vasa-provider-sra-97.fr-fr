@@ -1,0 +1,14 @@
+---
+permalink: manage/concept-manage-datastore.html 
+sidebar: sidebar 
+keywords: managing, traditional, and, vvols, datastores, 
+summary: 'Vous pouvez utiliser l"interface VSC pour gérer des datastores traditionnels et VMware Virtual volumes (vvols), puis effectuer des opérations de montage, de redimensionnement, de modification et de suppression de datastores.' 
+---
+= Gérer des datastores traditionnels et vvols
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser l'interface VSC pour gérer des datastores traditionnels et VMware Virtual volumes (vvols), puis effectuer des opérations de montage, de redimensionnement, de modification et de suppression de datastores.

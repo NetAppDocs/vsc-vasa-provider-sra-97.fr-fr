@@ -1,0 +1,32 @@
+---
+permalink: manage/concept-considerations-for-creating-and-editing-storage-capability-profiles.html 
+sidebar: sidebar 
+keywords: considerations, for, creating, and, editing, storage, capability, profiles, 
+summary: Vous devez tenir compte des considérations relatives à la création et à la modification de profils de capacité de stockage. 
+---
+= Considérations relatives à la création et à la modification de profils de capacité de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez tenir compte des considérations relatives à la création et à la modification de profils de capacité de stockage.
+
+* Vous pouvez configurer min IOPS uniquement sur les systèmes AFF.
+* Vous pouvez configurer les metrics de qualité de service au niveau du datastore de volume virtuel (VVol).
++
+Cette fonctionnalité offre une plus grande flexibilité lors de l'affectation de metrics QoS variés pour les différents VMDK de la même machine virtuelle provisionnée dans un datastore virtuel.
+
+* Vous pouvez configurer des profils de capacité de stockage pour les datastores FAS et AFF.
++
+Pour les systèmes FAS, vous pouvez configurer la réserve d'espace pour qu'elle soit fine ou non. Toutefois, pour les systèmes AFF, la réserve d'espace ne peut être configurée que sur « fine ».
+
+* Vous pouvez utiliser des profils de capacité de stockage pour assurer le cryptage de vos datastores.
+* Vous ne pouvez pas modifier les profils de capacité de stockage existants après la mise à niveau d'une version antérieure de l'appliance virtuelle pour VSC (Virtual Storage Console), VASA Provider et Storage Replication adapter (SRA) vers la dernière version de l'appliance virtuelle pour VSC, VASA Provider et SRA.
++
+Les profils de capacité de stockage hérités sont conservés pour une rétrocompatibilité. Si les modèles par défaut ne sont pas utilisés, les modèles existants sont remplacés lors de la mise à niveau vers la dernière version de l'appliance virtuelle pour VSC, VASA Provider et SRA, afin de prendre en compte les nouveaux metrics de QoS associés aux performances des profils de capacités de stockage.
+
+* Vous ne pouvez ni modifier, ni utiliser les profils de capacité de stockage hérités pour provisionner de nouveaux datastores virtuels ni appliquer les règles de stockage de machines virtuelles.
+* Vous devez utiliser de nouveaux profils de capacité de stockage pour tous les nouveaux datastores.
+

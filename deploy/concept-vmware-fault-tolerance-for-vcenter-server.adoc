@@ -1,0 +1,26 @@
+---
+permalink: deploy/concept-vmware-fault-tolerance-for-vcenter-server.html 
+sidebar: sidebar 
+keywords: vsc, vmware, vsphere, fault, tolerance, 
+summary: 'La fonction VMware vSphere Fault Tolerance (FT) fournit (HA) à un niveau supérieur et permet de protéger les machines virtuelles sans perte de données ni de connexions. Vous devez activer ou désactiver vSphere FT pour l"appliance virtuelle pour VSC, VASA Provider et SRA depuis votre vCenter Server.' 
+---
+= Tolérance aux pannes VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La fonction VMware vSphere Fault Tolerance (FT) fournit (HA) à un niveau supérieur et permet de protéger les machines virtuelles sans perte de données ni de connexions. Vous devez activer ou désactiver vSphere FT pour l'appliance virtuelle pour VSC, VASA Provider et SRA depuis votre vCenter Server.
+
+Assurez-vous que votre licence vSphere prend en charge FT avec le nombre de CPU virtuels requis pour l'appliance virtuelle de votre environnement (au moins 2 CPU virtuels ; 4 CPU virtuels pour les environnements à grande échelle).
+
+VSphere FT permet aux machines virtuelles de fonctionner en continu, même en cas de panne de serveur. Lorsque vSphere FT est activé sur une machine virtuelle, une copie de la machine virtuelle principale est automatiquement créée sur un autre hôte (la machine virtuelle secondaire) sélectionné par Distributed Resource Scheduler (DRS). Si DRS n'est pas activé, l'hôte cible est sélectionné à partir des hôtes disponibles. VSphere FT exploite la machine virtuelle principale et la machine virtuelle secondaire en mode parallèle, chaque mise en miroir de l'état d'exécution de la machine virtuelle principale vers la machine virtuelle secondaire.
+
+En cas de défaillance matérielle causant la défaillance de la machine virtuelle principale, la machine virtuelle secondaire reprend immédiatement l'endroit où la machine virtuelle principale est arrêtée. La machine virtuelle secondaire continue de fonctionner sans perte de connexions réseau, de transactions ou de données.
+
+Votre système doit répondre aux exigences du processeur, aux exigences de limite des machines virtuelles et aux exigences de licence pour la configuration de vSphere FT pour votre instance vCenter Server.
+
+La procédure de configuration de HA dépend de la version de votre serveur vCenter. Par exemple, vous pouvez utiliser le lien de référence suivant et sélectionner la version de vCenter Server requise pour afficher les étapes de configuration de HA.
+
+https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-57929CF0-DA9B-407A-BF2E-E7B72708D825.html["Documentation VMware vSphere : exigences en matière de tolérance aux pannes, limites et licences"^]

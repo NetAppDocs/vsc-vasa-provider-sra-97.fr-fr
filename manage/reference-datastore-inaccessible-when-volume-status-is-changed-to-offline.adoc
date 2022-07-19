@@ -1,0 +1,29 @@
+---
+permalink: manage/reference-datastore-inaccessible-when-volume-status-is-changed-to-offline.html 
+sidebar: sidebar 
+keywords: datastore, inaccessible, when, volume, status, is, changed, to, offline, 
+summary: Le datastore est inaccessible lorsque le statut du volume passe en mode hors ligne 
+---
+= Le datastore est inaccessible lorsque le statut du volume passe en mode hors ligne
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Problème
+
+Lorsqu'un volume de datastore est mis hors ligne, celui-ci est inaccessible. Même si vous connectez le volume en ligne, VSC ne détecte pas le datastore. Sur le client vSphere, si vous cliquez avec le bouton droit de la souris sur le datastore, aucune action VSC n'est disponible.
+
+
+
+== Cause
+
+Lorsque le volume est mis hors ligne du cluster, celui-ci est d'abord démonté, puis mis hors ligne ou restreint. La Junction path est supprimée lorsque le volume est mis hors ligne et le datastore devient inaccessible. Si le volume est mis en ligne, le chemin de jonction n'est pas disponible et n'est pas monté sur le par défaut. Il s'agit du comportement de ONTAP.
+
+
+
+== Action corrective
+
+Vous devez mettre le volume en ligne, puis le monter manuellement avec le même chemin de jonction qu'auparavant. Vous pouvez exécuter la détection de stockage pour afficher que le datastore est découvert et que des actions sont disponibles pour le datastore.

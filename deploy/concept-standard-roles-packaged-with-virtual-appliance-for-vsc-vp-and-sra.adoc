@@ -1,0 +1,62 @@
+---
+permalink: deploy/concept-standard-roles-packaged-with-virtual-appliance-for-vsc-vp-and-sra.html 
+sidebar: sidebar 
+keywords: standard, roles, packaged, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 'Pour simplifier la manipulation avec les privilèges vCenter Server et le contrôle d"accès basé sur des rôles (RBAC), (VSC) propose des rôles VSC standard qui vous permettent d"effectuer des tâches VSC clés. Il existe également un rôle en lecture seule qui vous permet de consulter les informations de VSC, mais ne pas effectuer de tâches.' 
+---
+= Rôles standard regroupés avec l'appliance virtuelle pour VSC, VASA Provider et SRA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour simplifier la manipulation avec les privilèges vCenter Server et le contrôle d'accès basé sur des rôles (RBAC), (VSC) propose des rôles VSC standard qui vous permettent d'effectuer des tâches VSC clés. Il existe également un rôle en lecture seule qui vous permet de consulter les informations de VSC, mais ne pas effectuer de tâches.
+
+Les rôles VSC standard disposent à la fois des privilèges spécifiques à VSC et des privilèges vCenter Server natifs requis pour que les utilisateurs puissent effectuer des tâches VSC. En outre, les rôles sont configurés de manière à disposer des privilèges requis pour toutes les versions prises en charge de vCenter Server.
+
+En tant qu'administrateur, vous pouvez attribuer ces rôles aux utilisateurs, selon les besoins.
+
+[NOTE]
+====
+Lorsque vous mettez à niveau VSC vers la dernière version, les rôles standard sont automatiquement mis à niveau pour fonctionner avec la nouvelle version de VSC.
+
+====
+Vous pouvez afficher les rôles standard VSC en cliquant sur *Roles* sur la page client vSphere *Home*.
+
+Les rôles décrits dans VSC vous permettent d'effectuer les tâches suivantes :
+
+[cols="1a,1a"]
+|===
+| Rôle | Description 
+
+
+ a| 
+Administrateur VSC
+ a| 
+Fournit tous les privilèges vCenter Server natifs et les privilèges spécifiques à VSC requis pour effectuer toutes les tâches VSC.
+
+
+
+ a| 
+VSC en lecture seule
+ a| 
+Fournit un accès en lecture seule à VSC.
+
+Ces utilisateurs ne peuvent pas effectuer d'actions VSC contrôlées par l'accès.
+
+
+
+ a| 
+Provisionnement VSC
+ a| 
+Fournit tous les privilèges vCenter Server natifs et les privilèges spécifiques à VSC requis pour le provisionnement du stockage.
+
+Vous pouvez effectuer les tâches suivantes :
+
+* Créer de nouveaux datastores
+* Détruire les datastores
+* Afficher des informations sur les profils de capacité de stockage
+
+
+|===

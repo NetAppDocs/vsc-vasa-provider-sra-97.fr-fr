@@ -1,0 +1,38 @@
+---
+permalink: deploy/reference-unable-to-install-sra-plug-in-due-to-winhttp-proxy-settings.html 
+sidebar: sidebar 
+keywords: unable, to, install, the, sra, plug-in, 
+summary: 'Impossible d"installer le plug-in SRA' 
+---
+= Impossible d'installer le plug-in SRA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Problème
+
+Lors de l'installation du plug-in Storage Replication adapter (SRA), le système s'arrête à l'écran de l'adresse IP et du mot de passe du serveur et affiche le message d'erreur suivant : « les informations d'identification saisies ne sont pas valides. Entrez un nom d'hôte et un mot de passe valides.»
+
+
+
+== Cause
+
+L'erreur peut se produire pour l'une des raisons suivantes :
+
+* Vous avez saisi des informations d'identification d'administrateur incorrectes.
+* Les paramètres du proxy WinHTTP sont incorrects.
+
+
+
+
+== Action corrective
+
+* Vérifiez vos informations d'identification administrateur.
+* L'article de la base de connaissances contient des informations supplémentaires sur la résolution des problèmes avec les paramètres du proxy WinHTTP.
++
+https://kb.netapp.com/app/answers/answer_view/a_id/1005074["Réponse 1005074 de la base de connaissances NetApp : l'installation du plug-in client SRA 4.0P1 (netapp_sra_4.0P1_ontap_64bit.msi) se bloque sur l'écran des adresses IP et du mot de passe du serveur"^]
+
+

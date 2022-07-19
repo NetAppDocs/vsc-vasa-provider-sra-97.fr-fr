@@ -1,0 +1,51 @@
+---
+permalink: deploy/task-upgrade-storage-replication-adapter.html 
+sidebar: sidebar 
+keywords: sra, upgrade, upgrading, storage, replication, adapter, 
+summary: 'Après la mise à niveau de votre appliance virtuelle pour VSC, VASA Provider et SRA, ou le déploiement de la dernière version de l"appliance virtuelle, vous devez mettre à niveau Storage Replication adapter (SRA).' 
+---
+= Mettre à niveau Storage Replication adapter
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après la mise à niveau de votre appliance virtuelle pour VSC, VASA Provider et SRA, ou le déploiement de la dernière version de l'appliance virtuelle, vous devez mettre à niveau Storage Replication adapter (SRA).
+
+.Étapes
+. Vous devez effectuer la mise à niveau vers la dernière carte à l'aide de l'une des procédures suivantes en fonction de votre adaptateur :
++
+[cols="1a,1a"]
+|===
+| *Pour...* | Effectuez les opérations suivantes... 
+
+
+ a| 
+*Windows*
+ a| 
+.. Connectez-vous à SRM Windows Server.
+.. Désinstallez le programme d'installation SRA _.msi_ existant de SRM Server.
+.. Définissez le chemin du système sur `C:\Program Files\VMware\VMware vCenter Site Recovery Manager\external\perl\c\bin`
+.. Double-cliquez sur le programme d'installation _.msi_ que vous avez téléchargé sur le site du support NetApp et suivez les instructions à l'écran.
+.. Entrez l'adresse IP et le mot de passe de l'appliance virtuelle déployée pour VSC, VASA Provider et SRA.
+
+
+
+
+ a| 
+*Carte réseau basée sur l'appliance*
+ a| 
+.. Connectez-vous à la page gestion de l'appliance SRM.
+.. Cliquez sur *Storage Replication adapter*, puis sur *Delete* pour supprimer le SRA existant.
+.. Cliquez sur menu:Nouvelle carte[Parcourir].
+.. Cliquez sur pour sélectionner le fichier tarball de SRA que vous avez téléchargé depuis le site du support NetApp, puis cliquez sur *Install*.
+.. Configurez SRA sur l'appliance SRM.
++
+xref:task-configure-sra-on-srm-appliance.adoc[Configurez SRA sur l'appliance SRM]
+
+
+
+|===
+

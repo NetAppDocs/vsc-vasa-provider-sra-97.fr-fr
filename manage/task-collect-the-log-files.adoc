@@ -1,0 +1,32 @@
+---
+permalink: manage/task-collect-the-log-files.html 
+sidebar: sidebar 
+keywords: collecting, the, log, files, 
+summary: 'Vous pouvez collecter les fichiers journaux de Virtual Storage Console pour VMware vSphere à partir de l"option disponible dans l"interface utilisateur graphique de VSC. Le support technique peut vous demander de collecter les fichiers journaux afin de résoudre un problème.' 
+---
+= Collectez les fichiers journaux
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez collecter les fichiers journaux de Virtual Storage Console pour VMware vSphere à partir de l'option disponible dans l'interface utilisateur graphique de VSC. Le support technique peut vous demander de collecter les fichiers journaux afin de résoudre un problème.
+
+Si vous avez besoin de fichiers journaux VASA Provider, vous pouvez générer un bundle de support à partir de l'écran *Vendor Provider Control Panel*. Cette page fait partie des menus de maintenance de VASA Provider, accessibles depuis la console de l'appliance virtuelle.
+
+https://vm_ip:9083[]
+
+Vous pouvez collecter les fichiers journaux VSC à l'aide de la fonctionnalité « Export VSC Logs » dans l'interface graphique de VSC. Lorsque vous collectez un bundle VSC Log avec VASA Provider activé, le bundle VSC Log propose également les journaux VP. La procédure suivante décrit comment collecter les fichiers journaux VSC :
+
+.Étapes
+. Dans la page d'accueil de Virtual Storage Console, cliquez sur menu :Configuration[Exporter les journaux VSC].
++
+Cette opération peut prendre plusieurs minutes.
+
+. Lorsque vous y êtes invité, enregistrez le fichier sur votre ordinateur local.
++
+Vous pouvez ensuite envoyer le `.zip` dossier au support technique.
+
+

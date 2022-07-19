@@ -1,0 +1,125 @@
+---
+permalink: manage/task-create-storage-capability-profiles.html 
+sidebar: sidebar 
+keywords: configuring, storage, capability, profiles, 
+summary: 'Vous pouvez utiliser VSC pour créer manuellement des profils de capacité de stockage, générer automatiquement un profil en fonction des fonctionnalités d"un datastore ou modifier un profil en fonction de vos besoins.' 
+---
+= Configurer les profils de capacité de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser VSC pour créer manuellement des profils de capacité de stockage, générer automatiquement un profil en fonction des fonctionnalités d'un datastore ou modifier un profil en fonction de vos besoins.
+
+Vous devez avoir enregistré votre instance VASA Provider sur Virtual Storage Console pour VMware vSphere.
+
+Après avoir configuré un profil, vous pouvez le modifier si nécessaire.
+
+.Étapes
+. Sur la page d'accueil * de Virtual Storage Console (VSC), cliquez sur *Storage Capability Profiles*.
+. Créez un profil ou modifiez un profil existant, selon les besoins :
++
+[cols="1a,1a"]
+|===
+| Les fonctions que vous recherchez... | Procédez comme ça... 
+
+
+ a| 
+Créer un profil
+ a| 
+Cliquez sur *image:../media/create-icon.gif[""]*.
+
+
+
+ a| 
+Modifier un profil existant
+ a| 
+Cliquez sur le profil que vous souhaitez modifier dans les profils répertoriés sur la page profils de capacité de stockage.
+
+|===
++
+[NOTE]
+====
+Pour afficher les valeurs associées à un profil existant, vous pouvez cliquer sur le nom du profil dans la page profil de capacités de stockage. Vasa Provider affiche alors la page Résumé de ce profil. - Vous ne pouvez pas modifier les profils de capacité de stockage existants créés avant l'appliance virtuelle 9.6 pour VSC, VASA Provider et SRA.
+
+====
+. Complétez les pages de l'assistant *Créer un profil de capacité de stockage* pour configurer un profil ou modifier des valeurs pour modifier un profil existant.
++
+La plupart des champs de cet assistant sont explicites. Le tableau suivant décrit certains des champs pour lesquels vous pouvez avoir besoin de conseils.
+
++
+[cols="1a,1a"]
+|===
+| Champ | Explication 
+
+
+ a| 
+Identification de plusieurs profils
+ a| 
+Vous pouvez utiliser le champ *Description* de l'onglet Nom et Description pour décrire l'objectif du profil de capacité de stockage. Fournir une bonne description est utile car il est conseillé de configurer différents profils en fonction des applications utilisées.
+
+Par exemple, une application stratégique nécessite un profil doté de fonctionnalités capables de prendre en charge des performances plus élevées, telles qu'une plateforme AFF. Un datastore utilisé à des fins de test ou de formation peut utiliser un profil avec une plateforme FAS aux performances moindres, et permettre à toutes les fonctionnalités d'efficacité du stockage et la hiérarchisation pour contrôler les coûts.
+
+Si vous avez activé le mode « lié » pour vos serveurs vCenter, vous devez sélectionner le serveur vCenter pour lequel vous créez le profil de capacité de stockage.
+
+
+
+ a| 
+Plateforme
+ a| 
+Vous pouvez sélectionner votre système de stockage pour obtenir la plate-forme AFF ou FAS. Les options des écrans suivants sont mises à jour en fonction de votre sélection de type de système de stockage.
+
+
+
+ a| 
+Performance
+ a| 
+Vous pouvez définir des règles QoS classiques pour votre système de stockage à l'aide de l'onglet performances.
+
+** Lorsque vous sélectionnez *aucun*, une règle de QoS sans limite (infinie) est appliquée à un VVol de données.
+** Lorsque vous sélectionnez *QoS Policy Group*, une règle de QoS classique s'applique à un VVol.
++
+Vous pouvez définir la valeur pour *Max IOPS* et *min IOPS* qui vous permet d'utiliser la fonctionnalité QoS. Si vous sélectionnez Infinite IOPS, le champ Max IOPS est désactivé. Lorsqu'elle est appliquée à un datastore traditionnel, une politique de QoS avec la valeur « Max IOPS » est créée et attribuée à un volume FlexVol. Lorsqu'il est utilisé avec un datastore VVol, une règle de QoS avec des valeurs d'IOPS max et min est créée pour chaque VVol de données.
+
++
+[NOTE]
+====
+*** Des IOPS maximales et un nombre d'IOPS minimum peuvent également être appliqués au volume FlexVol pour un datastore classique.
+*** Vous devez vous assurer que les mesures de performance ne sont pas définies séparément au niveau d'une machine virtuelle de stockage \(SVM\), d'un niveau d'agrégat ou du volume FlexVol.
+
+
+====
+
+
+
+
+ a| 
+Attributs de stockage
+ a| 
+Les attributs de stockage que vous pouvez activer dans cet onglet dépendent du type de stockage que vous sélectionnez dans l'onglet personnalité.
+
+** Si vous sélectionnez le stockage FAS, vous pouvez configurer la réserve d'espace (fine ou non) et activer la déduplication, la compression et le cryptage.
++
+L'attribut de hiérarchisation est désactivé car cet attribut n'est pas applicable au stockage FAS.
+
+** Si vous sélectionnez le stockage AFF, vous pouvez activer le cryptage et le Tiering.
++
+La déduplication et la compression sont activées par défaut pour le stockage AFF et ne peuvent pas être désactivées. La réserve d'espace est configurée en tant qu'fine et ne peut pas être modifiée en non fine (elle est requise pour l'efficacité de l'agrégat et la hiérarchisation).
+
++
+L'attribut de Tiering permet d'utiliser les volumes faisant partie d'un agrégat compatible FabricPool (pris en charge par VASA Provider pour les systèmes AFF avec ONTAP 9.4 et versions ultérieures). Vous pouvez configurer l'une des règles suivantes pour l'attribut de hiérarchisation :
+
+** Tout : permet d'utiliser ce profil de capacité de stockage avec tout volume FlexVol, que Fabric Pool soit utilisé ou non
+** Aucune : empêche le déplacement des données de volume vers le niveau de capacité
+** Snapshot uniquement : déplace les blocs de données utilisateur des copies Snapshot de volume, qui ne sont pas associés au système de fichiers actif vers le niveau de capacité
+** Auto : déplace les blocs de données utilisateur inactives dans les copies Snapshot et le système de fichiers actif vers le Tier de capacité
+
+
+|===
+. Passez en revue vos sélections sur la page *Résumé*, puis cliquez sur *OK*.
++
+Après avoir créé un profil, vous pouvez revenir à la page mappage du stockage pour afficher les profils correspondant aux datastores.
+
+

@@ -1,0 +1,42 @@
+---
+permalink: manage/reference-vm-provision-fails-with-undefined-error.html 
+sidebar: sidebar 
+keywords: virtual, machine, provisioning, fails, with, an, undefined, error, 
+summary: 'Opérations de provisionnement de la machine virtuelle telles que Créer, Cloner, mise sous tension, mise hors tension, interrompre, La migration et la mise à jour du profil de stockage de VM sur le datastore VVol peuvent échouer avec un message d"erreur générique dans le gestionnaire de tâches qui n"indique pas si le problème est avec VASA Provider ou VMware.' 
+---
+= L'approvisionnement de la machine virtuelle échoue avec une erreur non définie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Opérations de provisionnement de la machine virtuelle telles que Créer, Cloner, mise sous tension, mise hors tension, interrompre, La migration et la mise à jour du profil de stockage de VM sur le datastore VVol peuvent échouer avec un message d'erreur générique dans le gestionnaire de tâches qui n'indique pas si le problème est avec VASA Provider ou VMware.
+
+
+
+== Problème
+
+Vous recevez des messages d'erreur dans le gestionnaire des tâches, par exemple `No suitable volume was found amongst the candidate volumes for the specified requirements.`
+
+
+
+== Cause
+
+Cette erreur peut survenir en raison de problèmes au niveau du stockage VMware, VASA Provider ou ONTAP. Le message d'erreur peut ne pas indiquer la raison exacte de l'échec. Ce problème peut également être dû à de grands systèmes de stockage disposant d'un grand nombre de SVM, de volumes et de LUN dans l'environnement. Les opérations de détection périodique effectuées en arrière-plan sur ces systèmes de stockage prennent du temps et peuvent entraîner le délai d'expiration des opérations de provisionnement des machines virtuelles si ces opérations sont déclenchées simultanément.
+
+
+
+== Action corrective
+
+. Vérifiez si le problème concerne VASA Provider ou le stockage ONTAP en examinant le système `/opt/netapp/vpserver/logs/error.log`, `vvolvp.log`, et `zapi_error.log` fichiers journaux.
++
+** Si des erreurs telles que `NaException com.netapp.offtap3.ontap.ApiFailedException: No suitable volume was found amongst the candidate volumes for the specified requirements. Details: Vvol Placement: Type: place Candidate Volumes: Vvol_nfs_pb2, Vvol_nfs_pb1 Performance: Greatest IOPS Size: 4GB Space Guaranteed: false Volumes with insufficient unpromised IOPS: Vvol_nfs_pb1, Vvol_nfs_pb2 Result: success (errno=13001)` Sont signalées. Il est alors conseillé de prendre les mesures nécessaires, comme l'augmentation des IOPS du stockage avec l'aide de l'administrateur du stockage.
+** Vous devez exécuter des opérations de provisionnement uniquement lorsqu'aucune opération de détection n'est en cours d'exécution en arrière-plan. Si les erreurs signalées dans les fichiers journaux de VASA Provider ne sont pas spécifiques, contactez le support technique pour résoudre le problème.
+
+
+. Si aucune erreur spécifique n'est signalée dans les fichiers journaux de VASA Provider, examinez l' `sps.log` Fichier journal pour vérifier si le problème est lié à VMware, puis prendre les mesures correctives appropriées en fonction des erreurs signalées.
++
+Si les erreurs signalées dans le `sps.log` Le fichier journal ne sont pas spécifiques, puis vous devez contacter un administrateur VMware pour résoudre le problème.
+
+

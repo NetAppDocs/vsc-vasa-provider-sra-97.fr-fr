@@ -1,0 +1,36 @@
+---
+permalink: deploy/reference-product-level-privilege-required-by-vsc-for-vmware-vsphere.html 
+sidebar: sidebar 
+keywords: product-level, privilege, required, vsc, vmware, vsphere, 
+summary: 'Pour accéder à l"interface graphique Virtual Storage Console pour VMware vSphere, vous devez disposer du privilège VSC-Specific View (vue) au niveau du produit, qui est attribué au niveau de l"objet vSphere approprié. Si vous vous connectez sans ce privilège, VSC affiche un message d"erreur lorsque vous cliquez sur l"icône NetApp et vous empêche d"accéder à VSC.' 
+---
+= Privilèges de niveau produit requis par VSC pour VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour accéder à l'interface graphique Virtual Storage Console pour VMware vSphere, vous devez disposer du privilège VSC-Specific View (vue) au niveau du produit, qui est attribué au niveau de l'objet vSphere approprié. Si vous vous connectez sans ce privilège, VSC affiche un message d'erreur lorsque vous cliquez sur l'icône NetApp et vous empêche d'accéder à VSC.
+
+Les informations suivantes décrivent le privilège VSC Product-Level View :
+
+[cols="1a,1a,1a"]
+|===
+| Privilège | Description | Niveau d'affectation 
+
+
+ a| 
+Afficher
+ a| 
+Vous pouvez accéder à l'interface graphique de VSC. Ce privilège ne vous permet pas d'effectuer des tâches dans VSC. Pour effectuer toutes les tâches VSC, vous devez disposer des privilèges vCenter Server natifs et spécifiques à VSC pour ces tâches.
+ a| 
+Le niveau d'affectation détermine les parties de l'interface utilisateur que vous pouvez voir.
+
+L'attribution du privilège View (View) à l'objet racine (dossier) vous permet d'entrer dans VSC en cliquant sur l'icône NetApp.
+
+Vous pouvez attribuer le privilège View à un autre niveau d'objets vSphere. Toutefois, vous pouvez limiter les menus VSC que vous pouvez voir et utiliser.
+
+L'objet racine est l'endroit recommandé pour attribuer une autorisation contenant le privilège d'affichage.
+
+|===

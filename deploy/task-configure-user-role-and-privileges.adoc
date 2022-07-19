@@ -1,0 +1,41 @@
+---
+permalink: deploy/task-configure-user-role-and-privileges.html 
+sidebar: sidebar 
+keywords: user, roles, configuring, user, roles, and, privileges, 
+summary: 'Vous pouvez configurer de nouveaux rôles utilisateur pour la gestion des systèmes de stockage à l"aide du fichier JSON fourni avec l"appliance virtuelle pour VSC, VASA Provider, SRA et ONTAP System Manager.' 
+---
+= Configurez les rôles et privilèges utilisateur
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer de nouveaux rôles utilisateur pour la gestion des systèmes de stockage à l'aide du fichier JSON fourni avec l'appliance virtuelle pour VSC, VASA Provider, SRA et ONTAP System Manager.
+
+.Avant de commencer
+* Vous devez avoir téléchargé le fichier ONTAP Privileges depuis l'appliance virtuelle pour VSC, VASA Provider et SRA à l'aide de `+https://{virtual_appliance_IP}:9083/vsc/config/VSC_ONTAP_User_Privileges.zip+`.
+* Vous devez avoir configuré ONTAP 9.7 System Manager.
+* Vous devez avoir ouvert une session avec les privilèges d'administrateur pour le système de stockage.
+
+
+.étapes
+. Décompressez le fichier téléchargé `+https://{virtual_appliance_IP}:9083/vsc/config/VSC_ONTAP_User_Privileges.zip+` fichier.
+. Accédez à ONTAP System Manager.
+. Cliquez sur menu:CLUSTER[Paramètres > utilisateurs et rôles].
+. Cliquez sur *Ajouter un utilisateur*.
+. Dans la boîte de dialogue *Ajouter un utilisateur*, sélectionnez *produits de virtualisation*.
+. Cliquez sur *Parcourir* pour sélectionner et télécharger le fichier JSON de privilèges ONTAP.
++
+Le champ PRODUIT est rempli automatiquement.
+
+. Sélectionnez la capacité requise dans le menu déroulant *PRODUCT CAPABILITY*.
++
+Le champ *ROLE* est renseigné automatiquement en fonction de la capacité du produit sélectionnée.
+
+. Saisissez le nom d'utilisateur et le mot de passe requis.
+. Sélectionnez les privilèges (Discovery, Create Storage, Modify Storage, Destroy Storage) requis pour l'utilisateur, puis cliquez sur *Add*.
+
+
+Le nouveau rôle et l'utilisateur sont ajoutés et vous pouvez voir les privilèges détaillés sous le rôle que vous avez configuré.

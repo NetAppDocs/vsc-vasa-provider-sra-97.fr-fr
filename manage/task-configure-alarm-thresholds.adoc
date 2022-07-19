@@ -1,0 +1,41 @@
+---
+permalink: manage/task-configure-alarm-thresholds.html 
+sidebar: sidebar 
+keywords: configuring, alarm, thresholds, 
+summary: VSC vous permet de définir des alarmes pour vous avertir lorsque les seuils de volume et les seuils globaux atteignent les limites définies. 
+---
+= Configurer les seuils d'alarme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VSC vous permet de définir des alarmes pour vous avertir lorsque les seuils de volume et les seuils globaux atteignent les limites définies.
+
+.Étapes
+. Dans la page *Home* de Virtual Storage Console, cliquez sur *Settings*.
+. Cliquez sur *Paramètres de l'appliance unifiée*.
+. Spécifiez les valeurs de pourcentage pour le champ *seuil presque plein (%)* et le champ *seuil complet (%)* pour les seuils d'alarme de volume et les seuils d'alarme globaux.
++
+Lors de la définition des valeurs, vous devez garder les informations suivantes à l'esprit :
+
++
+** Si vous cliquez sur *Réinitialiser*, les seuils sont remis aux valeurs précédentes.
++
+Si vous cliquez sur *Reset*, les seuils ne sont pas réinitialisés aux valeurs par défaut de 80 % pour « presque plein » et de 90 % pour « plein ».
+
+** Il existe deux façons de définir les valeurs :
++
+*** Vous pouvez utiliser les flèches vers le haut et vers le bas situées à côté des valeurs pour régler les valeurs de seuil.
+*** Vous pouvez faire glisser les flèches de la barre de suivi sous les valeurs pour régler les valeurs de seuil.
+
+
+** La valeur la plus faible que vous pouvez définir pour le champ *seuil complet (%)* pour les volumes et les agrégats est de 6 pour cent.
+
+
+. Après avoir spécifié les valeurs requises, cliquez sur *appliquer*.
++
+Vous devez cliquer sur *appliquer* pour l'alarme de volume et l'alarme agrégée.
+
+

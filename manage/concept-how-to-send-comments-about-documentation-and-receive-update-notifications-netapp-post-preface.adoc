@@ -1,0 +1,30 @@
+---
+permalink: manage/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html 
+sidebar: sidebar 
+keywords: doccomments, quality, documentation, high-quality, documentation, how, to, send, comments, about, documentation, and, receive, update, notifications, 
+summary: 'Vous pouvez nous aider à améliorer la qualité de notre documentation en nous envoyant vos commentaires. Vous pouvez recevoir une notification automatique lorsque la documentation au niveau de production (GA/FCS) est publiée au départ ou lorsque des modifications importantes sont apportées aux documents existants de niveau de production.' 
+---
+= Comment envoyer des commentaires sur la documentation et recevoir des notifications de mise à jour
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez nous aider à améliorer la qualité de notre documentation en nous envoyant vos commentaires. Vous pouvez recevoir une notification automatique lorsque la documentation au niveau de production (GA/FCS) est publiée au départ ou lorsque des modifications importantes sont apportées aux documents existants de niveau de production.
+
+Si vous avez des suggestions pour améliorer ce document, envoyez-nous vos commentaires par e-mail.
+
+link:mailto:doccomments@netapp.com["doccomments@netapp.com"^]
+
+Pour nous aider, adressez vos commentaires à la division appropriée, en incluant le nom du produit, la version et le système d'exploitation dans la ligne de l'objet.
+
+Si vous souhaitez être informé automatiquement lors de la publication d'un document de niveau production ou lorsque des modifications importantes sont apportées à des documents de niveau production existants, suivez le compte Twitter @NetAppDoc.
+
+Vous pouvez également nous contacter de l'une des manières suivantes :
+
+* NetApp, Inc., 1395 Crossman Ave., Sunnyvale, CA 94089 États-Unis
+* Numéro de téléphone: +1 (408) 822-6000
+* Numéro de télécopieur: +1 (408) 822-4501
+* Numéro de téléphone du support : +1 (888) 463-8277
+

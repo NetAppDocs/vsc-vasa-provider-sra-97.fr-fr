@@ -1,0 +1,30 @@
+---
+permalink: manage/task-verify-the-replicated-storage-environment.html 
+sidebar: sidebar 
+keywords: verifying, replicated, storage, systems, 
+summary: 'Vous devez vérifier que le site protégé et le site de reprise sont appariés avec succès après la configuration de Storage Replication adapter (SRA). Le système de stockage répliqué doit être localisé vers le site protégé et vers le site de reprise.' 
+---
+= Vérification des systèmes de stockage répliqués
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez vérifier que le site protégé et le site de reprise sont appariés avec succès après la configuration de Storage Replication adapter (SRA). Le système de stockage répliqué doit être localisé vers le site protégé et vers le site de reprise.
+
+.Avant de commencer
+* Vous devez avoir configuré votre système de stockage.
+* Vous devez avoir associé le site protégé et le site de reprise à l'aide du gestionnaire de baies SRM.
+* Vous devez avoir activé la licence FlexClone et la licence SnapMirror avant d'effectuer l'opération de test de basculement et de basculement pour SRA.
+
+
+.Étapes
+. Connectez-vous à votre serveur vCenter.
+. Accédez au menu:site Recovery[Array Based Replication].
+. Sélectionner le SVM requis, puis vérifier les détails correspondants dans *Array pairs*.
++
+Les systèmes de stockage doivent être découverts sur le site protégé et sur le site de reprise avec l'état « activé ».
+
+

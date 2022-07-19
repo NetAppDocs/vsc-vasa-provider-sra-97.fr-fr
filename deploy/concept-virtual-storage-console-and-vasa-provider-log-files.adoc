@@ -1,0 +1,37 @@
+---
+permalink: deploy/concept-virtual-storage-console-and-vasa-provider-log-files.html 
+sidebar: sidebar 
+keywords: virtual, storage, console, vasa, provider, log, files, 
+summary: 'Vous pouvez vérifier les fichiers journaux dans le répertoire /opt/netapp/vscserver/log et dans le répertoire /opt/netapp/vpserver/log en cas d"erreur.' 
+---
+= Fichiers journaux de Virtual Storage Console et de VASA Provider
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez vérifier les fichiers journaux dans le `/opt/netapp/vscserver/log` et le `/opt/netapp/vpserver/log` répertoire lorsque vous rencontrez des erreurs.
+
+Les trois fichiers journaux suivants peuvent être utiles pour identifier les problèmes :
+
+* `cxf.log`, Contenant des informations sur le trafic API vers et hors de VASA Provider
+* `kaminoPrefs.xml`, Contenant des informations sur les paramètres VSC
+* `vvolvp.log`, Contenant toutes les informations de journalisation relatives à VASA Provider
+
+
+Grâce au menu de maintenance de l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA), vous pouvez définir différents niveaux de journaux en fonction de vos besoins. Les niveaux de journal suivants sont disponibles :
+
+* Info
+* Débogage
+* Erreur
+* Tracé
+
+
+Lorsque vous définissez les niveaux de journalisation, les fichiers suivants sont mis à jour :
+
+* Serveur VSC : `kamino.log` et `vvolvp.log`
+* Serveur VASA Provider : `vvolvp.log`, `error.log`, et `netapp.log`
+
+
+En outre, la page Web de l'interface de ligne de commandes (CLI) de VASA Provider contient les appels d'API effectués, les erreurs renvoyées et plusieurs compteurs de performances. La page Web CLI se trouve à l'adresse `_https_://<IP_address_or_hostname\>:9083/stats`.

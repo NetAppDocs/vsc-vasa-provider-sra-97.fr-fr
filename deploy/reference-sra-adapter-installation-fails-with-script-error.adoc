@@ -1,0 +1,40 @@
+---
+permalink: deploy/reference-sra-adapter-installation-fails-with-script-error.html 
+sidebar: sidebar 
+keywords: storage, replication, adapter, installation, fails, with, script, error, 
+summary: 'L"installation de SRA a échoué avec une erreur de script' 
+---
+= L'installation de SRA a échoué avec une erreur de script
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Problème
+
+L'installation de Storage Replication adapter (SRA) sur Windows 2008 R2 échoue et une erreur d'informations d'identification non valide s'affiche.
+
+
+
+== Cause
+
+Cette erreur peut survenir en raison de l'activation de différentes versions de transport Layer Security (TLS) sur l'appliance virtuelle pour VSC, VASA Provider, SRA et Windows 2008 R2.
+
+
+
+== Action corrective
+
+Si vous tentez d'installer SRA sur Windows 2008 R2, vous devez activer TLSv1 pour l'appliance virtuelle pour VSC, VASA Provider et SRA, à l'aide des étapes suivantes de la console de maintenance :
+
+. Connectez-vous à la console de maintenance à l'aide des informations d'identification de l'utilisateur « saint ».
+. Dans le menu principal, sélectionnez *1* pour le menu *Configuration de l'application*.
+. Saisissez *13* dans le menu *Configuration de l'application* pour sélectionner *Activer le protocole TLS* dans le menu *Configuration de l'application*.
+. Sélectionnez *TLSv1* dans la liste des protocoles TLS.
++
+Les services VSC et VASA Provider sont redémarrés et TLS1.0 est activé.
+
+
+
+Vous pouvez également activer TLSv1.2 sur Windows 2008 R2.

@@ -1,0 +1,75 @@
+---
+permalink: manage/task-configure-array-manager.html 
+sidebar: sidebar 
+keywords: configuring, sra, using, array, manager, 
+summary: 'La configuration de Storage Replication adapter (SRA) peut être configurée à l"aide de l"assistant Array Manager de site Recovery Manager (SRM) pour activer les interactions entre SRM et les SVM (Storage Virtual machines).' 
+---
+= Configurez SRA à l'aide du gestionnaire de baies
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer Storage Replication adapter (SRA) à l'aide de l'assistant *Array Manager* de site Recovery Manager (SRM) pour activer les interactions entre SRM et les machines virtuelles de stockage (SVM).
+
+.Avant de commencer
+* Vous devez avoir apparié les sites protégés et les sites de reprise dans SRM.
+* Vous devez avoir configuré votre stockage avant de configurer le gestionnaire de baies.
+* Vous devez avoir configuré et répliqué les relations SnapMirror entre les sites protégés et les sites de reprise.
+* Vous devez avoir activé les LIF de gestion du SVM pour permettre la colocation.
+
+
+SRA prend en charge la gestion au niveau du cluster et de la SVM. Si vous ajoutez du stockage au niveau du cluster, vous pouvez détecter et exécuter des opérations sur tous les SVM du cluster. Si vous ajoutez du stockage au niveau d'un SVM, vous ne pouvez gérer que ce SVM spécifique.
+
+[NOTE]
+====
+VMware ne prend pas en charge le protocole NFS4.1 pour SRM.
+
+====
+.Étapes
+. Dans SRM, cliquez sur *Array Managers*, puis sur *Add Array Manager*.
+. Entrez les informations suivantes pour décrire la matrice dans SRM :
++
+.. Entrez un nom pour identifier le gestionnaire de matrice dans le champ *Nom d'affichage*.
+.. Dans le champ *SRA Type*, sélectionnez *NetApp Storage Replication adapter pour ONTAP*.
+.. Entrer les informations pour se connecter au cluster ou au SVM :
++
+*** Si vous vous connectez à un cluster, vous devez saisir la LIF de gestion du cluster.
+*** Si vous vous connectez directement à un SVM, vous devez saisir l'adresse IP de la LIF de management du SVM.
++
+[NOTE]
+====
+Lors de la configuration du gestionnaire de baies, vous devez utiliser la même connexion et les mêmes informations d'identification pour le système de stockage utilisé pour ajouter le système de stockage dans le menu *Storage Systems* de Virtual Storage Console. Par exemple, si la configuration Array Manager est prévue au niveau du SVM, le stockage sous VSC doit être ajouté au niveau du SVM.
+
+====
+
+
+.. Si vous vous connectez à un cluster, entrez le nom du SVM dans le champ *SVM name*.
++
+Vous pouvez également laisser ce champ vide.
+
+.. *Facultatif:* Entrez les volumes à découvrir dans le champ *liste d'inclure le volume*.
++
+Vous pouvez saisir le volume source sur le site protégé et le volume de destination répliqué sur le site de reprise. Vous pouvez entrer le nom du volume complet ou le nom du volume partiel.
+
++
+Par exemple, si vous voulez découvrir le volume _src_vol1_ qui se trouve dans une relation SnapMirror avec le volume _dst_vol1_, vous devez spécifier _src_vol1_ dans le champ site protégé et _dst_vol1_ dans le champ site de récupération.
+
+.. *Facultatif:* Entrez les volumes à exclure de la découverte dans le champ *liste d'exclusion de volume*.
++
+Vous pouvez saisir le volume source sur le site protégé et le volume de destination répliqué sur le site de reprise. Vous pouvez entrer le nom du volume complet ou le nom du volume partiel.
+
++
+Par exemple, si vous souhaitez exclure le volume _src_vol1_ qui se trouve dans une relation SnapMirror avec le volume _dst_vol1_, vous devez spécifier _src_vol1_ dans le champ site protégé et _dst_vol1_ dans le champ site de récupération.
+
+.. Entrez le nom d'utilisateur du compte au niveau du cluster ou du compte au niveau du SVM dans le champ *Nom d'utilisateur*.
+.. Saisissez le mot de passe du compte utilisateur dans le champ *Mot de passe*.
+
+
+. Cliquez sur *Suivant*.
+. Vérifiez que la matrice est découverte et affichée en bas de la fenêtre *Add Array Manager*.
+. Cliquez sur *Terminer*.
+
+
+Vous pouvez suivre les mêmes étapes pour le site de reprise à l'aide des adresses IP et des identifiants de gestion des SVM appropriés. Sur l'écran *Activer les paires de matrices* de l'assistant *Ajouter un gestionnaire de matrices*, vous devez vérifier que la paire de matrices correcte est sélectionnée et qu'elle indique prêt à être activée.

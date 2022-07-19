@@ -1,0 +1,60 @@
+---
+permalink: deploy/reference-port-requirements-for-vsc.html 
+sidebar: sidebar 
+keywords: port, requirements, vsc 
+summary: 'Par défaut, (VSC) utilise des ports désignés pour activer la communication entre ses composants, notamment les systèmes de stockage et VMware vCenter Server. Si les pare-feu sont activés, vous devez vous assurer que les pare-feu sont définis de manière à autoriser les exceptions.' 
+---
+= Configuration requise pour les ports VSC
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Par défaut, (VSC) utilise des ports désignés pour activer la communication entre ses composants, notamment les systèmes de stockage et VMware vCenter Server. Si les pare-feu sont activés, vous devez vous assurer que les pare-feu sont définis de manière à autoriser les exceptions.
+
+Pour les pare-feu autres que Windows, vous devez autoriser manuellement l'accès à des ports spécifiques utilisés par VSC. Si vous n'autorisez pas l'accès à ces ports, un message d'erreur tel que ce qui suit s'affiche.
+
+_Impossible de communiquer avec le serveur_
+
+VSC utilise les ports TCP bidirectionnels suivants :
+
+[cols="1a,1a"]
+|===
+| Numéro de port par défaut | Description 
+
+
+ a| 
+9083
+ a| 
+Lorsqu'il est activé, le fournisseur VASA et l'adaptateur SRA (Storage Replication adapter) utilisent ce port pour communiquer avec vCenter Server. Ce port est également requis pour obtenir les paramètres TCP/IP.
+
+
+
+ a| 
+443
+ a| 
+En fonction de la façon dont vous avez configuré vos informations d'identification, VMware vCenter Server et les systèmes de stockage sont à l'écoute des communications sécurisées sur ce port.
+
+
+
+ a| 
+8143
+ a| 
+VSC écoute les communications sécurisées sur ce port.
+
+
+
+ a| 
+7
+ a| 
+VSC envoie une demande d'écho à ONTAP pour vérifier l'accessibilité. Elle n'est requise que lors de l'ajout d'un système de stockage et peut être désactivée par la suite.
+
+|===
+[NOTE]
+====
+Vous devez avoir activé le protocole ICMP (Internet Control message Protocol) avant de déployer l'appliance virtuelle pour VSC, VASA Provider et SRA.
+
+Si ICMP est désactivé, la configuration initiale de l'appliance virtuelle pour VSC, VASA Provider et SRA échoue et VSC ne peut pas démarrer les services VSC et VASA Provider après le déploiement. Vous devez activer manuellement les services VSC et VASA Provider après le déploiement.
+
+====

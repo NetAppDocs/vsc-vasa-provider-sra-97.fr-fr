@@ -1,0 +1,47 @@
+---
+permalink: deploy/concept-requirements-for-registering-vsc-in-multiple-vcenter-servers-environment.html 
+sidebar: sidebar 
+keywords: requirements, registering, vsc, multiple, vcenter, servers, environment, 
+summary: 'Si vous utilisez Virtual Storage Console pour VMware vSphere dans un environnement où un seul client VMware vSphere HTML5. Gère plusieurs instances de vCenter Server, vous devez enregistrer une instance de VSC avec chaque vCenter Server de sorte qu"il existe une association 1:1 entre VSC et vCenter Server. Cela vous permet de gérer tous les serveurs exécutant vCenter 6.0 ou version ultérieure en mode lié et en mode non lié à partir d"un seul client HTML5 vSphere.' 
+---
+= Conditions requises pour l'enregistrement de VSC dans un environnement de plusieurs serveurs vCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous utilisez Virtual Storage Console pour VMware vSphere dans un environnement où un seul client VMware vSphere HTML5. Gère plusieurs instances de vCenter Server, vous devez enregistrer une instance de VSC avec chaque vCenter Server de sorte qu'il existe une association 1:1 entre VSC et vCenter Server. Cela vous permet de gérer tous les serveurs exécutant vCenter 6.0 ou version ultérieure en mode lié et en mode non lié à partir d'un seul client HTML5 vSphere.
+
+[NOTE]
+====
+Si vous souhaitez utiliser VSC avec un serveur vCenter, vous devez avoir configuré ou enregistré une instance VSC pour chaque instance de vCenter Server à gérer. Chaque instance VSC enregistrée doit avoir la même version.
+
+====
+Le mode lié est installé automatiquement pendant le déploiement de vCenter Server. Le mode lié utilise LE mode d'application Microsoft Active Directory (ADAM) pour stocker et synchroniser des données sur plusieurs systèmes vCenter Server.
+
+L'utilisation du client HTML5 vSphere pour effectuer des tâches VSC sur plusieurs serveurs vCenter nécessite l'exécution des tâches suivantes :
+
+* Chaque serveur vCenter dans l'inventaire VMware que vous souhaitez gérer doit disposer d'un seul serveur VSC enregistré avec lui sous une configuration unique 1:1.
++
+Par exemple, vous pouvez faire enregistrer le serveur VSC A sur vCenter Server A, le serveur VSC B enregistré sur vCenter Server B, le serveur VSC C enregistré sur vCenter Server C, etc.
+
++
+Le serveur VSC A ne peut pas être enregistré sur vCenter Server A et vCenter Server B.
+
++
+Si un inventaire VMware inclut un serveur vCenter ne possédant pas de serveur VSC enregistré, mais un ou plusieurs serveurs vCenter sont enregistrés auprès de VSC, Vous pouvez alors afficher les instances de VSC et effectuer des opérations VSC pour les serveurs vCenter sur lesquels VSC est enregistré.
+
+* Vous devez disposer du privilège View spécifique à VSC pour chaque serveur vCenter enregistré sur la connexion unique (SSO).
++
+Vous devez également disposer des autorisations RBAC appropriées.
+
+
+
+Lorsque vous effectuez une tâche qui nécessite la spécification d'un serveur vCenter, la liste déroulante *vCenter Server* affiche les serveurs vCenter disponibles dans l'ordre alphanumérique. Le serveur vCenter par défaut est toujours le premier serveur de la liste déroulante.
+
+Si l'emplacement du stockage est connu (par exemple, lorsque vous utilisez l'assistant *Provisioning* et que le datastore se trouve sur un hôte géré par un serveur vCenter spécifique), la liste vCenter Server s'affiche sous forme d'option en lecture seule. Cela se produit uniquement lorsque vous utilisez l'option clic droit pour sélectionner un élément dans vSphere Web client.
+
+VSC vous avertit lorsque vous essayez de sélectionner un objet qu'il ne gère pas.
+
+Vous pouvez filtrer les systèmes de stockage basés sur un serveur vCenter spécifique depuis la page de résumé de VSC. Une page récapitule les instances VSC enregistrées avec un serveur vCenter. Vous pouvez gérer les systèmes de stockage associés à une instance VSC et à vCenter Server spécifique, mais vous devez séparer les informations d'enregistrement de chaque système de stockage si vous exécutez plusieurs instances de VSC.

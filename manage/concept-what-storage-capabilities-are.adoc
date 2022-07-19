@@ -1,0 +1,30 @@
+---
+permalink: manage/concept-what-storage-capabilities-are.html 
+sidebar: sidebar 
+keywords: storage, capability, profiles, 
+summary: 'Une fonctionnalité de stockage est un ensemble d"attributs du système de stockage qui identifie un niveau spécifique de performances de stockage, d"efficacité du stockage et d"autres fonctionnalités telles que le chiffrement de l"objet de stockage associé à la fonctionnalité de stockage.' 
+---
+= Quelles sont les capacités de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une fonctionnalité de stockage est un ensemble d'attributs du système de stockage qui identifie un niveau spécifique de performances de stockage, d'efficacité du stockage et d'autres fonctionnalités telles que le chiffrement de l'objet de stockage associé à la fonctionnalité de stockage.
+
+Pour les datastores traditionnels, vous pouvez utiliser un profil de capacité de stockage pour créer des datastores de manière cohérente avec des attributs communs et leur affecter des règles de QoS. Lors du provisionnement, VSC affiche les clusters, les SVM et les agrégats qui correspondent au profil de fonctionnalité de stockage. Vous pouvez générer un profil de capacité de stockage à partir de datastores traditionnels existants en utilisant l'option *GLOBAL AUTO-GENERATE PROFILES* du menu *Storage Mapping*. Une fois le profil créé, vous pouvez utiliser VSC pour contrôler la conformité des datastores avec le profil.
+
+Lorsqu'il est utilisé avec les datastores VVol, l'assistant de provisionnement peut utiliser plusieurs profils de capacité de stockage afin de créer différents volumes FlexVol dans le datastore. Vous pouvez utiliser la règle de stockage de VM pour créer automatiquement des volumes virtuels pour un serveur virtuel sur les volumes FlexVol appropriés, comme défini. Par exemple, vous pouvez créer des profils pour les classes de stockage courantes (par exemple, pour les limites de performance et d'autres fonctionnalités telles que le cryptage ou FabricPool). Vous pouvez par la suite créer des règles de stockage des machines virtuelles dans vCenter Server, qui représentent les classes commerciales des machines virtuelles, et les lier au profil de fonctionnalités de stockage approprié par nom (production, test, RH, par exemple).
+
+Lorsqu'il est utilisé avec les volumes virtuels virtuels, le profil de capacité de stockage est également utilisé pour définir la performance de stockage de chaque machine virtuelle et la placer sur le volume FlexVol du datastore vvol, qui répond le mieux aux exigences de performance. Vous pouvez spécifier une règle de QoS avec des IOPS minimales et/ou maximales pour plus de performances. Vous pouvez utiliser les règles par défaut lorsque vous provisionnez une machine virtuelle au départ ou modifier plus tard la règle de stockage de cette machine en cas d'évolution des exigences de l'entreprise.
+
+VCenter Server associe ensuite la fonctionnalité de stockage d'une LUN ou d'un volume au datastore provisionné sur cette LUN ou ce volume. Cela vous permet de provisionner une machine virtuelle dans un datastore qui correspond au profil de stockage de la machine virtuelle et de vous assurer que tous les datastores d'un cluster de datastore disposent des mêmes niveaux de service de stockage.
+
+Grâce à l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA), vous pouvez configurer chaque datastore de volume virtuel (VVol) avec un nouveau profil de fonctionnalité de stockage prenant en charge le provisionnement de machines virtuelles avec des exigences variables en termes d'IOPS sur le même datastore vvol. Lors de l'exécution du workflow de provisionnement des VM avec des exigences en IOPS, tous les datastores VVol sont répertoriés dans la liste de datastores compatibles.
+
+[NOTE]
+====
+Lorsque vous essayez de provisionner ou de modifier des machines virtuelles pour vCenter Server avant la version 6.5, seuls les datastores vVol contenant des profils de capacité de stockage avec des performances définies sur « `AX_IOPS' » sont répertoriés dans la liste de datastores compatibles. Les datastores vvol restants sont répertoriés dans la liste des datastores incompatibles. Vous pouvez ignorer cette classification et sélectionner n'importe quel datastore vVol dans la liste de datastores incompatibles pour provisionner ou modifier la machine virtuelle.
+
+====

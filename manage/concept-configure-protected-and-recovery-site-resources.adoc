@@ -1,0 +1,22 @@
+---
+permalink: manage/concept-configure-protected-and-recovery-site-resources.html 
+sidebar: sidebar 
+keywords: configuring, protected, and, recovery, site, resources, 
+summary: Vous devez configurer vos mappages de ressources tels que les réseaux de machines virtuelles, les hôtes ESXi et les dossiers des deux sites afin de permettre le mappage de chaque ressource du site protégé vers la ressource appropriée du site de reprise. 
+---
+= Configuration des ressources protégées et du site de reprise
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez configurer vos mappages de ressources tels que les réseaux de machines virtuelles, les hôtes ESXi et les dossiers des deux sites afin de permettre le mappage de chaque ressource du site protégé vers la ressource appropriée du site de reprise.
+
+Vous devez effectuer les configurations de ressources suivantes :
+
+* Mappages de réseau
+* Mappages de dossiers
+* Mappages de ressources
+* Datastores à espace réservé
+

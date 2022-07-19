@@ -1,0 +1,30 @@
+---
+permalink: manage/task-mount-a-vvol-datastore.html 
+sidebar: sidebar 
+keywords: Mount, vVol, datastore, 
+summary: 'Vous pouvez monter un datastore VMware Virtual volumes \(vVvols\) sur un ou plusieurs hôtes supplémentaires à l"aide de la boîte de dialogue Mount vVol datastore. Le montage du datastore permet d"accéder au stockage à des hôtes supplémentaires.' 
+---
+= Montez un datastore vvols
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez monter un datastore VMware Virtual volumes (vvols) sur un ou plusieurs hôtes supplémentaires en utilisant la boîte de dialogue Mount vVol datastore. Le montage du datastore permet d'accéder au stockage à des hôtes supplémentaires.
+
+.Étapes
+. Dans la page client vSphere *Home*, cliquez sur *hôtes et clusters*.
+. Cliquez avec le bouton droit sur le datastore à monter, puis sélectionnez menu :NetApp VSC[Mount vVol datastore].
++
+La boîte de dialogue *Mount vVol datastore* s'affiche, qui fournit la liste des hôtes disponibles dans le datacenter où vous pouvez monter le datastore. La liste ne comprend pas les hôtes sur lesquels le datastore a déjà été monté, les hôtes qui exécutent ESX 5.x ou version antérieure, ou les hôtes qui ne prennent pas en charge le protocole de datastore. Par exemple, si un hôte ne prend pas en charge le protocole FC, vous ne pouvez pas monter un datastore FC sur l'hôte.
+
++
+[NOTE]
+====
+Même si vSphere client fournit une boîte de dialogue de montage pour vCenter Server, vous devez toujours utiliser la boîte de dialogue VASA Provider pour cette opération. Vasa Provider configure l'accès aux systèmes de stockage exécutant le logiciel ONTAP.
+
+====
+. Sélectionnez l'hôte sur lequel vous souhaitez monter le datastore, puis cliquez sur *OK*.
+

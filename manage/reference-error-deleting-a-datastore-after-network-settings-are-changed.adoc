@@ -1,0 +1,47 @@
+---
+permalink: manage/reference-error-deleting-a-datastore-after-network-settings-are-changed.html 
+sidebar: sidebar 
+keywords: delete, datastore,troubleshooting errors 
+summary: 'Erreur lors de la suppression d"un datastore après modification des paramètres réseau' 
+---
+= Erreur lors de la suppression d'un datastore après modification des paramètres réseau
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Problème
+
+Après avoir modifié l'adresse IP de l'appliance virtuelle pour VSC, VASA Provider et SRA, une erreur s'affiche lors de l'utilisation de l'interface VSC pour effectuer certaines opérations. Par exemple, la suppression d'un datastore ou la tentative d'accès au serveur VASA Provider sur l'hôte ESXi.
+
+
+
+== Cause
+
+VCenter Server n'utilise pas l'adresse IP mise à jour et continue d'utiliser l'ancienne adresse IP pour passer des appels vers VASA Provider.
+
+
+
+== Action corrective
+
+Lorsque l'adresse IP de l'appliance virtuelle pour VSC, VASA Provider et SRA est modifiée, vous devez effectuer les opérations suivantes :
+
+. Annuler l'enregistrement de VSC à partir de vCenter Server.
+. L'accès `https://<vcenter_ip>/mob`.
+. Cliquez sur menu:contenu[Gestionnaire d'extension > Annuler l'enregistrement de l'extension > tout enregistrer com.netapp.extensions].
+. Connectez-vous au serveur vCenter en tant que racine à l'aide de putty.
+. Passez au répertoire vsphere-client-sérénité à l'aide de : `cd /etc/vmware/vsphere-client/vc-packages/vsphere-client-serenity`.
+. Arrêtez le service vSphere client: À l'aide de `vsphere-client stop`.
+. Supprimez les répertoires contenant les extensions de l'interface utilisateur : `rm -rf com.netapp*`
+. Démarrez le service vSphere client: À l'aide de `vsphere-client start`.
++
+Cette opération peut prendre plusieurs minutes pour que le client vSphere redémarre et s'initialise correctement.
+
+. Passez au répertoire vSphere-ui sérénité avec : `/etc/vmware/vsphere-ui/vc-packages/vsphere-client-serenity/`.
+. Arrêtez le service vSphere UI: À l'aide de `vsphere-ui stop`.
+. Supprimez les répertoires contenant les extensions de l'interface utilisateur : `rm -rf com.netapp*`
+. Démarrez l'interface utilisateur vSphere à l'aide des éléments suivants : `service-control --start vsphere-ui`.
+

@@ -1,0 +1,49 @@
+---
+permalink: deploy/reference-configure-guest-operating-system-scripts.html 
+sidebar: sidebar 
+keywords: guest, operating, system, configuring, scripts, 
+summary: 'Les images ISO des scripts du système d"exploitation invité sont montées sur la console de stockage virtuel pour le serveur VMware vSphere. Pour utiliser les scripts du système d"exploitation invité afin de définir les délais de stockage des machines virtuelles, vous devez monter les scripts à partir du client vSphere.' 
+---
+= Configurer les scripts des systèmes d'exploitation invités
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les images ISO des scripts du système d'exploitation invité sont montées sur la console de stockage virtuel pour le serveur VMware vSphere. Pour utiliser les scripts du système d'exploitation invité afin de définir les délais de stockage des machines virtuelles, vous devez monter les scripts à partir du client vSphere.
+
+[cols="1a,1a,1a"]
+|===
+| Type de système d'exploitation | paramètres de temporisation de 60 secondes | paramètres de temporisation de 190 secondes 
+
+
+ a| 
+Linux
+ a| 
+`_https_://<appliance_ip>:8143/vsc/public/writable/linux_gos_timeout-install.iso`
+ a| 
+`_https_://<appliance_ip>:8143/vsc/public/writable/linux_gos_timeout_190-install.iso`
+
+
+
+ a| 
+Répertoires de base
+ a| 
+`_https_://<appliance_ip>:8143/vsc/public/writable/windows_gos_timeout.iso`
+ a| 
+`_https_://<appliance_ip>:8143/vsc/public/writable/windows_gos_timeout_190.iso`
+
+
+
+ a| 
+Solaris
+ a| 
+`_https_://<appliance_ip>:8143/vsc/public/writable/solaris_gos_timeout-install.iso`
+ a| 
+`_https_://<appliance_ip>:8143/vsc/public/writable/solaris_gos_timeout_190-install.iso`
+
+|===
+Vous devez installer le script à partir de la copie de l'instance VSC enregistrée sur vCenter Server qui gère la machine virtuelle. Si votre environnement inclut plusieurs serveurs vCenter, sélectionnez le serveur qui contient la machine virtuelle pour laquelle vous souhaitez définir les valeurs de délai de stockage.
+
+Vous devez vous connecter à la machine virtuelle, puis exécuter le script pour définir les valeurs de délai de stockage.

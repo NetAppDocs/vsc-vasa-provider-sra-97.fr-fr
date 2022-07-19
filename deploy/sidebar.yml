@@ -1,0 +1,193 @@
+---
+section: deploy
+title: Déploiement et mise à niveau
+entries:
+- title: Présentation de l'appliance virtuelle pour VSC, VASA Provider et SRA
+  url: "/deploy/concept-virtual-storage-console-overview.html"
+- title: Workflow de déploiement pour les nouveaux utilisateurs de l'appliance virtuelle
+    VSC, VASA Provider et SRA
+  url: "/deploy/concept-installation-workflow-for-new-users.html"
+  entries:
+  - title: Workflow de déploiement pour les utilisateurs existants de VSC, VASA Provider
+      et SRA
+    url: "/deploy/concept-installation-workflow-for-existing-users-of-vsc.html"
+- title: Conditions requises pour le déploiement de l'appliance virtuelle pour VSC,
+    VASA Provider et SRA
+  url: "/deploy/concept-requirements-for-deploying-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  entries:
+  - title: Configuration requise pour les ports VSC
+    url: "/deploy/reference-port-requirements-for-vsc.html"
+  - title: Exigences en termes d'espace et de taille pour l'appliance virtuelle pour
+      VSC, VASA Provider et SRA
+    url: "/deploy/concept-space-and-size-requirements-for-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  - title: Système de stockage pris en charge, licences et applications pour l'appliance
+      virtuelle pour VSC, VASA Provider et SRA
+    url: "/deploy/concept-supported-storage-system-and-applications.html"
+  - title: Considérations et conditions requises pour le déploiement de l'appliance
+      virtuelle pour VSC, VASA Provider et SRA
+    url: "/deploy/reference-considerations-for-deploying-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+- title: Déploiement ou mise à niveau de VSC, VASA Provider et SRA
+  url: "/deploy/concept-deploy-or-upgrade-ontap-tools.html"
+  entries:
+  - title: Comment télécharger l'appliance virtuelle pour VSC, VASA Provider et SRA
+    url: "/deploy/concept-how-to-download-the-virtual-appliance-for-vsc-vp-and-sra.html"
+  - title: Déployez l'appliance virtuelle pour VSC, VASA Provider et SRA
+    url: "/deploy/task-deploy-ontap-tools.html"
+    entries:
+    - title: Personnalisation du déploiement
+      url: "/deploy/reference-deploment-customization-requirements.html"
+  - title: Activez VASA Provider pour la configuration des datastores virtuels
+    url: "/deploy/task-enable-vasa-provider-for-configuring-virtual-datastores.html"
+    entries:
+    - title: Enregistrez-vous avec l'appliance virtuelle pour VSC, VASA Provider et
+        SRA
+      url: "/deploy/task-register-oncommand-api-services-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  - title: Installez le plug-in NFS VAAI
+    url: "/deploy/task-install-the-nfs-vaai-plug-in.html"
+  - title: Activez Storage Replication adapter
+    url: "/deploy/task-enable-storage-replication-adapter.html"
+    entries:
+    - title: Configurez SRA sur l'appliance SRM
+      url: "/deploy/task-configure-sra-on-srm-appliance.html"
+    - title: Mettez à jour les informations d'identification SRA (Storage Replication
+        adapter)
+      url: "/deploy/task-update-sra-credentials.html"
+  - title: Migration de Windows SRM vers l'appliance SRM
+    url: "/deploy/concept-migration-of-disaster-recovery-setup-from-windows-to-appliance.html"
+  - title: Effectuez la mise à niveau vers l'appliance virtuelle 9.7.1 pour VSC, VASA
+      Provider et SRA
+    url: "/deploy/task-upgrade-to-the-9-7-1-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  - title: Mettre à niveau Storage Replication adapter
+    url: "/deploy/task-upgrade-storage-replication-adapter.html"
+- title: Configurez votre environnement Virtual Storage Console pour VMware vSphere
+  url: "/deploy/concept-configure-vsc-for-vmware-vsphere-environment.html"
+  entries:
+  - title: Configurer les paramètres de chemins d'accès multiples et de délai d'attente
+      du serveur ESXi
+    url: "/deploy/task-configure-esx-server-multipathing-and-timeout-settings.html"
+    entries:
+    - title: Valeurs de l'hôte ESXi définies à l'aide de Virtual Storage Console pour
+        VMware vSphere
+      url: "/deploy/reference-esx-host-values-set-by-vsc-for-vmware-vsphere.html"
+    - title: configurer les scripts des systèmes d'exploitation invités
+      url: "/deploy/reference-configure-guest-operating-system-scripts.html"
+      entries:
+      - title: Définissez les valeurs de délai d'expiration des systèmes d'exploitation
+          invités Windows
+        url: "/deploy/task-run-the-gos-timeout-scripts-for-windows.html"
+      - title: Définissez les valeurs de délai d'expiration pour les systèmes d'exploitation
+          invités Solaris
+        url: "/deploy/task-run-the-gos-timeout-scripts-for-solaris.html"
+      - title: Définissez les valeurs de délai d'expiration des systèmes d'exploitation
+          invités Linux
+        url: "/deploy/task-run-the-gos-timeout-scripts-for-rhel4-or-sles9.html"
+  - title: Régénérer un certificat SSL pour
+    url: "/deploy/task-regenerate-an-ssl-certificate-for-vsc.html"
+  - title: Conditions d'enregistrement de VSC dans un environnement de plusieurs serveurs
+      vCenter
+    url: "/deploy/concept-requirements-for-registering-vsc-in-multiple-vcenter-servers-environment.html"
+  - title: Configurez les fichiers de préférences VSC
+    url: "/deploy/reference-configure-the-vsc-preferences-files.html"
+    entries:
+    - title: Définissez IPv4 ou IPv6
+      url: "/deploy/reference-set-ipv4-or-ipv6.html"
+  - title: Activez le montage du datastore sur différents sous-réseaux
+    url: "/deploy/task-enable-datastore-mounting-across-different-subnets.html"
+  - title: Accédez aux options de la console de maintenance de l'appliance virtuelle
+      pour VSC, VASA Provider et SRA
+    url: "/deploy/task-access-virtual-appliance-maiintenance-console-options.html"
+  - title: Modifiez le mot de passe administrateur
+    url: "/deploy/task-change-the-administrative-password.html"
+  - title: Configurez la haute disponibilité de l'appliance virtuelle pour VSC, VASA
+      Provider et SRA
+    url: "/deploy/concept-configure-high-availability-for-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+    entries:
+    - title: Haute disponibilité VMware vSphere
+      url: "/deploy/concept-vmware-high-availability-for-vcenter-server.html"
+    - title: Tolérance aux pannes VMware vSphere
+      url: "/deploy/concept-vmware-fault-tolerance-for-vcenter-server.html"
+  - title: Configurations MetroCluster prises en charge par l'appliance virtuelle
+      pour VSC, VASA Provider et SRA
+    url: "/deploy/reference-metrocluster-configurations-supported-by-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+- title: Configuration de l'environnement Virtual Storage Console pour VMware vSphere
+  url: "/deploy/concept-configure-your-storage-system-environment.html"
+  entries:
+  - title: Définissez les identifiants par défaut des systèmes de stockage
+    url: "/deploy/task-set-default-credentials-for-storage-systems.html"
+  - title: Ajout de systèmes de stockage à VSC
+    url: "/deploy/task-add-storage-systems.html"
+  - title: Découverte des systèmes et des hôtes de stockage
+    url: "/deploy/task-discover-storage-systems-and-hosts.html"
+  - title: Actualiser l'affichage du système de stockage
+    url: "/deploy/task-refresh-the-storage-system-display.html"
+- title: 'VCenter Server : fonctionnalités de contrôle d''accès basé sur des rôles
+    dans VSC pour VMware vSphere'
+  url: "/deploy/concept-vcenter-server-role-based-access-control-features-in-vsc-for-vmware-vsphere.html"
+  entries:
+  - title: Composants des autorisations de vCenter Server
+    url: "/deploy/reference-components-that-make-up-vcenter-server-permissions.html"
+  - title: Points clés concernant l'attribution et la modification des autorisations
+      pour vCenter Server
+    url: "/deploy/reference-key-points-about-assigning-and-modifying-permissions.html"
+  - title: Rôles standard regroupés avec l'appliance virtuelle pour VSC, VASA Provider
+      et SRA
+    url: "/deploy/concept-standard-roles-packaged-with-virtual-appliance-for-vsc-vp-and-sra.html"
+    entries:
+    - title: Instructions d'utilisation des rôles standard VSC
+      url: "/deploy/concept-guidelines-for-using-vsc-standard-roles.html"
+  - title: Privilèges requis pour les tâches VSC
+    url: "/deploy/concept-privileges-required-for-vsc-tasks.html"
+    entries:
+    - title: Privilèges de niveau produit requis par VSC pour VMware vSphere
+      url: "/deploy/reference-product-level-privilege-required-by-vsc-for-vmware-vsphere.html"
+    - title: Contrôle d'accès basé sur des rôles ONTAP pour l'appliance virtuelle
+        pour VSC, VASA Provider et SRA
+      url: "/deploy/concept-ontap-role-based-access-control-feature-for-virtual-appliance.html"
+    - title: Rôles ONTAP recommandés lors de l'utilisation de VSC pour VMware vSphere
+      url: "/deploy/concept-recommended-ontap-roles-when-using-vsc-for-vmware-vsphere.html"
+    - title: Comment configurer le contrôle d'accès basé sur des rôles ONTAP pour
+        VSC pour VMware vSphere
+      url: "/deploy/concept-how-to-configure-data-ontap-role-based-access-control-for-vsc-for-vmware-vsphere.html"
+    - title: Configurez les rôles et privilèges utilisateur
+      url: "/deploy/task-configure-user-role-and-privileges.html"
+- title: Configuration de Storage Replication adapter pour la reprise après incident
+  url: "/deploy/concept-configure-storage-replication-adapter-for-disaster-recovery.html"
+  entries:
+  - title: Configuration de Storage Replication adapter pour un environnement SAN
+    url: "/deploy/task-configure-storage-replication-adapter-for-san-environment.html"
+  - title: Configuration de Storage Replication adapter pour un environnement NAS
+    url: "/deploy/task-configure-storage-replication-adapter-for-nas-environment.html"
+  - title: Configuration de l'adaptateur de réplication du stockage pour l'environnement
+      à grande échelle
+    url: "/deploy/reference-configure-storage-replication-adapter-for-highly-scaled-environment.html"
+- title: Résolvez les problèmes via l'appliance virtuelle pour VSC, VASA Provider
+    et SRA
+  url: "/deploy/concept-troubleshoot-issues-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html"
+  entries:
+  - title: Nettoyez les packages de plug-in téléchargés dans vSphere cache
+    url: "/deploy/task-clean-the-vsphere-cached-downloaded-plug-in-packages.html"
+  - title: La désinstallation ne supprime pas les rôles VSC standard
+    url: "/deploy/reference-uninstall-does-not-remove-standard-vsc-roles.html"
+  - title: Fichiers journaux de VSC et VASA Provider
+    url: "/deploy/concept-virtual-storage-console-and-vasa-provider-log-files.html"
+  - title: Les services VSC et VASA Provider redémarrent dans des environnements hautement
+      évolutifs
+    url: "/deploy/reference-vsc-and-vasa-provider-services-restart-in-scaled-environments.html"
+  - title: Configurez VASA Provider pour qu'il fonctionne avec SSH
+    url: "/deploy/task-configure-vasa-provider-to-work-with-ssh.html"
+  - title: Configurez l'appliance virtuelle pour VSC, VASA Provider et SRA afin d'utiliser
+      SSH pour l'accès aux diagnostics à distance
+    url: "/deploy/task-configure-vasa-provider-to-use-ssh-for-remote-diag-access.html"
+  - title: L'installation de SRA a échoué avec une erreur de script
+    url: "/deploy/reference-sra-adapter-installation-fails-with-script-error.html"
+  - title: SRA n'assure pas des performances optimales dans un environnement hautement
+      évolutif
+    url: "/deploy/reference-sra-fails-to-perform-optimally-in-a-highly-scaled-environment.html"
+  - title: Impossible d'installer le plug-in SRA
+    url: "/deploy/reference-unable-to-install-sra-plug-in-due-to-winhttp-proxy-settings.html"
+  - title: NetApp Storage Replication adapter pour ONTAP n'apparaît pas sur l'appliance
+      site Recovery Manager
+    url: "/deploy/reference-srm-does-not-work-after-sra-installation.html"
+  - title: Erreur lors du nouveau déploiement de l'appliance virtuelle pour VSC, VASA
+      Provider et SRA
+    url: "/deploy/reference-error-during-fresh-deployment-of-virtual-appliance-for-vsc-vasa-provider-and-sra.html"

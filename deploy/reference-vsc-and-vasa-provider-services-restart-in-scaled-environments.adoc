@@ -1,0 +1,25 @@
+---
+permalink: deploy/reference-vsc-and-vasa-provider-services-restart-in-scaled-environments.html 
+sidebar: sidebar 
+keywords: vsc, and vasa, provider, services, restart, highly, scaled, environments, 
+summary: Les services VSC et VASA Provider redémarrent dans des environnements hautement évolutifs 
+---
+= Les services VSC et VASA Provider redémarrent dans des environnements hautement évolutifs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Problème
+
+L'appliance virtuelle pour VSC, VASA Provider et SRA peut ne pas fonctionner de manière optimale dans un environnement hautement évolutif. Vous remarquerez peut-être des problèmes comme les redémarrages fréquents des services VSC et VASA Provider.
+
+
+
+== Action corrective
+
+Modifiez les besoins en mémoire vive et en mémoire de tas de l'appliance virtuelle pour VSC, VASA Provider et SRA.
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/tune_memory_settings_of_VM_VSC%2C_VASA_Provider%2C_and_SRA_for_scale_and_performance[]

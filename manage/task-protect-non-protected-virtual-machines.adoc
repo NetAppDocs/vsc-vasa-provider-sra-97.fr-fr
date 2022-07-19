@@ -1,0 +1,33 @@
+---
+permalink: manage/task-protect-non-protected-virtual-machines.html 
+sidebar: sidebar 
+keywords: virtual, machines, configuring, protection, protecting, unprotected, virtual, machines, 
+summary: 'Vous pouvez configurer la protection de vos machines virtuelles non protégées existantes qui ont été créées à l"aide de la stratégie de stockage de la machine virtuelle avec la réplication désactivée. Pour assurer la protection, vous devez modifier la règle de stockage de la machine virtuelle et attribuer un groupe de réplication.' 
+---
+= Protection des machines virtuelles non protégées
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer la protection de vos machines virtuelles non protégées existantes qui ont été créées à l'aide de la stratégie de stockage de la machine virtuelle avec la réplication désactivée. Pour assurer la protection, vous devez modifier la règle de stockage de la machine virtuelle et attribuer un groupe de réplication.
+
+Si SVM possède à la fois des LIF IPv4 et IPv6, vous devez désactiver les LIF IPv6 et réaliser par la suite des flux de travail de reprise sur incident.
+
+.Étapes
+. Cliquez sur l'ordinateur virtuel requis et vérifiez qu'il est configuré avec la stratégie de stockage par défaut de l'ordinateur virtuel.
+. Cliquez avec le bouton droit de la souris sur la machine virtuelle sélectionnée, puis cliquez sur menu :VM Policies[Edit VM Storage Policies].
+. Sélectionnez une stratégie de stockage VM dont la réplication est activée dans la liste déroulante *VM Storage policy*.
+. Sélectionnez un groupe de réplication dans la liste déroulante *Groupe de réplication*, puis cliquez sur *OK*.
++
+Vérifiez le récapitulatif de la machine virtuelle pour vérifier que celle-ci est protégée.
+
++
+[NOTE]
+====
+Cette version de l'appliance virtuelle pour VSC, VASA Provider et SRA ne prend pas en charge le clonage à chaud des machines virtuelles protégées. Vous devez mettre la machine virtuelle hors tension, puis effectuer l'opération de clonage.
+
+====
+

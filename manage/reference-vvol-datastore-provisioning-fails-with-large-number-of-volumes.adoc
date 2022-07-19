@@ -1,0 +1,29 @@
+---
+permalink: manage/reference-vvol-datastore-provision-fails-with-large-number-of-volumes.html 
+sidebar: sidebar 
+keywords: VVol, datastore, provisioning, fails, with, large, number, of, volumes, 
+summary: Le provisionnement du datastore VVOL échoue avec un grand nombre de volumes 
+---
+= Le provisionnement du datastore VVOL échoue avec un grand nombre de volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== Problème
+
+Le provisionnement du datastore VVol échoue lorsque vous tentez de provisionner les datastores VVol avec plus de six volumes.
+
+
+
+== Cause
+
+Le provisionnement du datastore VVol a échoué en raison des délais de connexion entre VSC et VASA Provider.
+
+
+
+== Action corrective
+
+Après le provisionnement, vous devez créer le datastore VVol avec moins de six volumes, ou augmenter la taille du datastore VVol après son provisionnement en utilisant l'option *étendre VVol datastore*.

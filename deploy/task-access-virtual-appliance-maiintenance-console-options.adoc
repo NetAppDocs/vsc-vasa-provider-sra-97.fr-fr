@@ -1,0 +1,111 @@
+---
+permalink: deploy/task-access-virtual-appliance-maiintenance-console-options.html 
+sidebar: sidebar 
+keywords: accessing, maintenance, console, options, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 'Vous pouvez gérer vos configurations applicatives, système et réseau à l"aide de la console de maintenance de l"appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA). Vous pouvez modifier votre mot de passe administrateur et votre mot de passe de maintenance. Vous pouvez également générer des offres de support, définir différents niveaux de journal, afficher et gérer les configurations TLS et démarrer les diagnostics à distance.' 
+---
+= Accédez aux options de la console de maintenance de l'appliance virtuelle pour VSC, VASA Provider et SRA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez gérer vos configurations applicatives, système et réseau à l'aide de la console de maintenance de l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA). Vous pouvez modifier votre mot de passe administrateur et votre mot de passe de maintenance. Vous pouvez également générer des offres de support, définir différents niveaux de journal, afficher et gérer les configurations TLS et démarrer les diagnostics à distance.
+
+Vous devez avoir installé les outils VMware après le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA.
+
+.Description de la tâche
+* Vous devez utiliser « saint » en tant que nom d'utilisateur et mot de passe configurés lors du déploiement pour vous connecter à la console de maintenance de l'appliance virtuelle pour VSC, VASA Provider et SRA.
+* Vous devez définir un mot de passe pour l'utilisateur "diag" tout en activant les diagnostics à distance.
+
+
+.Étapes
+. Accédez à l'onglet *Résumé* de votre appliance virtuelle déployée.
+. Cliquez sur image:../media/launch-maintenance-console.gif[""] pour démarrer la console de maintenance.
++
+Les options de la console de maintenance suivantes sont disponibles :
+
++
+** *Configuration de l'application*
++
+Les options suivantes sont disponibles :
+
++
+*** Afficher le récapitulatif de l'état du serveur
+*** Démarrage du service Virtual Storage Console
+*** Arrêtez le service Virtual Storage Console
+*** Démarrer le service VASA Provider et SRA
+*** Arrêt du service VASA Provider et SRA
+*** Modifier le mot de passe utilisateur « administrateur »
+*** Re-générez des certificats
+*** Réinitialisation matérielle du magasin de clés et des certificats
+*** Réinitialisation matérielle de la base de données
+*** Modifiez le niveau DE JOURNALISATION du service Virtual Storage Console
+*** Modifier le niveau DE JOURNALISATION pour les services VASA Provider et SRA
+*** Afficher la configuration TLS
+*** Activez le protocole TLS
+*** Désactivez le protocole TLS
+
+
+** *Configuration du système*
++
+Les options suivantes sont disponibles :
+
++
+*** Redémarrez la machine virtuelle
+*** Arrêter la machine virtuelle
+*** Modifier le mot de passe utilisateur « familiariser »
+*** Modifier le fuseau horaire
+*** Modifier le serveur NTP
++
+Vous pouvez fournir une adresse IPv6 pour votre serveur NTP.
+
+*** Activer/Désactiver l'accès SSH
+*** Augmentation de la taille des disques de prison (/prison)
+*** Mise à niveau
+*** Installez VMware Tools
+
+
+** *Configuration réseau*
++
+Les options suivantes sont disponibles :
+
++
+*** Afficher les paramètres d'adresse IP
+*** Modifier les paramètres d'adresse IP
++
+Vous pouvez utiliser cette option pour modifier l'adresse IP post-déploiement sur IPv6.
+
+*** Afficher les paramètres de recherche du nom de domaine
+*** Modifier les paramètres de recherche du nom de domaine
+*** Afficher les routes statiques
+*** Modifier les routes statiques
++
+Vous pouvez utiliser cette option pour ajouter une route IPv6.
+
+*** Valider les modifications
+*** Envoyez une requête ping à un hôte
++
+Vous pouvez utiliser cette option pour envoyer une requête ping vers un hôte IPv6.
+
+*** Restaurez les paramètres par défaut
+
+
+** *Support et diagnostics*
++
+Les options suivantes sont disponibles :
+
++
+*** Générez un bundle de support
+*** Accéder au shell de diagnostic
+*** Activer l'accès aux diagnostics à distance
+
+
+
+
+
+
+*Informations connexes*
+
+xref:concept-virtual-storage-console-and-vasa-provider-log-files.adoc[Fichiers journaux de VSC et VASA Provider]

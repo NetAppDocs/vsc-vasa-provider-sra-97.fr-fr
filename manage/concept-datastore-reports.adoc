@@ -1,0 +1,78 @@
+---
+permalink: manage/concept-datastore-reports.html 
+sidebar: sidebar 
+keywords: datastore, reports, 
+summary: Les rapports datastore fournissent des informations détaillées sur les datastores traditionnels et les machines virtuelles créées sur ces datastores. 
+---
+= Rapports sur les datastores
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les rapports datastore fournissent des informations détaillées sur les datastores traditionnels et les machines virtuelles créées sur ces datastores.
+
+Le tableau de bord traditionnel vous permet d'examiner et d'identifier les problèmes potentiels avec les datastores et les machines virtuelles de votre serveur vCenter. Vous pouvez afficher, trier et exporter des rapports. Le rapport sur les données des datastores traditionnels et des machines virtuelles est fourni par vCenter Server.
+
+Le datastore fournit les rapports prédéfinis suivants :
+
+* Rapport datastore
+* Rapport de machine virtuelle
+
+
+
+
+== Rapport datastore
+
+Le menu Rapport datastore fournit des informations sur les paramètres suivants pour les datastores :
+
+* Nom du datastore
+* Type de datastore : NFS ou VMFS
+* Espace libre
+* Espace utilisé
+* Espace total
+* Pourcentage d'espace utilisé
+* Pourcentage d'espace disponible
+* D'IOPS
++
+Le rapport affiche les opérations d'E/S par seconde du datastore.
+
+* Latence
++
+Le rapport affiche les informations de latence pour le datastore.
+
+
+
+Vous pouvez également vérifier l'heure à laquelle le rapport a été généré. Le menu Rapport datastore vous permet d'organiser le rapport selon vos besoins, puis d'exporter le rapport organisé à l'aide du bouton *Exporter vers CSV*. Les noms de datastores du rapport sont des liens qui se trouvent dans l'onglet Monitor du datastore sélectionné, dans lequel vous pouvez afficher les mesures de performances du datastore.
+
+
+
+== Rapport de machine virtuelle
+
+Le menu Virtual machine Report fournit les mesures de performances suivantes pour toutes les machines virtuelles qui utilisent des datastores provisionnés par VSC pour un serveur vCenter sélectionné :
+
+* Nom de la machine virtuelle
+* De la capacité
++
+Le rapport affiche la valeur de la capacité engagée pour une machine virtuelle.
+
+* Continuité
++
+Le rapport indique l'heure à laquelle la machine virtuelle est mise sous tension et disponible sur un hôte ESXi.
+
+* Latence
++
+Le rapport affiche la latence des machines virtuelles sur tous les datastores associés aux machines virtuelles.
+
+* État de l'alimentation
++
+Le rapport indique si la machine virtuelle est sous tension ou hors tension.
+
+* Hôte
++
+Le rapport affiche les systèmes hôtes sur lesquels la machine virtuelle est disponible.
+
+
+
+Chaque nom de machine virtuelle dans le rapport est un lien vers l'onglet Monitor de la machine virtuelle sélectionnée. Vous pouvez trier le rapport de la machine virtuelle selon vos besoins et exporter le rapport dans un `.CSV` et enregistrez le rapport sur votre système local. L'horodatage du rapport est également ajouté au rapport enregistré.

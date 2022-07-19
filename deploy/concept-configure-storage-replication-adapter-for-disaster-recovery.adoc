@@ -1,0 +1,18 @@
+---
+permalink: deploy/concept-configure-storage-replication-adapter-for-disaster-recovery.html 
+sidebar: sidebar 
+keywords: configuring, storage, replication, adapter, disaster, recovery, 
+summary: 'Si vous souhaitez configurer vCenter Server pour la reprise après incident, vous devez activer Storage Replication adapter (SRA) après le déploiement de l"appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA). Par défaut, le déploiement de l"appliance virtuelle installe VSC. Vous devez activer SRA pour votre vCenter Server après le déploiement de l"appliance virtuelle.' 
+---
+= Configuration de Storage Replication adapter pour la reprise après incident
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous souhaitez configurer vCenter Server pour la reprise après incident, vous devez activer Storage Replication adapter (SRA) après le déploiement de l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA). Par défaut, le déploiement de l'appliance virtuelle installe VSC. Vous devez activer SRA pour votre vCenter Server après le déploiement de l'appliance virtuelle.
+
+*Informations connexes*
+
+xref:task-enable-storage-replication-adapter.adoc[Activez Storage Replication adapter]

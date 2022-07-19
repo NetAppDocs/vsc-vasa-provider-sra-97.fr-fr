@@ -1,0 +1,38 @@
+---
+permalink: deploy/task-configure-storage-replication-adapter-for-nas-environment.html 
+sidebar: sidebar 
+keywords: configuring, storage, replication, adapter, nas, environment, 
+summary: 'Vous devez configurer les systèmes de stockage avant d"exécuter Storage Replication adapter (SRA) pour VMware vCenter site Recovery Manager (SRM).' 
+---
+= Configuration de Storage Replication adapter pour un environnement NAS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez configurer les systèmes de stockage avant d'exécuter Storage Replication adapter (SRA) pour VMware vCenter site Recovery Manager (SRM).
+
+Vous devez avoir installé les programmes suivants sur le site protégé et le site de reprise :
+
+* SRM
++
+La documentation relative à l'installation de SRM est disponible sur le site de VMware.
+
++
+https://www.vmware.com/support/pubs/srm_pubs.html["Documentation VMware site Recovery Manager"^]
+
+* SRA
++
+L'adaptateur est installé sur SRM et le serveur SRA.
+
+
+
+.Étapes
+. Vérifiez que les datastores du site protégé contiennent des machines virtuelles enregistrées auprès de vCenter Server.
+. Vérifiez que les hôtes ESXi du site protégé ont monté les volumes NFS exportés depuis le .
+. Vérifiez que les adresses valides telles que l'adresse IP, le nom d'hôte ou le FQDN sur lequel les exportations NFS sont présentes sont spécifiées dans le champ *NFS Addresses* lors de l'utilisation de l'assistant *Array Manager* pour ajouter des matrices à SRM.
+. Utilisez le `ping` Commande sur chaque hôte ESXi du site de reprise pour vérifier que l'hôte dispose d'un port VMkernel qui peut accéder aux adresses IP utilisées pour servir les exportations NFS à partir de .
+
+
+https://mysupport.netapp.com/site/["Support NetApp"^]

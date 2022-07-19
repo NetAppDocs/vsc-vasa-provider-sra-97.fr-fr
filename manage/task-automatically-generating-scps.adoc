@@ -1,0 +1,31 @@
+---
+permalink: manage/task-automatically-generate-scps.html 
+sidebar: sidebar 
+keywords: generating, storage, capability, profiles, automatically, 
+summary: 'Vasa Provider pour ONTAP vous permet de générer automatiquement des profils de fonctionnalité de stockage pour les data stores traditionnels. Lorsque vous sélectionnez l"option de génération automatique pour un datastore, VASA Provider crée un profil contenant les fonctionnalités de stockage utilisées par ce datastore.' 
+---
+= Générez automatiquement des profils de capacité de stockage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vasa Provider pour ONTAP vous permet de générer automatiquement des profils de fonctionnalité de stockage pour les data stores traditionnels. Lorsque vous sélectionnez l'option de génération automatique pour un datastore, VASA Provider crée un profil contenant les fonctionnalités de stockage utilisées par ce datastore.
+
+.Avant de commencer
+* Vous devez avoir enregistré votre instance VASA Provider sur Virtual Storage Console (VSC).
+* VSC doit avoir découvert votre système de stockage.
+
+
+Une fois que vous avez créé un profil de capacité de stockage, vous pouvez le modifier pour inclure d'autres fonctionnalités. L'assistant *Créer un profil de capacité de stockage* fournit des informations sur les fonctionnalités que vous pouvez inclure dans un profil.
+
+.Étapes
+. Dans la page d'accueil de VSC, cliquez sur *Storage Mapping*.
+. Sélectionnez le datastore dans la liste disponible.
+. Dans le menu *actions*, sélectionnez *Auto-generate*.
+. Une fois le processus de génération automatique terminé, actualisez l'écran pour afficher les informations relatives au nouveau profil.
++
+Le nouveau profil est répertorié dans la colonne *profil associé*. Le nom du nouveau profil est basé sur les ressources du profil. Vous pouvez renommer le profil, si nécessaire.
+
+

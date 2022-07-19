@@ -1,0 +1,29 @@
+---
+permalink: manage/task-migrate-existing-virtual-machines-to-7-1-virtual-appliance.html 
+sidebar: sidebar 
+keywords: migrating, virtual, machines, with, older, storage, capability, profiles, 
+summary: 'Si vous utilisez la dernière version de l"appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA), Il est ensuite préférable de migrer vos machines virtuelles provisionnées avec les mesures de qualité de service MAXTHROUGHPUT OU MaxThroughput IOPS vers de nouveaux datastores VVol qui sont provisionnés avec les mesures de qualité de service « Max IOPS » de la dernière version de l"appliance virtuelle pour VSC, VASA Provider et SRA.' 
+---
+= Migration de machines virtuelles avec des profils de fonctionnalités de stockage plus anciens
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous utilisez la dernière version de l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA), Il vous faut ensuite migrer vos machines virtuelles provisionnées avec les mesures de QoS « MOXTHROUGHPUT MBPS » ou « MeaxThroughput IOPS » vers de nouveaux datastores VVol provisionnés avec les mesures de QoS « `max IOPS' » de la dernière version de l'appliance virtuelle pour VSC, VASA Provider et SRA.
+
+Avec la dernière version de l'appliance virtuelle pour VSC, VASA Provider et SRA, vous pouvez configurer les metrics de QoS pour chaque machine virtuelle ou disque de machine virtuelle (VMDK). Les metrics de qualité de service étaient précédemment appliquées au niveau du volume ONTAP FlexVol et étaient partagées par toutes les machines virtuelles ou les VMDK provisionnés sur ce volume FlexVol.
+
+À partir de la version 7.2 de l'appliance virtuelle pour VSC, VASA Provider et SRA, les mesures de QoS d'une machine virtuelle ne sont pas partagées avec les autres machines virtuelles.
+
+[NOTE]
+====
+Vous ne devez pas modifier la stratégie de stockage de VM existante, car les machines virtuelles risquent de ne pas être compatibles.
+
+====
+.Étapes
+. Créez des datastores VVol en utilisant un nouveau profil de capacité de stockage avec la valeur 'max IOPS' requise.
+. Créez une règle de stockage des machines virtuelles, puis associez-la à celle du nouveau profil de capacité de stockage.
+. Migrez les machines virtuelles existantes vers les nouveaux datastores VVol en utilisant la nouvelle politique de stockage de VM.
+

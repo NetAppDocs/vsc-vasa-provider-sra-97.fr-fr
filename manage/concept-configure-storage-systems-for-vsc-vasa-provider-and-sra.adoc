@@ -1,0 +1,14 @@
+---
+permalink: manage/concept-configure-storage-systems-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: configuring, storage, systems, for, vsc, vasa, provider, sra, 
+summary: 'Vous devez ajouter des systèmes de stockage à l"appliance virtuelle et définir des identifiants par défaut, le cas échéant, à l"aide de l"interface VSC.' 
+---
+= Configuration des systèmes de stockage pour VSC, VASA Provider et SRA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez ajouter des systèmes de stockage à l'appliance virtuelle et définir des identifiants par défaut, le cas échéant, à l'aide de l'interface VSC.

@@ -1,0 +1,16 @@
+---
+permalink: manage/concept-manage-disaster-recovery-setup-using-srm.html 
+sidebar: sidebar 
+keywords: managing, disaster, recovery, setup, by, using, site, recovery, manager, 
+summary: 'Vous pouvez créer et gérer la configuration de reprise après incident dans votre serveur vCenter en utilisant site Recovery Manager (SRM) et site Recovery Manager (SRM) de VMware.' 
+---
+= Gérer la configuration de la reprise sur incident à l'aide de site Recovery Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer et gérer la configuration de reprise après incident dans votre serveur vCenter à l'aide de site Recovery Manager (SRM) et de VMware site Recovery Manager (SRM).
+
+Cette version de VASA Provider est désormais intégrée avec les fonctionnalités de Storage Repliaction adapter (SRA). Si vous avez configuré des datastores vvols dans votre datacenter, alors pour la restauration de datastores vvols, il n'est pas nécessaire d'installer SRA séparément pour la reprise après incident. Dans site Recovery Manager (SRM), vous devez coupler les sites protégés et de reprise. Une fois le couplage du site effectué, la partie suivante de la configuration SRM implique la configuration d'une paire de matrices qui permet à SRM de communiquer avec le système de stockage pour détecter les périphériques et la réplication des périphériques. Avant de pouvoir configurer la paire de matrices, vous devez d'abord créer une paire de sites dans SRM.

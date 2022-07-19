@@ -1,0 +1,49 @@
+---
+permalink: manage/reference-verify-vvol-dashboard-data-requirements.html 
+sidebar: sidebar 
+keywords: vVol, dashboard, data, requirements, 
+summary: 'Vous devez vérifier certaines exigences importantes du tableau de bord vvol pour afficher les détails dynamiques des datastores VMware Virtual volumes (vvols) et des machines virtuelles.' 
+---
+= Exigences relatives aux données du tableau de bord vvol
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez vérifier certaines exigences importantes du tableau de bord vvol pour afficher les détails dynamiques des datastores VMware Virtual volumes (vvols) et des machines virtuelles.
+
+Le tableau suivant présente un aperçu de ce que vous devez vérifier si le tableau de bord vVol n'affiche pas les metrics de performances pour les datastores SAN vvols et les machines virtuelles provisionnés.
+
+[cols="1a,1a"]
+|===
+| Considérations | Description 
+
+
+ a| 
+Premier déploiement des services d'API OnCommand
+ a| 
+* Si vous utilisez des clusters ONTAP version 9.6 ou antérieure, vous utilisez les services d'API OnCommand version 2.1 ou ultérieure.
++
+Vous n'avez pas besoin d'enregistrer les services d'API OnCommand auprès de VASA Provider si vous utilisez ONTAP 9.7 ou version ultérieure.
+
+* Vous devez avoir suivi les instructions d'installation fournies dans le _guide d'installation et de configuration des services d'API OnCommand_ après le téléchargement et l'installation des services d'API OnCommand sur le site de support NetApp.
+* Chaque instance de VASA Provider doit disposer d'une instance de services d'API OnCommand dédiée.
++
+Les services d'API OnCommand ne doivent pas être partagés entre plusieurs instances de VASA Provider ou des serveurs vCenter.
+
+* Les services d'API OnCommand sont en cours d'exécution et accessibles.
+
+
+
+
+ a| 
+Adieu les migrations de données onéreuses
+ a| 
+* Vous utilisez ONTAP 9.3 ou version ultérieure.
+* Vous utilisez les identifiants appropriés pour le système de stockage.
+* Votre système de stockage est actif et accessible.
+* La machine virtuelle que vous avez sélectionnée doit utiliser au moins un datastore vvols et les opérations d'E/S s'exécutent sur le disque de la machine virtuelle.
+
+
+|===

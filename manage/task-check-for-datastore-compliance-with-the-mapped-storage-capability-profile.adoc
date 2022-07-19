@@ -1,0 +1,37 @@
+---
+permalink: manage/task-check-for-datastore-compliance-with-the-mapped-storage-capability-profile.html 
+sidebar: sidebar 
+keywords: verifying, datastore, compliance, with, the, mapped, storage, capability, profile, 
+summary: Vous pouvez rapidement vérifier si vos datastores sont conformes avec les profils de capacité de stockage mappés aux datastores. 
+---
+= Vérifiez la conformité du datastore avec le profil de capacité de stockage mappé
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez rapidement vérifier si vos datastores sont conformes avec les profils de capacité de stockage mappés aux datastores.
+
+.Avant de commencer
+* Vous devez avoir enregistré votre instance VASA Provider sur Virtual Storage Console pour VMware vSphere (VSC).
+* VSC doit avoir découvert votre système de stockage.
+
+
+.Étapes
+. Dans la page VSC *Home*, cliquez sur *Storage Mapping*.
+. Consultez les informations de la colonne *Statut de conformité* pour identifier les datastores non conformes et examinez les alertes pour des raisons de non-conformité.
++
+[NOTE]
+====
+Lorsque vous cliquez sur le bouton *COMPLIANCE CHECK*, VSC effectue une nouvelle détection pour l'ensemble du stockage, ce qui peut prendre quelques minutes.
+
+====
++
+Si un datastore n'est plus compatible avec son profil, la colonne *Statut de conformité* affiche une alerte indiquant la raison de la non-conformité. Par exemple, un profil peut nécessiter une compression. Si ce paramètre a été modifié sur le stockage, la compression n'est plus utilisée et le datastore n'est pas compatible.
+
+
+
+Lorsque vous découvrez un datastore qui n'est pas compatible avec son profil, vous pouvez modifier les paramètres du volume qui soutient le datastore pour le rendre compatible ou vous pouvez attribuer un nouveau profil au datastore.
+
+Vous pouvez modifier les paramètres à partir de la page *profil de capacité de stockage*.

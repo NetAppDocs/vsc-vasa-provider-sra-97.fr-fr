@@ -1,0 +1,25 @@
+---
+permalink: deploy/task-regenerate-an-ssl-certificate-for-vsc.html 
+sidebar: sidebar 
+keywords: regenerating, ssl, certificate, virtual, storage, console, 
+summary: 'Le certificat SSL est généré lors de l"installation de (VSC). Le nom distinctif (DN) généré pour le certificat SSL peut ne pas être un nom commun (CN) reconnu par les ordinateurs clients. En modifiant les mots de passe du magasin de clés et de la clé privée, vous pouvez régénérer le certificat et créer un certificat spécifique au site.' 
+---
+= Régénérer un certificat SSL pour Virtual Storage Console
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le certificat SSL est généré lors de l'installation de (VSC). Le nom distinctif (DN) généré pour le certificat SSL peut ne pas être un nom commun (CN) reconnu par les ordinateurs clients. En modifiant les mots de passe du magasin de clés et de la clé privée, vous pouvez régénérer le certificat et créer un certificat spécifique au site.
+
+Vous pouvez activer le diagnostic à distance à l'aide de la console de maintenance et générer un certificat spécifique au site.
+
+https://kb.netapp.com/app/answers/answer_view/a_id/1075654["Réponse de la base de connaissances NetApp 1075654 : Virtual Storage Console 7.x : mise en œuvre de certificats signés par une autorité de certification"^]
+
+.Étapes
+. Connectez-vous à la console de maintenance.
+. Entrez `1` pour accéder au `Application Configuration` menu.
+. Dans le `Application Configuration` entrée, menu `3` Pour arrêter le service VSC.
+. Entrez `7` Pour régénérer le certificat SSL.
+

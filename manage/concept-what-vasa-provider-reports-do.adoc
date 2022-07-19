@@ -1,0 +1,64 @@
+---
+permalink: manage/concept-what-vasa-provider-reports-do.html 
+sidebar: sidebar 
+keywords: VSC, VASA Provider, and SRA 
+summary: 'Les rapports vvols affichent des informations détaillées sur les datastores VMware Virtual volumes (vvols) et les machines virtuelles qui sont créées sur ces datastores. Le tableau de bord vVol vous permet d"examiner et d"identifier les problèmes potentiels avec les datastores vvols et les machines virtuelles de votre serveur vCenter.' 
+---
+= Rapports vVols
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les rapports vvols affichent des informations détaillées sur les datastores VMware Virtual volumes (vvols) et les machines virtuelles qui sont créées sur ces datastores. Le tableau de bord vVol vous permet d'examiner et d'identifier les problèmes potentiels avec les datastores vvols et les machines virtuelles de votre serveur vCenter.
+
+Vous pouvez afficher, organiser et exporter des rapports. Les données pour les datastores vvols et les machines virtuelles sont fournies par ONTAP avec OnCommand API Services.
+
+VVvols fournit les rapports prédéfinis suivants :
+
+* Rapport de datastore vvol
+* Rapport vvol VM
+
+
+
+
+== Rapport de datastore vvol
+
+Le menu *vVol datastore Report* fournit des informations sur les paramètres suivants pour les datastores :
+
+* Nom du datastore vVols
+* Espace libre
+* Espace utilisé
+* Espace total
+* Pourcentage d'espace utilisé
+* Pourcentage d'espace disponible
+* D'IOPS
+* Latence
+
+
+Vous pouvez également vérifier l'heure à laquelle le rapport a été généré. Le menu *vVol datastore Report* vous permet d'organiser le rapport selon vos besoins, puis d'exporter le rapport organisé à l'aide du bouton *Exporter vers CSV*. Chaque nom de datastore SAN vVols du rapport est un lien qui navigue vers l'onglet *Monitor* du datastore SAN vVvols sélectionné, que vous pouvez utiliser pour afficher les mesures de performances.
+
+
+
+== Rapport machine virtuelle vVvols
+
+Le menu *vVol Virtual machine Summary Report* fournit les indicateurs de performances suivants pour toutes les machines virtuelles qui utilisent les datastores SAN vvols provisionnés par VASA Provider pour ONTAP pour un serveur vCenter sélectionné :
+
+* Nom de la machine virtuelle
+* De la capacité
+* Continuité
+* Débit
++
+Le rapport indique si la machine virtuelle est sous tension ou hors tension.
+
+* Espace logique
+* Hôte
+* État de l'alimentation
+* Latence
++
+Le rapport affiche la latence des machines virtuelles sur tous les datastores vvols qui sont associés aux machines virtuelles.
+
+
+
+Chaque nom de machine virtuelle dans le rapport est un lien vers l'onglet *Monitor* de la machine virtuelle sélectionnée. Vous pouvez organiser le rapport de la machine virtuelle en fonction de vos besoins, exportez-le dans `.CSV` formatez, puis enregistrez le rapport sur votre système local. L'horodatage du rapport est ajouté au rapport enregistré.

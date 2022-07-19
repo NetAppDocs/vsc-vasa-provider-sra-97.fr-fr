@@ -1,0 +1,34 @@
+---
+permalink: deploy/concept-configure-your-storage-system-environment.html 
+sidebar: sidebar 
+keywords: configuring, virtual, storage, console, vmware, vsphere, storage, system, environment, 
+summary: 'Virtual Storage Console pour VMware vSphere fournit un mécanisme unique pour détecter les systèmes de stockage et définir les identifiants de stockage. Ces identifiants fournissent les autorisations ONTAP requises pour permettre aux utilisateurs de Virtual Storage Console (VSC) d"effectuer des tâches à l"aide des systèmes de stockage.' 
+---
+= Configuration de l'environnement Virtual Storage Console pour VMware vSphere
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Virtual Storage Console pour VMware vSphere fournit un mécanisme unique pour détecter les systèmes de stockage et définir les identifiants de stockage. Ces identifiants fournissent les autorisations ONTAP requises pour permettre aux utilisateurs de Virtual Storage Console (VSC) d'effectuer des tâches à l'aide des systèmes de stockage.
+
+Avant que VSC ne puisse afficher et gérer les ressources de stockage, VSC doit détecter les systèmes de stockage. Dans le cadre du processus de détection, vous devez fournir les identifiants ONTAP de vos systèmes de stockage. Il s'agit des privilèges (ou rôles) associés à la paire nom d'utilisateur et mot de passe attribuée à chaque système de stockage. Ces paires de noms d'utilisateur et de mots de passe utilisent le contrôle d'accès basé sur des rôles (RBAC) ONTAP et doivent être configurées depuis ONTAP. Vous ne pouvez pas modifier ces identifiants depuis VSC. Vous pouvez définir des rôles RBAC ONTAP à l'aide de .
+
+[NOTE]
+====
+Si vous vous connectez en tant qu'administrateur, vous disposez automatiquement de tous les privilèges pour ce système de stockage.
+
+====
+Lorsque vous ajoutez un système de stockage à VSC, vous devez fournir une adresse IP pour le système de stockage et la paire nom d'utilisateur et mot de passe associée à ce système. Vous pouvez configurer les identifiants par défaut que VSC utilisera lors de la détection du système de stockage ou vous pouvez saisir manuellement des informations d'identification lors de la découverte du système de stockage. Les détails du système de stockage ajouté à VSC sont automatiquement transmis aux extensions que vous activez lors du déploiement. Vous n'avez pas besoin d'ajouter manuellement du stockage à VASA Provider et Storage Replication adapter (SRA). VSC et SRA prennent en charge l'ajout des identifiants au niveau du cluster. Vasa Provider prend uniquement en charge les identifiants au niveau du cluster lors de l'ajout de systèmes de stockage.
+
+Si votre environnement inclut plusieurs instances vCenter Server, lorsque vous ajoutez un système de stockage à VSC à partir de la page Storage Systems (systèmes de stockage), la boîte de dialogue Add Storage System (Ajouter un système de stockage) affiche une boîte de dialogue vCenter Server dans laquelle vous pouvez spécifier l'instance de vCenter Server à laquelle le système de stockage doit être ajouté. Si vous ajoutez un système de stockage en cliquant avec le bouton droit de la souris sur un nom de datacenter, vous n'avez pas la possibilité de spécifier une instance de vCenter Server car le serveur est déjà associé à ce datacenter.
+
+La découverte se fait de l'une des manières suivantes. Dans chaque cas, vous devez fournir des informations d'identification pour tout système de stockage nouvellement découvert.
+
+* Au démarrage du service VSC, VSC démarre son processus de détection automatique en arrière-plan.
+* Vous pouvez cliquer sur le bouton *REDÉCOUVRIR tout* de la page systèmes de stockage, ou sur un hôte ou un centre de données pour le sélectionner dans le menu *actions* (menu:actions[NetApp VSC > mettre à jour les données hôte et de stockage]). Vous pouvez également cliquer sur *DÉCOUVRIR* dans l'onglet mise en route de la section vue d'ensemble.
+
+
+Toutes les fonctionnalités de VSC requièrent des autorisations spécifiques pour effectuer des tâches. Vous pouvez limiter ce que les utilisateurs peuvent faire en fonction des informations d'identification associées au rôle ONTAP. Tous les utilisateurs disposant des mêmes nom d'utilisateur et paire de mots de passe du système de stockage partagent le même ensemble d'informations d'identification du système de stockage et peuvent effectuer les mêmes opérations.

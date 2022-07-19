@@ -1,0 +1,109 @@
+---
+permalink: deploy/reference-components-that-make-up-vcenter-server-permissions.html 
+sidebar: sidebar 
+keywords: components, vcenter, server, permissions, 
+summary: VCenter Server reconnaît les autorisations et non les privilèges. Chaque autorisation vCenter Server comprend trois composants. 
+---
+= Composants des autorisations de vCenter Server
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VCenter Server reconnaît les autorisations et non les privilèges. Chaque autorisation vCenter Server comprend trois composants.
+
+VCenter Server dispose des composants suivants :
+
+* Un ou plusieurs privilèges (le rôle)
++
+Les privilèges définissent les tâches qu'un utilisateur peut effectuer.
+
+* Un objet vSphere
++
+L'objet est la cible des tâches.
+
+* Un utilisateur ou un groupe
++
+L'utilisateur ou le groupe définit qui peut effectuer la tâche.
+
+
+
+Comme le montre le diagramme suivant, vous devez disposer des trois éléments pour avoir une autorisation.
+
+[NOTE]
+====
+Dans ce diagramme, les cases grises indiquent les composants qui existent dans vCenter Server et les cases blanches indiquent les composants qui existent dans le système d'exploitation où le serveur vCenter est exécuté.
+
+====
+image::../media/permission-updated-graphic.png[graphique des autorisations mis à jour]
+
+
+
+== Privilèges
+
+Deux types de privilèges sont associés à Virtual Storage Console pour VMware vSphere :
+
+* Privilèges de serveur vCenter natif
++
+Ces privilèges sont fournis avec vCenter Server.
+
+* Privilèges spécifiques à VSC
++
+Ces privilèges sont définis pour des tâches VSC spécifiques. Ils sont uniques à VSC.
+
+
+
+Les tâches VSC requièrent à la fois des privilèges spécifiques à VSC et des privilèges natifs vCenter Server. Ces privilèges constituent le « rôle » pour l'utilisateur. Une autorisation peut avoir plusieurs privilèges. Ces privilèges concernent un utilisateur connecté à vCenter Server.
+
+[NOTE]
+====
+Pour simplifier l'utilisation du contrôle d'accès basé sur des rôles vCenter Server, VSC fournit plusieurs rôles standard contenant tous les privilèges natifs et spécifiques de VSC requis pour effectuer des tâches VSC.
+
+====
+Si vous modifiez les privilèges dans une autorisation, l'utilisateur associé à cette autorisation doit se déconnecter, puis se connecter pour activer l'autorisation mise à jour.
+
+[cols="1a,1a,1a"]
+|===
+| Privilège | Rôles | Tâches 
+
+
+ a| 
+Menu:NetApp Virtual Storage Console [View]
+ a| 
+* Administrateur VSC
+* Provisionnement VSC
+* VSC en lecture seule
+
+ a| 
+Toutes les tâches spécifiques à VSC et VASA Provider requièrent le privilège View.
+
+
+
+ a| 
+Menu :NetApp Virtual Storage Console[gestion basée sur des règles > gestion] ou menu :privilege.nvpfVSC.VASAGroup.com.netapp.nvpf.label[Management]
+ a| 
+Administrateur VSC
+ a| 
+Tâches VSC et VASA Provider associées aux profils de fonctionnalité de stockage et aux paramètres de seuil.
+
+|===
+
+
+== Objets vSphere
+
+Les autorisations sont associées aux objets vSphere, tels que vCenter Server, les hôtes ESXi, les machines virtuelles, les datastores, les data centers, et les dossiers. Vous pouvez attribuer des autorisations à n'importe quel objet vSphere. En fonction de l'autorisation attribuée à un objet vSphere, vCenter Server détermine qui peut effectuer les tâches sur cet objet. Pour les tâches VSC spécifiques, les autorisations sont attribuées et validées uniquement au niveau du dossier racine (vCenter Server) et non sur toute autre entité. Sauf pour le fonctionnement du plug-in VAAI, où les autorisations sont validées par rapport à l'ESXi concerné .
+
+
+
+== Utilisateurs et groupes
+
+Vous pouvez utiliser Active Directory (ou la machine vCenter Server locale) pour configurer des utilisateurs et des groupes d'utilisateurs. Vous pouvez ensuite utiliser les autorisations de vCenter Server pour accorder l'accès à ces utilisateurs ou groupes afin de leur permettre d'effectuer des tâches VSC spécifiques.
+
+[NOTE]
+====
+Ces autorisations vCenter Server s'appliquent aux utilisateurs de VSC vCenter, et non aux administrateurs VSC. Par défaut, les administrateurs VSC disposent d'un accès complet au produit et ne requièrent pas l'autorisation qui leur est attribuée.
+
+====
+Les utilisateurs et les groupes n'ont pas de rôles qui leur sont attribués. Ils ont accès à un rôle en faisant partie de l'autorisation vCenter Server.

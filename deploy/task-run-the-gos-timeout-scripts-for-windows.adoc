@@ -1,0 +1,30 @@
+---
+permalink: deploy/task-run-the-gos-timeout-scripts-for-windows.html 
+sidebar: sidebar 
+keywords: setting, timeout, values, windows, guest, operating, systems, 
+summary: 'Les scripts d"expiration du délai d"attente du système d"exploitation invité (OS) définissent les paramètres d"expiration du délai d"E/S SCSI pour les systèmes d"exploitation invités Windows. Vous pouvez spécifier un délai de 60 secondes ou un délai de 190 secondes. Vous devez redémarrer le système d"exploitation invité Windows pour que les paramètres prennent effet.' 
+---
+= Définissez les valeurs de délai d'expiration des systèmes d'exploitation invités Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les scripts d'expiration du délai d'attente du système d'exploitation invité (OS) définissent les paramètres d'expiration du délai d'E/S SCSI pour les systèmes d'exploitation invités Windows. Vous pouvez spécifier un délai de 60 secondes ou un délai de 190 secondes. Vous devez redémarrer le système d'exploitation invité Windows pour que les paramètres prennent effet.
+
+Vous devez avoir monté l'image ISO contenant le script Windows.
+
+.Étapes
+. Accédez à la console de la machine virtuelle Windows et connectez-vous à un compte disposant des privilèges d'administrateur.
+. Si le script ne démarre pas automatiquement, ouvrez le lecteur de CD, puis exécutez le `windows_gos_timeout.reg` script.
++
+La boîte de dialogue Éditeur du Registre s'affiche.
+
+. Cliquez sur *Oui* pour continuer.
++
+Le message suivant s'affiche : `The keys and values contained in D:\windows_gos_timeout.reg have been successfully added to the registry.`
+
+. Redémarrez le système d'exploitation invité Windows.
+. Démontez l'image ISO.
+

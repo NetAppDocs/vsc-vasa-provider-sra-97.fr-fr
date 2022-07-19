@@ -1,0 +1,25 @@
+---
+permalink: manage/task-migrate-standard-virtual-machines-to-vvol-datastores.html 
+sidebar: sidebar 
+keywords: migrate, traditional, virtual, machines, datastores, 
+summary: 'Il est possible de migrer des ordinateurs virtuels de datastores traditionnels vers des datastores de volumes virtuels (vvols) afin de tirer parti de la gestion de machines virtuelles basée sur des règles et d"autres fonctionnalités vvols. Les datastores vvols vous permettent de répondre à de plus en plus de besoins de charge de travail.' 
+---
+= Migrez des machines virtuelles classiques vers des datastores vvols
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il est possible de migrer des ordinateurs virtuels de datastores traditionnels vers des datastores de volumes virtuels (vvols) afin de tirer parti de la gestion de machines virtuelles basée sur des règles et d'autres fonctionnalités vvols. Les datastores vvols vous permettent de répondre à de plus en plus de besoins de charge de travail.
+
+Vous devez vous assurer que VASA Provider n'est pas exécuté sur les machines virtuelles que vous envisagez de migrer. Si vous migrez une machine virtuelle qui exécute VASA Provider dans un datastore vvols, vous ne pouvez pas effectuer d'opérations de gestion, y compris la mise sous tension des machines virtuelles qui se trouvent sur des datastores vvols.
+
+Lorsque vous migrez d'un datastore classique vers un datastore VVol, vCenter Server utilise les API vStorage pour l'intégration de baies (VAAI) pour décharger les données lors du déplacement des datastores VMFS, mais pas depuis un fichier VMDK NFS. VAAI réduit généralement la charge sur l'hôte.
+
+.Étapes
+. Cliquez avec le bouton droit de la souris sur la machine virtuelle à migrer, puis cliquez sur *migrer*.
+. Sélectionnez *changer le stockage uniquement*, puis cliquez sur *Suivant*.
+. Sélectionnez un format de disque virtuel, une stratégie de stockage de VM et un datastore VVol qui correspondent aux caractéristiques du datastore que vous migrez, puis cliquez sur *Suivant*.
+. Vérifiez les paramètres, puis cliquez sur *Terminer*.
+

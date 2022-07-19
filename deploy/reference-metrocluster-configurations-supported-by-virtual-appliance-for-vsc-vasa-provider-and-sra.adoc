@@ -1,0 +1,46 @@
+---
+permalink: deploy/reference-metrocluster-configurations-supported-by-virtual-appliance-for-vsc-vasa-provider-and-sra.html 
+sidebar: sidebar 
+keywords: metroCluster, configurations, supported, virtual, appliance, vsc, vasa, provider, sra, 
+summary: 'L"appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA) prend en charge les environnements qui utilisent les configurations IP et FC de MetroCluster pour ONTAP. La majeure partie de ce support est automatique. Toutefois, vous remarquerez peut-être quelques différences si vous utilisez un environnement MetroCluster avec VSC et VASA Provider.' 
+---
+= Configurations MetroCluster prises en charge par l'appliance virtuelle pour VSC, VASA Provider et SRA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA) prend en charge les environnements qui utilisent les configurations IP et FC de MetroCluster pour ONTAP. La majeure partie de ce support est automatique. Toutefois, vous remarquerez peut-être quelques différences si vous utilisez un environnement MetroCluster avec VSC et VASA Provider.
+
+
+
+== Les configurations MetroCluster et VSC
+
+Vous devez vous assurer que VSC détecte les contrôleurs du système de stockage sur le site principal et sur le site secondaire. En général, VSC détecte automatiquement les contrôleurs de stockage. Si vous utilisez une LIF de gestion de cluster, il est recommandé de vérifier que VSC a détecté les clusters sur les deux sites. Vous pouvez également ajouter manuellement les contrôleurs de stockage à VSC. Vous pouvez également modifier les paires de noms d'utilisateur et de mots de passe que VSC utilise pour se connecter aux contrôleurs de stockage.
+
+Lorsqu'un basculement se produit, le basculement sur le site secondaire prend le relais. Ceux-ci ont le suffixe «»-mc» annexé à leurs noms. Si une opération de basculement se produit pendant que vous effectuez des opérations telles que le provisionnement d'un datastore, le nom de l'emplacement du datastore est modifié pour inclure le suffixe «`-mc ». Ce suffixe n'est supprimé que lorsque le rétablissement a lieu et que le contrôle de reprise sur le site principal est activé.
+
+[NOTE]
+====
+Si vous avez ajouté directement avec la configuration MetroCluster à VSC, puis après le basculement, la modification du nom de SVM (l'ajout du suffixe «`-mc ») n'est pas reflétée. Toutes les autres opérations de basculement continuent à s'exécuter normalement.
+
+====
+En cas de basculement ou de rétablissement, VSC peut prendre quelques minutes pour détecter et détecter automatiquement les clusters. Si cela se produit pendant l'exécution d'une opération VSC comme le provisionnement d'un datastore, vous risquez de rencontrer un retard.
+
+
+
+== Configurations MetroCluster et VASA Provider
+
+Vasa Provider prend automatiquement en charge les environnements qui utilisent les configurations MetroCluster. Le basculement est transparent dans les environnements VASA Provider. Vous ne pouvez pas ajouter directement à VASA Provider.
+
+[NOTE]
+====
+Vasa Provider n'ajoute pas le suffixe "`-mc" aux noms du sur le site secondaire après un basculement.
+
+====
+
+
+== Configurations MetroCluster et SRA
+
+SRA ne prend pas en charge les configurations MetroCluster.

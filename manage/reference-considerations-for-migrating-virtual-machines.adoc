@@ -1,0 +1,59 @@
+---
+permalink: manage/reference-considerations-for-migrating-virtual-machines.html 
+sidebar: sidebar 
+keywords: considerations, for, migrating, or, cloning, virtual, machines, 
+summary: Il est important de tenir compte de certains éléments à prendre en compte lors de la migration des machines virtuelles existantes dans votre data Center. 
+---
+= Considérations relatives à la migration ou au clonage de machines virtuelles
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il est important de tenir compte de certains éléments à prendre en compte lors de la migration des machines virtuelles existantes dans votre data Center.
+
+
+
+== Migrer des machines virtuelles protégées
+
+Vous pouvez migrer les machines virtuelles protégées vers :
+
+* Même datastore vVvols dans un autre hôte ESXi
+* Il existe un autre datastore compatible vVvols dans le même hôte ESXi
+* Il existe un autre datastore compatible vVvols dans un hôte VMware ESXi différent
+
+
+Si la machine virtuelle est migrée vers un volume FlexVol différent, le fichier de métadonnées respectif est également mis à jour avec les informations de cette machine virtuelle. Lors de la migration d'une machine virtuelle vers un autre hôte ESXi mais le même stockage, le métafichier de volume FlexVol sous-jacent ne sera pas modifié.
+
+
+
+== Machines virtuelles protégées par des clones
+
+Vous pouvez cloner des machines virtuelles protégées à plusieurs méthodes :
+
+* Même conteneur du même volume FlexVol à l'aide du groupe de réplication
++
+Le fichier de métadonnées du volume FlexVol est mis à jour avec les détails de la machine virtuelle clonée.
+
+* Même conteneur d'un autre volume FlexVol utilisant le groupe de réplication
++
+Volume FlexVol où la machine virtuelle clonée est placée, le fichier de métadonnées est mis à jour avec les détails de la machine virtuelle clonée.
+
+* Il existe un autre conteneur ou datastore vvols
++
+Volume FlexVol sur lequel la machine virtuelle clonée est placée, le fichier de métadonnées est mis à jour les informations relatives à la machine virtuelle.
+
+
+
+Actuellement, VMware ne prend pas en charge la machine virtuelle clonée sur un modèle de machine virtuelle.
+
+Le clonage d'une machine virtuelle protégée est pris en charge.
+
+
+
+== Snapshots de machine virtuelle
+
+Actuellement, seuls les snapshots de machine virtuelle sans mémoire sont pris en charge. Si la machine virtuelle possède une copie Snapshot de la mémoire, la machine virtuelle n'est pas prise en compte pour sa protection.
+
+De plus, vous ne pouvez pas protéger la machine virtuelle non protégée dotée d'une copie Snapshot de mémoire. Pour cette version, vous devez supprimer l'instantané de mémoire avant d'activer la protection de la machine virtuelle.

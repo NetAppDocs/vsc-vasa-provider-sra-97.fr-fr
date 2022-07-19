@@ -1,0 +1,43 @@
+---
+permalink: deploy/reference-configure-storage-replication-adapter-for-highly-scaled-environment.html 
+sidebar: sidebar 
+keywords: configuration, storage, replication, adapter, highly, scaled, environment, 
+summary: 'Vous devez configurer les intervalles d"expiration du stockage en fonction des paramètres recommandés pour Storage Replication adapter (SRA) afin de bénéficier de performances optimales dans les environnements à grande échelle.' 
+---
+= Configuration de l'adaptateur de réplication du stockage pour l'environnement à grande échelle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez configurer les intervalles d'expiration du stockage en fonction des paramètres recommandés pour Storage Replication adapter (SRA) afin de bénéficier de performances optimales dans les environnements à grande échelle.
+
+
+
+== Paramètres du fournisseur de stockage
+
+* Vous devez augmenter la valeur de l' `StorageProvider.resignatureTimeout` réglage de 900 secondes à 12000 secondes.
+* Vous devez activer `StorageProvider.autoResignatureMode` option.
+
+
+Pour plus d'informations sur la modification des paramètres du fournisseur de stockage, reportez-vous à la documentation VMware.
+
+https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.admin.doc/GUID-E4060824-E3C2-4869-BC39-76E88E2FF9A0.html["Documentation VMware vSphere : modifiez les paramètres du fournisseur de stockage"^]
+
+
+
+== Paramètres de stockage
+
+Vous devez définir la valeur du `storage.commandTimeout` intervalle d'expiration pour les environnements hautement évolutifs jusqu'à 12,000 secondes.
+
+[NOTE]
+====
+L'intervalle de temporisation spécifié est la valeur maximale. Il n'est pas nécessaire d'attendre que le délai maximum soit atteint. La plupart des commandes se terminent dans l'intervalle maximal défini de temps d'attente.
+
+====
+https://kb.netapp.com/app/answers/answer_view/a_id/1001111["Réponse de la base de connaissances NetApp 1001111 : Guide de dimensionnement de NetApp Storage Replication adapter 4.0/7.X pour ONTAP"^]
+
+La documentation VMware sur la modification des paramètres du fournisseur de SAN contient davantage d'informations.
+
+https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.admin.doc/GUID-711FD223-50DB-414C-A2A7-3BEB8FAFDBD9.html["Documentation de VMware site Recovery Manager : modifiez les paramètres de stockage"^]

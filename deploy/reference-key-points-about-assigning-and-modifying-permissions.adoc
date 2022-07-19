@@ -1,0 +1,45 @@
+---
+permalink: deploy/reference-key-points-about-assigning-and-modifying-permissions.html 
+sidebar: sidebar 
+keywords: key, points, about, assigning, modifying, permissions, vcenter, server, 
+summary: 'Lorsque vous travaillez avec des autorisations vCenter Server, vous devez garder à l"esprit plusieurs points clés. La réussite d"une tâche Virtual Storage Console pour VMware vSphere peut dépendre de l"endroit où vous avez attribué une autorisation ou des actions qu"un utilisateur a effectuées après la modification d"une autorisation.' 
+---
+= Points clés concernant l'attribution et la modification des autorisations pour vCenter Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque vous travaillez avec des autorisations vCenter Server, vous devez garder à l'esprit plusieurs points clés. La réussite d'une tâche Virtual Storage Console pour VMware vSphere peut dépendre de l'endroit où vous avez attribué une autorisation ou des actions qu'un utilisateur a effectuées après la modification d'une autorisation.
+
+
+
+== Attribution d'autorisations
+
+Vous n'avez besoin de configurer les autorisations vCenter Server que si vous souhaitez limiter l'accès aux objets et aux tâches vSphere. Sinon, vous pouvez vous connecter en tant qu'administrateur. Cette connexion vous permet automatiquement d'accéder à tous les objets vSphere.
+
+L'endroit où vous attribuez une autorisation détermine les tâches VSC que l'utilisateur peut effectuer.
+
+Parfois, pour assurer la réalisation d'une tâche, vous devez attribuer l'autorisation à un niveau supérieur, tel que l'objet racine. C'est le cas lorsqu'une tâche nécessite un privilège qui ne s'applique pas à un objet vSphere spécifique (par exemple, le suivi de la tâche) ou lorsqu'un privilège requis s'applique à un objet non vSphere (par exemple, un système de stockage).
+
+Dans ce cas, vous pouvez configurer une autorisation de sorte qu'elle soit héritée par les entités enfants. Vous pouvez également attribuer d'autres autorisations aux entités enfants. La permission attribuée à une entité enfant remplace toujours l'autorisation héritée de l'entité parent. Cela signifie que vous pouvez autoriser une entité enfant pour restreindre la portée d'une autorisation qui a été attribuée à un objet racine et héritée par l'entité enfant.
+
+
+TIP: À moins que les règles de sécurité de votre entreprise ne nécessitent des autorisations plus restrictives, il est conseillé d'attribuer des autorisations à l'objet racine (également appelé dossier racine).
+
+
+
+== Autorisations et objets non vSphere
+
+L'autorisation que vous créez est appliquée à un objet non vSphere. Par exemple, un système de stockage n'est pas un objet vSphere. Si un privilège s'applique à un système de stockage, vous devez attribuer l'autorisation contenant ce privilège à l'objet racine VSC car aucun objet vSphere ne peut être affecté.
+
+Par exemple, toute autorisation incluant un privilège tel que le privilège VSC « Add/Modify/Skip Storage Systems » doit être attribuée au niveau de l'objet racine.
+
+
+
+== Modification des autorisations
+
+Vous pouvez modifier une autorisation à tout moment.
+
+Si vous modifiez les privilèges dans une autorisation, l'utilisateur associé à cette autorisation doit se déconnecter puis se reconnecter pour activer l'autorisation mise à jour.

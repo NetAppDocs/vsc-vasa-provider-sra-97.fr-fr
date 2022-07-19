@@ -1,0 +1,30 @@
+---
+permalink: deploy/task-configure-esx-server-multipathing-and-timeout-settings.html 
+sidebar: sidebar 
+keywords: configuring, esxi, server, multipathing, timeout, settings, 
+summary: 'Virtual Storage Console pour VMware vSphere vérifie et définit les paramètres de chemins d"accès multiples de l"hôte ESXi ainsi que les paramètres de délai d"expiration de la carte HBA qui fonctionnent le mieux avec les systèmes de stockage.' 
+---
+= Configurer les paramètres de chemins d'accès multiples et de délai d'attente du serveur ESXi
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Virtual Storage Console pour VMware vSphere vérifie et définit les paramètres de chemins d'accès multiples de l'hôte ESXi ainsi que les paramètres de délai d'expiration de la carte HBA qui fonctionnent le mieux avec les systèmes de stockage.
+
+Ce processus peut prendre un certain temps, selon votre configuration et la charge du système. La progression de la tâche s'affiche dans le panneau *tâches récentes*. Lorsque les tâches sont terminées, l'icône d'alerte d'état de l'hôte est remplacée par l'icône Normal ou l'icône redémarrage en attente.
+
+.Étapes
+. Dans la page Web client VMware vSphere *Home*, cliquez sur menu:vCenter[hosts].
+. Cliquez avec le bouton droit sur un hôte, puis sélectionnez menu :actions [NetApp VSC > définir les valeurs recommandées].
+. Dans la boîte de dialogue *Paramètres recommandés NetApp*, sélectionnez les valeurs qui conviennent le mieux à votre système.
++
+Les valeurs standard recommandées sont définies par défaut.
+
++
+image::../media/vsc-recommended-hosts-settings.gif[paramètres des hôtes recommandés par vsc]
+
+. Cliquez sur *OK*.
+

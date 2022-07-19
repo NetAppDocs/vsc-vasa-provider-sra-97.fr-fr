@@ -1,0 +1,28 @@
+---
+permalink: manage/task-map-storage-policies.html 
+sidebar: sidebar 
+keywords: mapping, storage, policies, 
+summary: Vous devez mapper les stratégies de stockage du site protégé vers les stratégies de stockage du site de reprise pour que votre plan de reprise place les serveurs virtuels récupérés sur les datastores appropriés, en fonction de vos mappages. Après la restauration de la machine virtuelle sur le site de reprise, la stratégie de stockage des machines virtuelles mappées sera attribuée à la machine virtuelle. 
+---
+= Mappage des règles de stockage
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez mapper les stratégies de stockage du site protégé vers les stratégies de stockage du site de reprise pour que votre plan de reprise place les serveurs virtuels récupérés sur les datastores appropriés, en fonction de vos mappages. Après la restauration de la machine virtuelle sur le site de reprise, la stratégie de stockage des machines virtuelles mappées sera attribuée à la machine virtuelle.
+
+.Étapes
+. Dans vSphere client, cliquez sur menu:site Recovery[Open site Recovery].
+. Dans l'onglet *site pair*, cliquez sur menu:Configure[Storage Policy mappings].
+. Sélectionnez le site requis, puis cliquez sur *Nouveau* pour créer un nouveau mappage.
+. Sélectionnez l'option *préparer automatiquement les mappages pour les stratégies de stockage avec les noms correspondants*, puis cliquez sur *SUIVANT*.
++
+SRM sélectionne les stratégies de stockage sur le site protégé pour lequel une stratégie de stockage portant le même nom existe sur le site de reprise. Cependant, si vous sélectionnez l'option de mappage manuel, vous pouvez sélectionner plusieurs règles de stockage.
+
+. Cliquez sur *Ajouter des mappages*, puis sur *SUIVANT*.
+. Dans la section *Reverse Mapping*, cochez les cases requises pour le mappage, puis cliquez sur *NEXT*.
+. Dans la section *prêt à compléter*, vérifiez vos sélections et cliquez sur *TERMINER*.
+
