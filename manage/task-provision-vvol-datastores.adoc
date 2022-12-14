@@ -22,6 +22,7 @@ Reportez-vous à la section *activation du montage de datastores sur différents
 * Pour que la réplication inverse puisse être correctement effectuée, vous devez configurer des règles et des planifications de réplication similaires sur les datastores des sites source et cible.
 
 
+.Description de la tâche
 Le menu *Provision datastore* vous permet de spécifier un profil de capacité de stockage pour le datastore, ce qui permet de définir des objectifs de niveau de service (SLO) cohérents et simplifie le processus de provisionnement. Vous ne pouvez spécifier un profil de capacité de stockage que si vous avez activé VASA Provider.
 
 Les volumes FlexVol utilisés comme stockage de sauvegarde sont affichés sur le tableau de bord vvol uniquement s'ils exécutent ONTAP 9.5 ou une version ultérieure. Vous ne devez pas utiliser l'assistant de vCenter Server *New datastore* pour provisionner les datastores vvols.

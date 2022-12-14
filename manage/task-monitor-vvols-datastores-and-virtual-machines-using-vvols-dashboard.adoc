@@ -26,6 +26,7 @@ https://mysupport.netapp.com/site/["Support NetApp"^]
 
 link:reference-verify-vvol-dashboard-data-requirements.html["Exigences relatives aux données du tableau de bord vvol"]
 
+.Description de la tâche
 Les données IOPS fournies par ONTAP sont arrondies et affichées sur le tableau de bord vvol. Il peut y avoir une différence entre la valeur d'IOPS réelle fournie par ONTAP et la valeur d'IOPS affichée sur le tableau de bord vvol.
 
 [NOTE]

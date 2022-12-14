@@ -13,6 +13,7 @@ summary: 'Vous devez configurer les systèmes de stockage avant d"exécuter Stor
 [role="lead"]
 Vous devez configurer les systèmes de stockage avant d'exécuter Storage Replication adapter (SRA) pour site Recovery Manager (SRM).
 
+.Avant de commencer
 Vous devez avoir installé les programmes suivants sur le site protégé et le site de reprise :
 
 * SRM

@@ -13,10 +13,12 @@ summary: 'Vous pouvez surveiller les datastores classiques et les machines virtu
 [role="lead"]
 Vous pouvez surveiller les datastores classiques et les machines virtuelles à l'aide du tableau de bord traditionnel de l'appliance virtuelle pour Virtual Storage Console, VASA Provider et Storage Replication adapter. Les données du tableau de bord vous permettent d'analyser l'utilisation du datastore et de prendre des mesures correctives pour éviter que les machines virtuelles ne s'exécutent dans des contraintes d'espace.
 
+.Avant de commencer
 Sélectionnez l'option *Activer le contrôle d'E/S de stockage et la collecte de statistiques* ou *Désactiver le contrôle d'E/S de stockage mais activer la collecte de statistiques* dans la boîte de dialogue configurer le contrôle d'E/S de stockage. Vous pouvez activer le contrôle des E/S de stockage uniquement si vous disposez de la licence Enterprise plus de VMware.
 
 https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-BB5D9BAB-9E0E-4204-A76A-54634CD8AD51.html["Documentation VMware vSphere : activation du contrôle des E/S du stockage"^]
 
+.Description de la tâche
 Le tableau de bord VSC affiche les mesures relatives aux IOPS, à l'espace utilisé, à la latence et à la capacité dédiée obtenues auprès de votre vCenter Server. ONTAP fournit des mesures d'économie d'espace pour les volumes au tableau de bord VSC. Ces paramètres de performances vous permettent d'identifier les goulets d'étranglement des performances dans l'environnement virtuel et de prendre des mesures correctives pour résoudre ces problèmes.
 
 Le tableau de bord traditionnel de l'appliance virtuelle pour VSC, VASA Provider et SRA vous permet de voir les datastores NFS ou VMFS. Vous pouvez cliquer sur un datastore pour accéder à la vue détaillée du datastore fournie par l'instance de vCenter Server pour afficher et résoudre les problèmes éventuels rencontrés avec les datastores de votre serveur vCenter.

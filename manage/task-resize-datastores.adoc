@@ -14,8 +14,10 @@ summary: 'Le redimensionnement d"un datastore vous permet d"augmenter ou de réd
 [role="lead"]
 Le redimensionnement d'un datastore vous permet d'augmenter ou de réduire le stockage de vos fichiers de machine virtuelle. Vous devrez peut-être modifier la taille d'un datastore en fonction de l'évolution des besoins de votre infrastructure.
 
+.Avant de commencer
 Si vous souhaitez que VSC redimensionne le volume contenant lors de la redimensionnement du datastore VMFS, vous ne devez pas utiliser l'option *Use existing volume* sous *Storage attributes* (attributs de stockage*) lors du premier provisionnement du datastore VMFS, mais plutôt le laisser créer automatiquement un nouveau volume pour chaque datastore.
 
+.Description de la tâche
 Vous pouvez augmenter ou réduire la taille d'un datastore NFS. Vous ne pouvez augmenter la taille d'un datastore VMFS que.
 
 .Étapes

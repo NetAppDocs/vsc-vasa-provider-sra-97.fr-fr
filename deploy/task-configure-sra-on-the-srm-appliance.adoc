@@ -13,8 +13,10 @@ summary: 'Une fois l"appliance SRM déployée, vous devez configurer SRA sur l"a
 [role="lead"]
 Une fois l'appliance SRM déployée, vous devez configurer SRA sur l'appliance SRM. La configuration de SRA permet de communiquer avec SRM Appliance et SRA pour la gestion de la reprise après incident. Vous devez stocker l'appliance virtuelle pour les informations d'identification VSC, VASA Provider et SRA (adresse IP et mot de passe d'administrateur) dans l'appliance SRM pour permettre la communication entre SRM Appliance et SRA.
 
+.Avant de commencer
 Vous devez télécharger le `tar.gz` Fichier vers l'appliance SRM.
 
+.Description de la tâche
 La configuration de SRA sur SRM Appliance stocke les informations d'identification SRA dans l'appliance SRM.
 
 .Étapes

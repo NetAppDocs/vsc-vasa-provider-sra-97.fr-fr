@@ -13,6 +13,7 @@ summary: 'Si vous utilisez la dernière version de l"appliance virtuelle pour Vi
 [role="lead"]
 Si vous utilisez la dernière version de l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA), Il vous faut ensuite migrer vos machines virtuelles provisionnées avec les mesures de QoS « MOXTHROUGHPUT MBPS » ou « MeaxThroughput IOPS » vers de nouveaux datastores VVol provisionnés avec les mesures de QoS « `max IOPS' » de la dernière version de l'appliance virtuelle pour VSC, VASA Provider et SRA.
 
+.Description de la tâche
 Avec la dernière version de l'appliance virtuelle pour VSC, VASA Provider et SRA, vous pouvez configurer les metrics de QoS pour chaque machine virtuelle ou disque de machine virtuelle (VMDK). Les metrics de qualité de service étaient précédemment appliquées au niveau du volume ONTAP FlexVol et étaient partagées par toutes les machines virtuelles ou les VMDK provisionnés sur ce volume FlexVol.
 
 À partir de la version 7.2 de l'appliance virtuelle pour VSC, VASA Provider et SRA, les mesures de QoS d'une machine virtuelle ne sont pas partagées avec les autres machines virtuelles.

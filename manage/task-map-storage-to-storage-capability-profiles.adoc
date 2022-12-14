@@ -18,6 +18,7 @@ Vous pouvez mapper les datastores associés à VASA Provider pour ONTAP vers les
 * Virtual Storage Console (VSC) doit déjà avoir découvert votre système de stockage.
 
 
+.Description de la tâche
 Vous pouvez associer un data store traditionnel à un profil de fonctionnalité de stockage ou modifier le profil de fonctionnalité de stockage associé à un datastore. Vasa Provider _not_ affiche les datastores de volume virtuel (VVol) sur la page *Storage Adressages*. Tous les datastores cités dans cette tâche sont des datastores classiques.
 
 .Étapes

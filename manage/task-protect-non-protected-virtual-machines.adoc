@@ -14,6 +14,7 @@ summary: 'Vous pouvez configurer la protection de vos machines virtuelles non pr
 [role="lead"]
 Vous pouvez configurer la protection de vos machines virtuelles non protégées existantes qui ont été créées à l'aide de la stratégie de stockage de la machine virtuelle avec la réplication désactivée. Pour assurer la protection, vous devez modifier la règle de stockage de la machine virtuelle et attribuer un groupe de réplication.
 
+.Description de la tâche
 Si SVM possède à la fois des LIF IPv4 et IPv6, vous devez désactiver les LIF IPv6 et réaliser par la suite des flux de travail de reprise sur incident.
 
 .Étapes

@@ -13,6 +13,7 @@ summary: 'Les scripts d"expiration du délai d"attente du système d"exploitatio
 [role="lead"]
 Les scripts d'expiration du délai d'attente du système d'exploitation invité (OS) définissent les paramètres d'expiration du délai d'E/S SCSI pour les versions 4, 5, 6 et 7 de Red Hat Enterprise Linux et les versions 9, 10 et 11 de SUSE Linux Enterprise Server. Vous pouvez spécifier un délai de 60 secondes ou un délai de 190 secondes. Vous devez exécuter le script à chaque mise à niveau vers une nouvelle version de Linux.
 
+.Avant de commencer
 Vous devez avoir monté l'image ISO contenant le script Linux.
 
 .Étapes

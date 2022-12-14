@@ -23,6 +23,7 @@ xref:task-clean-the-vsphere-cached-downloaded-plug-in-packages.adoc[Nettoyez les
 
 
 
+.Description de la tâche
 Après la mise à niveau, l'état de VASA Provider depuis le déploiement existant est conservé. Vous devez activer ou désactiver manuellement VASA Provider en fonction de vos besoins après la mise à niveau. Cependant, il est recommandé d'activer VASA Provider, même si VMware Virtual volumes (vvols) n'est pas utilisé, car il permet de gérer les profils de capacité de stockage pour le provisionnement classique des datastores, et les alarmes de stockage.
 
 [NOTE]

@@ -13,6 +13,7 @@ summary: 'Vous pouvez gérer vos configurations applicatives, système et résea
 [role="lead"]
 Vous pouvez gérer vos configurations applicatives, système et réseau à l'aide de la console de maintenance de l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA). Vous pouvez modifier votre mot de passe administrateur et votre mot de passe de maintenance. Vous pouvez également générer des offres de support, définir différents niveaux de journal, afficher et gérer les configurations TLS et démarrer les diagnostics à distance.
 
+.Avant de commencer
 Vous devez avoir installé les outils VMware après le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA.
 
 .Description de la tâche

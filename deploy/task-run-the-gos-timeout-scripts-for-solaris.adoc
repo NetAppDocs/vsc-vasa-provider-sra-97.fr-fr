@@ -13,6 +13,7 @@ summary: 'Les scripts d"expiration du délai d"attente du système d"exploitatio
 [role="lead"]
 Les scripts d'expiration du délai d'attente du système d'exploitation invité (OS) définissent les paramètres d'expiration du délai d'E/S SCSI pour Solaris 10. Vous pouvez spécifier un délai de 60 secondes ou un délai de 190 secondes.
 
+.Avant de commencer
 Vous devez avoir monté l'image ISO contenant le script Solaris.
 
 .Étapes

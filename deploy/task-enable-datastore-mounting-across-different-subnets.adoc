@@ -13,6 +13,7 @@ summary: 'Si vous utilisez iSCSI ou NFS et que le sous-réseau est différent en
 [role="lead"]
 Si vous utilisez iSCSI ou NFS et que le sous-réseau est différent entre vos hôtes ESXi et votre système de stockage, vous devez modifier les fichiers de préférences de Virtual Storage Console pour VMware vSphere. Si vous ne modifiez pas le fichier de préférences, l'approvisionnement du datastore échoue car (VSC) ne peut pas monter le datastore.
 
+.Description de la tâche
 Lorsque le provisionnement du datastore échoue, VSC consigne les messages d'erreur suivants :
 
 `Unable to continue. No ip addresses found when cross-referencing kernel ip addresses and addresses on the controller.`

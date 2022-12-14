@@ -14,6 +14,7 @@ summary: 'Vous pouvez augmenter la capacité de stockage disponible en ajoutant 
 [role="lead"]
 Vous pouvez augmenter le stockage disponible en utilisant l'assistant *Add Storage* pour ajouter des volumes FlexVol à un datastore VMware Virtual volumes (vvols) existant.
 
+.Description de la tâche
 Lorsque vous ajoutez un volume FlexVol, vous pouvez également modifier le profil de capacité de stockage associé à ce volume. Vous pouvez utiliser la fonction de génération automatique de VASA Provider pour créer un nouveau profil pour le volume, ou affecter un des profils existants au volume.
 
 [NOTE]

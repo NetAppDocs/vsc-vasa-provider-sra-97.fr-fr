@@ -14,6 +14,7 @@ summary: 'Vous pouvez ajouter manuellement un système de stockage à Virtual St
 [role="lead"]
 Vous pouvez ajouter manuellement un système de stockage à Virtual Storage Console (VSC).
 
+.Description de la tâche
 Chaque fois que vous démarrez (VSC) ou que vous sélectionnez l'option *REDÉCOUVREZ tout*, VSC détecte automatiquement les systèmes de stockage disponibles.
 
 .Étapes

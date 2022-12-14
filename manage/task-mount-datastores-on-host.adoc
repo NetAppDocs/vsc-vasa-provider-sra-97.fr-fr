@@ -14,6 +14,7 @@ summary: 'Le montage d"un datastore permet d"accéder au stockage à des hôtes 
 [role="lead"]
 Le montage d'un datastore permet d'accéder au stockage à des hôtes supplémentaires. Après avoir ajouté les hôtes à votre environnement VMware, vous pouvez monter le datastore sur les hôtes supplémentaires.
 
+.Avant de commencer
 Vous devez vous assurer que les détails de sous-réseau de tous les réseaux auxquels le ESXi hébergé est connecté sont saisis dans le `Kaminoprefs.xml`.
 
 Reportez-vous à la section activation du montage de datastores sur différents sous-réseaux du _VSC 9.6 Deployment and Setup Guide_.

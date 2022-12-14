@@ -14,6 +14,7 @@ summary: 'Vous pouvez collecter les fichiers journaux de Virtual Storage Console
 [role="lead"]
 Vous pouvez collecter les fichiers journaux de Virtual Storage Console pour VMware vSphere à partir de l'option disponible dans l'interface utilisateur graphique de VSC. Le support technique peut vous demander de collecter les fichiers journaux afin de résoudre un problème.
 
+.Description de la tâche
 Si vous avez besoin de fichiers journaux VASA Provider, vous pouvez générer un bundle de support à partir de l'écran *Vendor Provider Control Panel*. Cette page fait partie des menus de maintenance de VASA Provider, accessibles depuis la console de l'appliance virtuelle.
 
 https://vm_ip:9083[]

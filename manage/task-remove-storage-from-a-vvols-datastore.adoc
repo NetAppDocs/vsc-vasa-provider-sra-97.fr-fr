@@ -14,6 +14,7 @@ summary: 'Si un datastore VMware Virtual volumes (vvols) comporte plusieurs volu
 [role="lead"]
 Si un datastore VMware Virtual volumes (vvols) comporte plusieurs volumes FlexVol, vous pouvez supprimer un ou plusieurs volumes FlexVol du datastore vVvols sans supprimer le datastore.
 
+.Description de la tâche
 Il existe un datastore vvols jusqu'à ce qu'il y ait au moins un volume FlexVol sur le datastore.
 
 .Étapes

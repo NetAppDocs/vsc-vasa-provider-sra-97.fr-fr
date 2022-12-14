@@ -23,6 +23,7 @@ https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_conf
 
 
 
+.Description de la tâche
 La flexibilité d'activer les fonctionnalités VASA Provider et SRA vous permet d'exécuter uniquement les workflows dont vous avez besoin pour votre entreprise.
 
 .Étapes

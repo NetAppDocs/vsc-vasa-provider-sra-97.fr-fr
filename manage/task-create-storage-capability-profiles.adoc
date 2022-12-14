@@ -13,8 +13,10 @@ summary: 'Vous pouvez utiliser VSC pour créer manuellement des profils de capac
 [role="lead"]
 Vous pouvez utiliser VSC pour créer manuellement des profils de capacité de stockage, générer automatiquement un profil en fonction des fonctionnalités d'un datastore ou modifier un profil en fonction de vos besoins.
 
+.Avant de commencer
 Vous devez avoir enregistré votre instance VASA Provider sur Virtual Storage Console pour VMware vSphere.
 
+.Description de la tâche
 Après avoir configuré un profil, vous pouvez le modifier si nécessaire.
 
 .Étapes

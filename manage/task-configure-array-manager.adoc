@@ -20,6 +20,7 @@ Vous pouvez configurer Storage Replication adapter (SRA) à l'aide de l'assistan
 * Vous devez avoir activé les LIF de gestion du SVM pour permettre la colocation.
 
 
+.Description de la tâche
 SRA prend en charge la gestion au niveau du cluster et de la SVM. Si vous ajoutez du stockage au niveau du cluster, vous pouvez détecter et exécuter des opérations sur tous les SVM du cluster. Si vous ajoutez du stockage au niveau d'un SVM, vous ne pouvez gérer que ce SVM spécifique.
 
 [NOTE]
@@ -72,4 +73,5 @@ Par exemple, si vous souhaitez exclure le volume _src_vol1_ qui se trouve dans u
 . Cliquez sur *Terminer*.
 
 
+.Une fois que vous avez terminé
 Vous pouvez suivre les mêmes étapes pour le site de reprise à l'aide des adresses IP et des identifiants de gestion des SVM appropriés. Sur l'écran *Activer les paires de matrices* de l'assistant *Ajouter un gestionnaire de matrices*, vous devez vérifier que la paire de matrices correcte est sélectionnée et qu'elle indique prêt à être activée.

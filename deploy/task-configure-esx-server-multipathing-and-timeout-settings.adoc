@@ -14,6 +14,7 @@ summary: 'Virtual Storage Console pour VMware vSphere vérifie et définit les p
 [role="lead"]
 Virtual Storage Console pour VMware vSphere vérifie et définit les paramètres de chemins d'accès multiples de l'hôte ESXi ainsi que les paramètres de délai d'expiration de la carte HBA qui fonctionnent le mieux avec les systèmes de stockage.
 
+.Description de la tâche
 Ce processus peut prendre un certain temps, selon votre configuration et la charge du système. La progression de la tâche s'affiche dans le panneau *tâches récentes*. Lorsque les tâches sont terminées, l'icône d'alerte d'état de l'hôte est remplacée par l'icône Normal ou l'icône redémarrage en attente.
 
 .Étapes

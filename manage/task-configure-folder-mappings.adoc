@@ -14,6 +14,7 @@ summary: Vous devez mapper vos dossiers sur le site protégé et sur le site de 
 [role="lead"]
 Vous devez mapper vos dossiers sur le site protégé et sur le site de restauration pour permettre la communication entre eux.
 
+.Avant de commencer
 Vous devez avoir connecté les sites protégés et de restauration.
 
 .Étapes
@@ -34,4 +35,5 @@ L'assistant de création de mappage de dossier s'affiche.
 
 
 
+.Résultats
 La page *mappages de dossiers* affiche les ressources du site protégé et les ressources du site de reprise. Vous pouvez suivre les mêmes étapes pour les autres réseaux de votre environnement.

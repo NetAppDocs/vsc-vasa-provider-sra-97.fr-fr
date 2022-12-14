@@ -13,6 +13,7 @@ summary: 'Vous pouvez configurer VASA Provider de manière à utiliser SSH pour 
 [role="lead"]
 Vous pouvez configurer VASA Provider de manière à utiliser SSH pour un accès sécurisé en configurant l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA).
 
+.Description de la tâche
 Lorsque vous configurez SSH, vous devez vous connecter en tant qu'utilisateur de maintenance. En effet, l'accès racine à VASA Provider a été désactivé. Si vous utilisez d'autres identifiants de connexion, vous ne pouvez pas utiliser SSH pour accéder à VASA Provider.
 
 .Étapes

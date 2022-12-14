@@ -14,8 +14,10 @@ summary: 'Vous devez mapper vos ressources sur le site protégé et le site de r
 [role="lead"]
 Vous devez mapper vos ressources sur le site protégé et le site de reprise afin que les ordinateurs virtuels puissent basculer vers un groupe d'hôtes ou un autre.
 
+.Avant de commencer
 Vous devez avoir connecté les sites protégés et de restauration.
 
+.Description de la tâche
 ++ ++
 
 [NOTE]
@@ -41,4 +43,5 @@ L'assistant de création de mappage de ressources s'affiche.
 
 
 
+.Résultats
 La page mappages des ressources affiche les ressources protégées du site et les ressources du site de reprise. Vous pouvez suivre les mêmes étapes pour les autres réseaux de votre environnement.

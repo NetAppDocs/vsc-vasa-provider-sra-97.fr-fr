@@ -31,6 +31,7 @@ Ce fichier de préférences s'applique également à la création du datastore V
 * Pour créer un datastore NFSv4.1, vous devez avoir activé NFSv4.1 au niveau du SVM.
 
 
+.Description de la tâche
 L'option *Provision datastore* vous permet de spécifier un profil de capacité de stockage pour le datastore. Les profils de capacité de stockage facilitent la spécification d'objectifs de niveau de service (SLO) cohérents et simplifient le processus de provisionnement. Vous ne pouvez spécifier un profil de capacité de stockage que si vous avez activé VASA Provider. L'appliance virtuelle pour VSC, VASA Provider et SRA prend en charge les protocoles suivants :
 
 * NFS v3 et NFS v4.1

@@ -32,6 +32,7 @@ Si un datastore n'est plus compatible avec son profil, la colonne *Statut de con
 
 
 
+.Une fois que vous avez terminé
 Lorsque vous découvrez un datastore qui n'est pas compatible avec son profil, vous pouvez modifier les paramètres du volume qui soutient le datastore pour le rendre compatible ou vous pouvez attribuer un nouveau profil au datastore.
 
 Vous pouvez modifier les paramètres à partir de la page *profil de capacité de stockage*.

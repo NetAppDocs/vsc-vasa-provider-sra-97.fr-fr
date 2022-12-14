@@ -38,4 +38,5 @@ Le champ *ROLE* est renseigné automatiquement en fonction de la capacité du pr
 . Sélectionnez les privilèges (Discovery, Create Storage, Modify Storage, Destroy Storage) requis pour l'utilisateur, puis cliquez sur *Add*.
 
 
+.Résultats
 Le nouveau rôle et l'utilisateur sont ajoutés et vous pouvez voir les privilèges détaillés sous le rôle que vous avez configuré.

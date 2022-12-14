@@ -14,6 +14,7 @@ summary: 'La fonction de mise à jour proposée par Virtual Storage Console pour
 [role="lead"]
 La fonction de mise à jour proposée par Virtual Storage Console pour VMware vSphere permet d'actualiser les informations relatives aux systèmes de stockage et de forcer Virtual Storage Console (VSC) à détecter les systèmes de stockage.
 
+.Description de la tâche
 L'option « reneuf » est utile si vous avez modifié les identifiants par défaut des systèmes de stockage après avoir reçu une erreur d'authentification. Vous devez toujours effectuer une mise à jour si vous avez modifié les informations d'identification du système de stockage après que le système de stockage ait signalé un « État d'échec d'authentification ». Lors de l'opération de mise à jour, VSC tente de se connecter au système de stockage à l'aide des nouvelles informations d'identification.
 
 Selon la configuration de votre système, cette tâche peut prendre un certain temps.

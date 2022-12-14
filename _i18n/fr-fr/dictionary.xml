@@ -1856,4 +1856,6 @@
   <block id="dec3e9da01f86a71bed912a019fad778" category="sidebar">L'état de VASA Provider s'affiche sous la forme d'un état « hors ligne » dans l'interface graphique de vCenter Server</block>
   <block id="07a4e02530218bb020bf2b5915f43cde" category="sidebar">configurer les scripts des systèmes d'exploitation invités</block>
   <block id="d036f2c382984088af9c7b41532db232" category="sidebar">Conditions d'enregistrement de VSC dans un environnement de plusieurs serveurs vCenter</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">Une fois que vous avez terminé</block>
+  <block id="fd69c5cf902969e6fb71d043085ddee6" category="paragraph-title">Résultats</block>
 </blocks>

@@ -19,6 +19,7 @@ Vous devez coupler les sites protégés et de reprise créés à l'aide de votre
 * Vous devez avoir installé SRA sur les sites protégés et de reprise.
 
 
+.Description de la tâche
 Les configurations « fan-out » SnapMirror sont celles où un volume source est répliqué vers deux destinations différentes. Ces opérations créent un problème lors de la restauration lorsque SRM a besoin de restaurer la machine virtuelle à partir de la destination.
 
 [NOTE]
@@ -39,4 +40,5 @@ Storage Replication adapter (SRA) ne prend pas en charge les configurations Snap
 . Si vous y êtes invité, cliquez sur *Oui* pour accepter les certificats de sécurité.
 
 
+.Résultats
 Les sites protégés et de restauration s'affichent dans la boîte de dialogue objets.

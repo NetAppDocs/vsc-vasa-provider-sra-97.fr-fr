@@ -14,6 +14,7 @@ summary: 'Il est recommandé de configurer des stratégies de stockage de machin
 [role="lead"]
 Il est recommandé de configurer des stratégies de stockage de machines virtuelles pour gérer les machines virtuelles qui sont configurées sur le datastore vvols et pour activer des services tels que la réplication pour les disques virtuels. Pour les datastores classiques, il est facultatif d'utiliser ces règles de stockage de machines virtuelles.
 
+.Description de la tâche
 Le client web vSphere fournit des règles de stockage par défaut. Mais vous pouvez créer des stratégies et les affecter aux machines virtuelles.
 
 .Étapes

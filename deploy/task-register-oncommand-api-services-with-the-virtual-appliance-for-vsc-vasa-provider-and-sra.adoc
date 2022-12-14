@@ -13,6 +13,7 @@ summary: 'Si vous utilisez ONTAP 9.6 ou une version antérieure, le tableau de b
 [role="lead"]
 Si vous utilisez ONTAP 9.6 ou une version antérieure, le tableau de bord vvol ne peut afficher les détails des datastores VMware Virtual volumes (vvols) et des machines virtuelles que si vous vous êtes inscrit pour VASA Provider afin d'obtenir les données des rapports vvols VM et datastore.
 
+.Avant de commencer
 Vous devez avoir téléchargé 2.1 ou une version ultérieure à partir de .
 
 [NOTE]

@@ -14,8 +14,10 @@ summary: 'Le tableau de bord de l"appliance virtuelle pour Virtual Storage Conso
 [role="lead"]
 Le tableau de bord de l'appliance virtuelle pour Virtual Storage Console (VSC), VASA Provider et Storage Replication adapter (SRA) vous permet de modifier les paramètres de votre hôte ESXi.
 
+.Avant de commencer
 Vous devez avoir configuré un système hôte ESXi pour votre instance vCenter Server.
 
+.Description de la tâche
 En cas de problème avec les paramètres de votre hôte VMware ESXi, le problème s'affiche dans le portlet systèmes hôtes VMware ESXi du tableau de bord. Vous pouvez cliquer sur le problème pour afficher le nom d'hôte ou l'adresse IP de l'hôte ESXi qui présente le problème.
 
 .Étapes

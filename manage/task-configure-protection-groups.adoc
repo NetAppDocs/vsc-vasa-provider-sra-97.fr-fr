@@ -14,6 +14,7 @@ summary: Vous devez créer des groupes de protection pour protéger un groupe de
 [role="lead"]
 Vous devez créer des groupes de protection pour protéger un groupe de machines virtuelles sur le site protégé.
 
+.Avant de commencer
 Vous devez vous assurer que les sites source et cible sont configurés pour les sites suivants :
 
 * Même version de SRM installée

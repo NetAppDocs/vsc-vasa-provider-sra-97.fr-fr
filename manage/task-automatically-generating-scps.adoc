@@ -18,6 +18,7 @@ Vasa Provider pour ONTAP vous permet de générer automatiquement des profils de
 * VSC doit avoir découvert votre système de stockage.
 
 
+.Description de la tâche
 Une fois que vous avez créé un profil de capacité de stockage, vous pouvez le modifier pour inclure d'autres fonctionnalités. L'assistant *Créer un profil de capacité de stockage* fournit des informations sur les fonctionnalités que vous pouvez inclure dans un profil.
 
 .Étapes
