@@ -2362,7 +2362,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 05:48:18 +0000">11/17/2022</time>
+    <time datetime="2022-12-15 15:04:26 +0000">12/15/2022</time>
     
   
 
@@ -2376,9 +2376,11 @@
 <p>Il est possible de migrer des ordinateurs virtuels de datastores traditionnels vers des datastores de volumes virtuels (vvols) afin de tirer parti de la gestion de machines virtuelles basée sur des règles et d&#8217;autres fonctionnalités vvols. Les datastores vvols vous permettent de répondre à de plus en plus de besoins de charge de travail.</p>
 </div>
 <div class="paragraph">
+<div class="title">Avant de commencer</div>
 <p>Vous devez vous assurer que VASA Provider n&#8217;est pas exécuté sur les machines virtuelles que vous envisagez de migrer. Si vous migrez une machine virtuelle qui exécute VASA Provider dans un datastore vvols, vous ne pouvez pas effectuer d&#8217;opérations de gestion, y compris la mise sous tension des machines virtuelles qui se trouvent sur des datastores vvols.</p>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Lorsque vous migrez d&#8217;un datastore classique vers un datastore VVol, vCenter Server utilise les API vStorage pour l&#8217;intégration de baies (VAAI) pour décharger les données lors du déplacement des datastores VMFS, mais pas depuis un fichier VMDK NFS. VAAI réduit généralement la charge sur l&#8217;hôte.</p>
 </div>
 <div class="olist arabic">

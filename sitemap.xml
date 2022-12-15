@@ -561,42 +561,42 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97//search.html</loc>
       
-      <lastmod>2022-12-15T12:23:01+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:39+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-access-virtual-appliance-maiintenance-console-options.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-add-storage-systems.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-add-storage-systems.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-add-storage-to-a-vvol-datastore.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-automatically-generate-scps.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
@@ -610,7 +610,7 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-check-for-datastore-compliance-with-the-mapped-storage-capability-profile.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
@@ -624,7 +624,7 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-collect-the-log-files.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
@@ -638,28 +638,28 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-array-manager.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-esx-server-multipathing-and-timeout-settings.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-folder-mappings.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-network-mappings.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
@@ -673,84 +673,84 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-protection-groups.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-resource-mappings.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-sra-on-srm-appliance.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-storage-replication-adapter-for-nas-environment.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-storage-replication-adapter-for-san-environment.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-user-role-and-privileges.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-vasa-provider-to-use-ssh-for-remote-diag-access.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-vasa-provider-to-work-with-ssh.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-vm-storage-policies.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-create-storage-capability-profiles.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-deploy-ontap-tools.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-discover-storage-systems-and-hosts.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
@@ -764,28 +764,28 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-edit-esxi-host-settings.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-enable-datastore-mounting-across-different-subnets.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-enable-storage-replication-adapter.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-enable-vasa-provider-for-configuring-virtual-datastores.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
@@ -806,35 +806,35 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-map-storage-to-storage-capability-profiles.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-migrate-existing-virtual-machines-to-7-1-virtual-appliance.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-migrate-standard-virtual-machines-to-vvol-datastores.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-monitor-datastores-using-the-traditional-dashboard.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-monitor-vvols-datastores-and-virtual-machines-using-vvols-dashboard.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
@@ -848,112 +848,112 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-mount-datastores-on-host.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-pair-protected-and-recovery-sites.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-protect-non-protected-virtual-machines.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-provision-datastores.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-provision-vvol-datastores.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-refresh-the-storage-system-display.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-regenerate-an-ssl-certificate-for-vsc.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-register-oncommand-api-services-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-remove-storage-from-a-vvols-datastore.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-resize-datastores.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-run-the-gos-timeout-scripts-for-rhel4-or-sles9.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-run-the-gos-timeout-scripts-for-solaris.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-run-the-gos-timeout-scripts-for-windows.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/manage/task-set-default-credentials-for-storage-systems.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-set-default-credentials-for-storage-systems.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-update-sra-credentials.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
@@ -967,7 +967,7 @@
     <url>
       <loc>https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/deploy/task-upgrade-to-the-9-7-1-virtual-appliance-for-vsc-vasa-provider-and-sra.html</loc>
       
-      <lastmod>2022-11-17T05:48:18+00:00</lastmod>
+      <lastmod>2022-12-15T15:04:26+00:00</lastmod>
       
     </url>
   
