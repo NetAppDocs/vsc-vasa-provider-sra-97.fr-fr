@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-  <block id="bc61d0b08d1fd7734eecaba3c782ee73" category="summary">Documentation relative à Virtual Storage Console pour VMware vSphere, documentation VSC, documentation VSC</block>
   <block id="2a72439647125372a883f6f62a3b3b97" category="doc">VSC, VASA Provider et SRA Documentation</block>
   <block id="a8dc833bcc6c968d006708c85d7a6930" category="summary">Vous pouvez utiliser l'interface VSC pour gérer des datastores traditionnels et VMware Virtual volumes (vvols), puis effectuer des opérations de montage, de redimensionnement, de modification et de suppression de datastores.</block>
   <block id="b381193d993fea90737e6750c09d59ad" category="doc">Gérer des datastores traditionnels et vvols</block>
@@ -1858,4 +1857,7 @@
   <block id="d036f2c382984088af9c7b41532db232" category="sidebar">Conditions d'enregistrement de VSC dans un environnement de plusieurs serveurs vCenter</block>
   <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">Une fois que vous avez terminé</block>
   <block id="fd69c5cf902969e6fb71d043085ddee6" category="paragraph-title">Résultats</block>
+  <block id="59b25b58a320cb1bd7e03ff77563a7d1" category="sidebar">Virtual Storage Console pour VSC, VASA Provider et SRA vous permettent de configurer, gérer et protéger vos datastores virtuels dans votre environnement vCenter Server.</block>
+  <block id="457ec720234469b4fc2740e0d3e8b0bc" category="sidebar">Documentation relative à Virtual Storage Console pour VMware vSphere, documentation VSC, documentation VSC.</block>
+  <block id="43fe6507a14726ae86f2c7d411f9b929" category="sidebar">Documentation relative aux outils ONTAP pour VMware vSphere</block>
 </blocks>
