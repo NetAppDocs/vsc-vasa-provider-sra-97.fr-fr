@@ -1,0 +1,3514 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head class="at-element-marker">
+  <title>Démarrage rapide</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Démarrage rapide" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/qsg.html" />
+	<meta property="og:description" content="Fournit une présentation des exigences de déploiement et des instructions détaillées pour le déploiement de l"appliance virtuelle pour Virtual Storage Consol..." />
+  <meta property="og:image" content="https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Fournit une présentation des exigences de déploiement et des instructions détaillées pour le déploiement de l"appliance virtuelle pour Virtual Storage Consol...">
+  <meta name="keywords" content=" qsg, ontap tools for vmware vsphere, quick start guide, installing"><!-- Icons -->
+  <link rel="icon" href="/fr-fr/vsc-vasa-provider-sra-97/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/fr-fr/vsc-vasa-provider-sra-97/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/fr-fr/vsc-vasa-provider-sra-97/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/fr-fr/vsc-vasa-provider-sra-97/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/vsc-vasa-provider-sra-97/qsg.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/vsc-vasa-provider-sra-97/qsg.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/fr-fr/vsc-vasa-provider-sra-97/js/na-search.js'></script><script src='/fr-fr/vsc-vasa-provider-sra-97/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/fr-fr/vsc-vasa-provider-sra-97/js/custom-dropdown.js'></script>
+  <script src='/fr-fr/vsc-vasa-provider-sra-97/js/FileSaver.min.js'></script>
+  <script src='/fr-fr/vsc-vasa-provider-sra-97/js/jszip-utils.min.js'></script>
+  <script src='/fr-fr/vsc-vasa-provider-sra-97/js/jszip.min.js'></script><script src='/fr-fr/vsc-vasa-provider-sra-97/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/fr-fr/vsc-vasa-provider-sra-97/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/fr">
+                <image id="ie-header-logo" src="/fr-fr/vsc-vasa-provider-sra-97/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/fr/support-and-training/documentation/">Documents</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/fr-fr/vsc-vasa-provider-sra-97/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">Français</span>
+                    <img src="/fr-fr/vsc-vasa-provider-sra-97/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/fr-fr/vsc-vasa-provider-sra-97/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/qsg.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/vsc-vasa-provider-sra-97/qsg.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/vsc-vasa-provider-sra-97/qsg.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/vsc-vasa-provider-sra-97/qsg.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/vsc-vasa-provider-sra-97/qsg.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/vsc-vasa-provider-sra-97/qsg.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/vsc-vasa-provider-sra-97/qsg.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/vsc-vasa-provider-sra-97/qsg.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/vsc-vasa-provider-sra-97/qsg.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/fr-fr/vsc-vasa-provider-sra-97/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">Tout NetApp</span>
+                    <img src="/fr-fr/vsc-vasa-provider-sra-97/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/fr-fr/vsc-vasa-provider-sra-97/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/fr/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">Support</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">Base de connaissances</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/fr/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">Formation</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/fr-fr/vsc-vasa-provider-sra-97/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">Tous les documents</a>
+    </li>
+    
+    
+
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/fr-fr/vsc-vasa-provider-sra-97/">-->
+      VSC, VASA Provider, and SRA 9.7
+    <!--</a>-->
+  </div>
+</div>
+
+            
+
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/fr-fr/vsc-vasa-provider-sra-97/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/fr-fr/vsc-vasa-provider-sra-97/search.html" 
+        data-type="widget"
+        data-placeholder="Rechercher dans la documentation"
+        data-no-results-found="Aucun résultat trouvé pour : {query}"
+        data-did-you-mean="Rechercher {suggestion}."
+        data-no-results-found-did-you-mean="Aucun résultat n'a été trouvé pour {query}. Voulez-vous dire {suggestion} ?"
+        data-results-found="{hitCount} résultats"
+        data-error-message="Une erreur s'est produite. Merci de réessayer."
+        data-error-reset="Réinitialiser la recherche"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Documents VSC, VASA Provider et SRA"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/fr-fr/vsc-vasa-provider-sra-97/index.html">
+        Documents VSC, VASA Provider et SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Notes de mise à jour"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/release-notes.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/fr-fr/vsc-vasa-provider-sra-97/release-notes.html">
+        Notes de mise à jour
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Démarrage rapide"
+      data-li-level="1#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/qsg.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/fr-fr/vsc-vasa-provider-sra-97/qsg.html">
+        Démarrage rapide
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déploiement et mise à niveau"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Déploiement et mise à niveau</div>-->
+         Déploiement et mise à niveau
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Présentation de l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-virtual-storage-console-overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-virtual-storage-console-overview.html">
+        Présentation de l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Workflow de déploiement pour les nouveaux utilisateurs de l'appliance virtuelle VSC, VASA Provider et SRA"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-installation-workflow-for-new-users.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-installation-workflow-for-new-users.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Workflow de déploiement pour les nouveaux utilisateurs de l'appliance virtuelle VSC, VASA Provider et SRA</div>-->
+         Workflow de déploiement pour les nouveaux utilisateurs de l'appliance virtuelle VSC, VASA Provider et SRA
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Workflow de déploiement pour les utilisateurs existants de VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-installation-workflow-for-existing-users-of-vsc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-installation-workflow-for-existing-users-of-vsc.html">
+        Workflow de déploiement pour les utilisateurs existants de VSC, VASA Provider et SRA
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Conditions requises pour le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-requirements-for-deploying-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-requirements-for-deploying-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Conditions requises pour le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA</div>-->
+         Conditions requises pour le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration requise pour les ports VSC"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-port-requirements-for-vsc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-port-requirements-for-vsc.html">
+        Configuration requise pour les ports VSC
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Exigences en termes d'espace et de taille pour l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-space-and-size-requirements-for-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-space-and-size-requirements-for-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html">
+        Exigences en termes d'espace et de taille pour l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Système de stockage pris en charge, licences et applications pour l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-supported-storage-system-and-applications.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-supported-storage-system-and-applications.html">
+        Système de stockage pris en charge, licences et applications pour l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Considérations et conditions requises pour le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-considerations-for-deploying-virtual-appliance-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-considerations-for-deploying-virtual-appliance-for-vsc-vasa-provider-and-sra.html">
+        Considérations et conditions requises pour le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déploiement ou mise à niveau de VSC, VASA Provider et SRA"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-deploy-or-upgrade-ontap-tools.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-deploy-or-upgrade-ontap-tools.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Déploiement ou mise à niveau de VSC, VASA Provider et SRA</div>-->
+         Déploiement ou mise à niveau de VSC, VASA Provider et SRA
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Comment télécharger l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-how-to-download-the-virtual-appliance-for-vsc-vp-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-how-to-download-the-virtual-appliance-for-vsc-vp-and-sra.html">
+        Comment télécharger l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déployez l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-deploy-ontap-tools.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-deploy-ontap-tools.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Déployez l'appliance virtuelle pour VSC, VASA Provider et SRA</div>-->
+         Déployez l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Personnalisation du déploiement"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-deploment-customization-requirements.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-deploment-customization-requirements.html">
+        Personnalisation du déploiement
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Activez VASA Provider pour la configuration des datastores virtuels"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-enable-vasa-provider-for-configuring-virtual-datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-enable-vasa-provider-for-configuring-virtual-datastores.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Activez VASA Provider pour la configuration des datastores virtuels</div>-->
+         Activez VASA Provider pour la configuration des datastores virtuels
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Enregistrez-vous avec l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-register-oncommand-api-services-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-register-oncommand-api-services-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html">
+        Enregistrez-vous avec l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installez le plug-in NFS VAAI"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-install-the-nfs-vaai-plug-in.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-install-the-nfs-vaai-plug-in.html">
+        Installez le plug-in NFS VAAI
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Activez Storage Replication adapter"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-enable-storage-replication-adapter.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-enable-storage-replication-adapter.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Activez Storage Replication adapter</div>-->
+         Activez Storage Replication adapter
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez SRA sur l'appliance SRM"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-configure-sra-on-srm-appliance.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-sra-on-srm-appliance.html">
+        Configurez SRA sur l'appliance SRM
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Mettez à jour les informations d'identification SRA (Storage Replication adapter)"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-update-sra-credentials.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-update-sra-credentials.html">
+        Mettez à jour les informations d'identification SRA (Storage Replication adapter)
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Migration de Windows SRM vers l'appliance SRM"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-migration-of-disaster-recovery-setup-from-windows-to-appliance.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-migration-of-disaster-recovery-setup-from-windows-to-appliance.html">
+        Migration de Windows SRM vers l'appliance SRM
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Effectuez la mise à niveau vers l'appliance virtuelle 9.7.1 pour VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-upgrade-to-the-9-7-1-virtual-appliance-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-upgrade-to-the-9-7-1-virtual-appliance-for-vsc-vasa-provider-and-sra.html">
+        Effectuez la mise à niveau vers l'appliance virtuelle 9.7.1 pour VSC, VASA Provider et SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Mettre à niveau Storage Replication adapter"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-upgrade-storage-replication-adapter.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-upgrade-storage-replication-adapter.html">
+        Mettre à niveau Storage Replication adapter
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez votre environnement Virtual Storage Console pour VMware vSphere"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-configure-vsc-for-vmware-vsphere-environment.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-configure-vsc-for-vmware-vsphere-environment.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configurez votre environnement Virtual Storage Console pour VMware vSphere</div>-->
+         Configurez votre environnement Virtual Storage Console pour VMware vSphere
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer les paramètres de chemins d'accès multiples et de délai d'attente du serveur ESXi"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-configure-esx-server-multipathing-and-timeout-settings.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-esx-server-multipathing-and-timeout-settings.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configurer les paramètres de chemins d'accès multiples et de délai d'attente du serveur ESXi</div>-->
+         Configurer les paramètres de chemins d'accès multiples et de délai d'attente du serveur ESXi
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Valeurs de l'hôte ESXi définies à l'aide de Virtual Storage Console pour VMware vSphere"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-esx-host-values-set-by-vsc-for-vmware-vsphere.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-esx-host-values-set-by-vsc-for-vmware-vsphere.html">
+        Valeurs de l'hôte ESXi définies à l'aide de Virtual Storage Console pour VMware vSphere
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="configurer les scripts des systèmes d'exploitation invités"
+      data-li-level="4" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-configure-guest-operating-system-scripts.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-configure-guest-operating-system-scripts.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> configurer les scripts des systèmes d'exploitation invités</div>-->
+         configurer les scripts des systèmes d'exploitation invités
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Définissez les valeurs de délai d'expiration des systèmes d'exploitation invités Windows"
+      data-li-level="5#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-run-the-gos-timeout-scripts-for-windows.html" 
+    ><a class="ie-sidebar-menuitem-5 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-run-the-gos-timeout-scripts-for-windows.html">
+        Définissez les valeurs de délai d'expiration des systèmes d'exploitation invités Windows
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Définissez les valeurs de délai d'expiration pour les systèmes d'exploitation invités Solaris"
+      data-li-level="5#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-run-the-gos-timeout-scripts-for-solaris.html" 
+    ><a class="ie-sidebar-menuitem-5 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-run-the-gos-timeout-scripts-for-solaris.html">
+        Définissez les valeurs de délai d'expiration pour les systèmes d'exploitation invités Solaris
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Définissez les valeurs de délai d'expiration des systèmes d'exploitation invités Linux"
+      data-li-level="5#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-run-the-gos-timeout-scripts-for-rhel4-or-sles9.html" 
+    ><a class="ie-sidebar-menuitem-5 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-run-the-gos-timeout-scripts-for-rhel4-or-sles9.html">
+        Définissez les valeurs de délai d'expiration des systèmes d'exploitation invités Linux
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Régénérer un certificat SSL pour"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-regenerate-an-ssl-certificate-for-vsc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-regenerate-an-ssl-certificate-for-vsc.html">
+        Régénérer un certificat SSL pour
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Conditions d'enregistrement de VSC dans un environnement de plusieurs serveurs vCenter"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-requirements-for-registering-vsc-in-multiple-vcenter-servers-environment.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-requirements-for-registering-vsc-in-multiple-vcenter-servers-environment.html">
+        Conditions d'enregistrement de VSC dans un environnement de plusieurs serveurs vCenter
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez les fichiers de préférences VSC"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-configure-the-vsc-preferences-files.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-configure-the-vsc-preferences-files.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configurez les fichiers de préférences VSC</div>-->
+         Configurez les fichiers de préférences VSC
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Définissez IPv4 ou IPv6"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-set-ipv4-or-ipv6.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-set-ipv4-or-ipv6.html">
+        Définissez IPv4 ou IPv6
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Activez le montage du datastore sur différents sous-réseaux"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-enable-datastore-mounting-across-different-subnets.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-enable-datastore-mounting-across-different-subnets.html">
+        Activez le montage du datastore sur différents sous-réseaux
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Accédez aux options de la console de maintenance de l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-access-virtual-appliance-maiintenance-console-options.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-access-virtual-appliance-maiintenance-console-options.html">
+        Accédez aux options de la console de maintenance de l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Modifiez le mot de passe administrateur"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-change-the-administrative-password.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-change-the-administrative-password.html">
+        Modifiez le mot de passe administrateur
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez la haute disponibilité de l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-configure-high-availability-for-virtual-appliance-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-configure-high-availability-for-virtual-appliance-for-vsc-vasa-provider-and-sra.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configurez la haute disponibilité de l'appliance virtuelle pour VSC, VASA Provider et SRA</div>-->
+         Configurez la haute disponibilité de l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Haute disponibilité VMware vSphere"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-vmware-high-availability-for-vcenter-server.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-vmware-high-availability-for-vcenter-server.html">
+        Haute disponibilité VMware vSphere
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tolérance aux pannes VMware vSphere"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-vmware-fault-tolerance-for-vcenter-server.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-vmware-fault-tolerance-for-vcenter-server.html">
+        Tolérance aux pannes VMware vSphere
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurations MetroCluster prises en charge par l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-metrocluster-configurations-supported-by-virtual-appliance-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-metrocluster-configurations-supported-by-virtual-appliance-for-vsc-vasa-provider-and-sra.html">
+        Configurations MetroCluster prises en charge par l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration de l'environnement Virtual Storage Console pour VMware vSphere"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-configure-your-storage-system-environment.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-configure-your-storage-system-environment.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configuration de l'environnement Virtual Storage Console pour VMware vSphere</div>-->
+         Configuration de l'environnement Virtual Storage Console pour VMware vSphere
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Définissez les identifiants par défaut des systèmes de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-set-default-credentials-for-storage-systems.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-set-default-credentials-for-storage-systems.html">
+        Définissez les identifiants par défaut des systèmes de stockage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ajout de systèmes de stockage à VSC"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-add-storage-systems.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-add-storage-systems.html">
+        Ajout de systèmes de stockage à VSC
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Découverte des systèmes et des hôtes de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-discover-storage-systems-and-hosts.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-discover-storage-systems-and-hosts.html">
+        Découverte des systèmes et des hôtes de stockage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Actualiser l'affichage du système de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-refresh-the-storage-system-display.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-refresh-the-storage-system-display.html">
+        Actualiser l'affichage du système de stockage
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VCenter Server : fonctionnalités de contrôle d'accès basé sur des rôles dans VSC pour VMware vSphere"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-vcenter-server-role-based-access-control-features-in-vsc-for-vmware-vsphere.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-vcenter-server-role-based-access-control-features-in-vsc-for-vmware-vsphere.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> VCenter Server : fonctionnalités de contrôle d'accès basé sur des rôles dans VSC pour VMware vSphere</div>-->
+         VCenter Server : fonctionnalités de contrôle d'accès basé sur des rôles dans VSC pour VMware vSphere
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Composants des autorisations de vCenter Server"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-components-that-make-up-vcenter-server-permissions.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-components-that-make-up-vcenter-server-permissions.html">
+        Composants des autorisations de vCenter Server
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Points clés concernant l'attribution et la modification des autorisations pour vCenter Server"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-key-points-about-assigning-and-modifying-permissions.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-key-points-about-assigning-and-modifying-permissions.html">
+        Points clés concernant l'attribution et la modification des autorisations pour vCenter Server
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Rôles standard regroupés avec l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-standard-roles-packaged-with-virtual-appliance-for-vsc-vp-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-standard-roles-packaged-with-virtual-appliance-for-vsc-vp-and-sra.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Rôles standard regroupés avec l'appliance virtuelle pour VSC, VASA Provider et SRA</div>-->
+         Rôles standard regroupés avec l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Instructions d'utilisation des rôles standard VSC"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-guidelines-for-using-vsc-standard-roles.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-guidelines-for-using-vsc-standard-roles.html">
+        Instructions d'utilisation des rôles standard VSC
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Privilèges requis pour les tâches VSC"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-privileges-required-for-vsc-tasks.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-privileges-required-for-vsc-tasks.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Privilèges requis pour les tâches VSC</div>-->
+         Privilèges requis pour les tâches VSC
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Privilèges de niveau produit requis par VSC pour VMware vSphere"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-product-level-privilege-required-by-vsc-for-vmware-vsphere.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-product-level-privilege-required-by-vsc-for-vmware-vsphere.html">
+        Privilèges de niveau produit requis par VSC pour VMware vSphere
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Contrôle d'accès basé sur des rôles ONTAP pour l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-ontap-role-based-access-control-feature-for-virtual-appliance.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-ontap-role-based-access-control-feature-for-virtual-appliance.html">
+        Contrôle d'accès basé sur des rôles ONTAP pour l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Rôles ONTAP recommandés lors de l'utilisation de VSC pour VMware vSphere"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-recommended-ontap-roles-when-using-vsc-for-vmware-vsphere.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-recommended-ontap-roles-when-using-vsc-for-vmware-vsphere.html">
+        Rôles ONTAP recommandés lors de l'utilisation de VSC pour VMware vSphere
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Comment configurer le contrôle d'accès basé sur des rôles ONTAP pour VSC pour VMware vSphere"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-how-to-configure-data-ontap-role-based-access-control-for-vsc-for-vmware-vsphere.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-how-to-configure-data-ontap-role-based-access-control-for-vsc-for-vmware-vsphere.html">
+        Comment configurer le contrôle d'accès basé sur des rôles ONTAP pour VSC pour VMware vSphere
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez les rôles et privilèges utilisateur"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-configure-user-role-and-privileges.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-user-role-and-privileges.html">
+        Configurez les rôles et privilèges utilisateur
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration de Storage Replication adapter pour la reprise après incident"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-configure-storage-replication-adapter-for-disaster-recovery.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-configure-storage-replication-adapter-for-disaster-recovery.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configuration de Storage Replication adapter pour la reprise après incident</div>-->
+         Configuration de Storage Replication adapter pour la reprise après incident
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration de Storage Replication adapter pour un environnement SAN"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-configure-storage-replication-adapter-for-san-environment.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-storage-replication-adapter-for-san-environment.html">
+        Configuration de Storage Replication adapter pour un environnement SAN
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration de Storage Replication adapter pour un environnement NAS"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-configure-storage-replication-adapter-for-nas-environment.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-storage-replication-adapter-for-nas-environment.html">
+        Configuration de Storage Replication adapter pour un environnement NAS
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration de l'adaptateur de réplication du stockage pour l'environnement à grande échelle"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-configure-storage-replication-adapter-for-highly-scaled-environment.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-configure-storage-replication-adapter-for-highly-scaled-environment.html">
+        Configuration de l'adaptateur de réplication du stockage pour l'environnement à grande échelle
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Résolvez les problèmes via l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-troubleshoot-issues-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-troubleshoot-issues-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Résolvez les problèmes via l'appliance virtuelle pour VSC, VASA Provider et SRA</div>-->
+         Résolvez les problèmes via l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Nettoyez les packages de plug-in téléchargés dans vSphere cache"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-clean-the-vsphere-cached-downloaded-plug-in-packages.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-clean-the-vsphere-cached-downloaded-plug-in-packages.html">
+        Nettoyez les packages de plug-in téléchargés dans vSphere cache
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="La désinstallation ne supprime pas les rôles VSC standard"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-uninstall-does-not-remove-standard-vsc-roles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-uninstall-does-not-remove-standard-vsc-roles.html">
+        La désinstallation ne supprime pas les rôles VSC standard
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Fichiers journaux de VSC et VASA Provider"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/concept-virtual-storage-console-and-vasa-provider-log-files.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/concept-virtual-storage-console-and-vasa-provider-log-files.html">
+        Fichiers journaux de VSC et VASA Provider
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Les services VSC et VASA Provider redémarrent dans des environnements hautement évolutifs"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-vsc-and-vasa-provider-services-restart-in-scaled-environments.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-vsc-and-vasa-provider-services-restart-in-scaled-environments.html">
+        Les services VSC et VASA Provider redémarrent dans des environnements hautement évolutifs
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez VASA Provider pour qu'il fonctionne avec SSH"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-configure-vasa-provider-to-work-with-ssh.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-vasa-provider-to-work-with-ssh.html">
+        Configurez VASA Provider pour qu'il fonctionne avec SSH
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez l'appliance virtuelle pour VSC, VASA Provider et SRA afin d'utiliser SSH pour l'accès aux diagnostics à distance"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/task-configure-vasa-provider-to-use-ssh-for-remote-diag-access.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/task-configure-vasa-provider-to-use-ssh-for-remote-diag-access.html">
+        Configurez l'appliance virtuelle pour VSC, VASA Provider et SRA afin d'utiliser SSH pour l'accès aux diagnostics à distance
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="L'installation de SRA a échoué avec une erreur de script"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-sra-adapter-installation-fails-with-script-error.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-sra-adapter-installation-fails-with-script-error.html">
+        L'installation de SRA a échoué avec une erreur de script
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SRA n'assure pas des performances optimales dans un environnement hautement évolutif"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-sra-fails-to-perform-optimally-in-a-highly-scaled-environment.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-sra-fails-to-perform-optimally-in-a-highly-scaled-environment.html">
+        SRA n'assure pas des performances optimales dans un environnement hautement évolutif
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impossible d'installer le plug-in SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-unable-to-install-sra-plug-in-due-to-winhttp-proxy-settings.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-unable-to-install-sra-plug-in-due-to-winhttp-proxy-settings.html">
+        Impossible d'installer le plug-in SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Storage Replication adapter pour ONTAP n'apparaît pas sur l'appliance site Recovery Manager"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-srm-does-not-work-after-sra-installation.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-srm-does-not-work-after-sra-installation.html">
+        NetApp Storage Replication adapter pour ONTAP n'apparaît pas sur l'appliance site Recovery Manager
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erreur lors du nouveau déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/deploy/reference-error-during-fresh-deployment-of-virtual-appliance-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/deploy/reference-error-during-fresh-deployment-of-virtual-appliance-for-vsc-vasa-provider-and-sra.html">
+        Erreur lors du nouveau déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérez"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Gérez</div>-->
+         Gérez
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Workflow de configuration de l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-workflow-for-configuring-the-unified-appliance.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-workflow-for-configuring-the-unified-appliance.html">
+        Workflow de configuration de l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration des systèmes de stockage pour VSC, VASA Provider et SRA"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-configure-storage-systems-for-vsc-vasa-provider-and-sra.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-configure-storage-systems-for-vsc-vasa-provider-and-sra.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configuration des systèmes de stockage pour VSC, VASA Provider et SRA</div>-->
+         Configuration des systèmes de stockage pour VSC, VASA Provider et SRA
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ajout de systèmes de stockage à VSC"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-add-storage-systems.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-add-storage-systems.html">
+        Ajout de systèmes de stockage à VSC
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Définissez les identifiants par défaut des systèmes de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-set-default-credentials-for-storage-systems.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-set-default-credentials-for-storage-systems.html">
+        Définissez les identifiants par défaut des systèmes de stockage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer les seuils d'alarme"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-configure-alarm-thresholds.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-alarm-thresholds.html">
+        Configurer les seuils d'alarme
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Créer des profils de capacité de stockage"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-configure-storage-capability-profiles.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-configure-storage-capability-profiles.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Créer des profils de capacité de stockage</div>-->
+         Créer des profils de capacité de stockage
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quelles sont les capacités de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-what-storage-capabilities-are.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-what-storage-capabilities-are.html">
+        Quelles sont les capacités de stockage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Considérations relatives à la création et à la modification de profils de capacité de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-considerations-for-creating-and-editing-storage-capability-profiles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-considerations-for-creating-and-editing-storage-capability-profiles.html">
+        Considérations relatives à la création et à la modification de profils de capacité de stockage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer les profils de capacité de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-create-storage-capability-profiles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-create-storage-capability-profiles.html">
+        Configurer les profils de capacité de stockage
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration de datastores classiques et de machines virtuelles"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-configure-traditional-datastores.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-configure-traditional-datastores.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configuration de datastores classiques et de machines virtuelles</div>-->
+         Configuration de datastores classiques et de machines virtuelles
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Provisionner les datastores"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-provision-datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-provision-datastores.html">
+        Provisionner les datastores
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Mappage des datastores sur les profils de capacité de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-map-storage-to-storage-capability-profiles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-map-storage-to-storage-capability-profiles.html">
+        Mappage des datastores sur les profils de capacité de stockage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Générez automatiquement des profils de capacité de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-automatically-generate-scps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-automatically-generate-scps.html">
+        Générez automatiquement des profils de capacité de stockage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Vérifiez la conformité du datastore avec le profil de capacité de stockage mappé"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-check-for-datastore-compliance-with-the-mapped-storage-capability-profile.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-check-for-datastore-compliance-with-the-mapped-storage-capability-profile.html">
+        Vérifiez la conformité du datastore avec le profil de capacité de stockage mappé
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Surveillez les datastores et les machines virtuelles à l'aide du tableau de bord classique"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-monitor-datastores-using-the-traditional-dashboard.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-monitor-datastores-using-the-traditional-dashboard.html">
+        Surveillez les datastores et les machines virtuelles à l'aide du tableau de bord classique
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Modifiez les paramètres d'hôte ESXi pour VSC, VASA Provider et SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-edit-esxi-host-settings.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-edit-esxi-host-settings.html">
+        Modifiez les paramètres d'hôte ESXi pour VSC, VASA Provider et SRA
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez les datastores vvols"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-configure-vvols-datastores.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-configure-vvols-datastores.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configurez les datastores vvols</div>-->
+         Configurez les datastores vvols
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez la réplication pour les datastores vvols"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-configure-replication-for-vvols-datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-configure-replication-for-vvols-datastore.html">
+        Configurez la réplication pour les datastores vvols
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Provisionner des datastores vVols"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-provision-vvol-datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-provision-vvol-datastores.html">
+        Provisionner des datastores vVols
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Surveillez les datastores vvols et les machines virtuelles à l'aide du tableau de bord vVol"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-monitor-vvols-datastores-and-virtual-machines-using-vvols-dashboard.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-monitor-vvols-datastores-and-virtual-machines-using-vvols-dashboard.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Surveillez les datastores vvols et les machines virtuelles à l'aide du tableau de bord vVol</div>-->
+         Surveillez les datastores vvols et les machines virtuelles à l'aide du tableau de bord vVol
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Exigences relatives aux données du tableau de bord vvol"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-verify-vvol-dashboard-data-requirements.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-verify-vvol-dashboard-data-requirements.html">
+        Exigences relatives aux données du tableau de bord vvol
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérer la configuration de la reprise sur incident à l'aide de site Recovery Manager"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-manage-disaster-recovery-setup-using-srm.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-manage-disaster-recovery-setup-using-srm.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Gérer la configuration de la reprise sur incident à l'aide de site Recovery Manager</div>-->
+         Gérer la configuration de la reprise sur incident à l'aide de site Recovery Manager
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer les règles de stockage des VM"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-configure-vm-storage-policies.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-vm-storage-policies.html">
+        Configurer les règles de stockage des VM
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration des groupes de protection"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-configure-protection-groups.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-protection-groups.html">
+        Configuration des groupes de protection
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Protection par paires et sites de reprise après incident"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-pair-protected-and-recovery-sites.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-pair-protected-and-recovery-sites.html">
+        Protection par paires et sites de reprise après incident
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration des ressources protégées et du site de reprise"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-configure-protected-and-recovery-site-resources.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-configure-protected-and-recovery-site-resources.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Configuration des ressources protégées et du site de reprise</div>-->
+         Configuration des ressources protégées et du site de reprise
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer les mappages du réseau"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-configure-network-mappings.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-network-mappings.html">
+        Configurer les mappages du réseau
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer les mappages de dossiers"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-configure-folder-mappings.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-folder-mappings.html">
+        Configurer les mappages de dossiers
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer les mappages de ressources"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-configure-resource-mappings.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-resource-mappings.html">
+        Configurer les mappages de ressources
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Mappage des règles de stockage"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-map-storage-policies.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-map-storage-policies.html">
+        Mappage des règles de stockage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez les datastores à espace réservé"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-configure-placeholder-datastores.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-placeholder-datastores.html">
+        Configurez les datastores à espace réservé
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez SRA à l'aide du gestionnaire de baies"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-configure-array-manager.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-configure-array-manager.html">
+        Configurez SRA à l'aide du gestionnaire de baies
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Vérification des systèmes de stockage répliqués"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-verify-the-replicated-storage-environment.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-verify-the-replicated-storage-environment.html">
+        Vérification des systèmes de stockage répliqués
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Protection des machines virtuelles non protégées"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-protect-non-protected-virtual-machines.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-protect-non-protected-virtual-machines.html">
+        Protection des machines virtuelles non protégées
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérer des datastores traditionnels et vvols"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-manage-datastore.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-manage-datastore.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Gérer des datastores traditionnels et vvols</div>-->
+         Gérer des datastores traditionnels et vvols
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Montage du datastore sur des hôtes supplémentaires"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-mount-datastores-on-host.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-mount-datastores-on-host.html">
+        Montage du datastore sur des hôtes supplémentaires
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Redimensionner les datastores"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-resize-datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-resize-datastores.html">
+        Redimensionner les datastores
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Modifiez un datastore vVols"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-edit-a-vvol-datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-edit-a-vvol-datastore.html">
+        Modifiez un datastore vVols
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Stockage publicitaire dans un datastore vvols"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-add-storage-to-a-vvol-datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-add-storage-to-a-vvol-datastore.html">
+        Stockage publicitaire dans un datastore vvols
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Stockage distant d'un datastore vvols"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-remove-storage-from-a-vvols-datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-remove-storage-from-a-vvols-datastore.html">
+        Stockage distant d'un datastore vvols
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Montez un datastore vvols"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-mount-a-vvol-datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-mount-a-vvol-datastore.html">
+        Montez un datastore vvols
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Considérations relatives à la migration ou au clonage de machines virtuelles"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-considerations-for-migrating-virtual-machines.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-considerations-for-migrating-virtual-machines.html">
+        Considérations relatives à la migration ou au clonage de machines virtuelles
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Migrez des machines virtuelles classiques vers des datastores vvols"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-migrate-standard-virtual-machines-to-vvol-datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-migrate-standard-virtual-machines-to-vvol-datastores.html">
+        Migrez des machines virtuelles classiques vers des datastores vvols
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Migration de machines virtuelles avec des profils de fonctionnalités de stockage plus anciens"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-migrate-existing-virtual-machines-to-7-1-virtual-appliance.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-migrate-existing-virtual-machines-to-7-1-virtual-appliance.html">
+        Migration de machines virtuelles avec des profils de fonctionnalités de stockage plus anciens
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Description des rapports de Virtual Storage Console"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-virtual-storage-console-reports.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-virtual-storage-console-reports.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Description des rapports de Virtual Storage Console</div>-->
+         Description des rapports de Virtual Storage Console
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Que font les rapports"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-what-reports-do.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-what-reports-do.html">
+        Que font les rapports
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Rapports sur les datastores"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-datastore-reports.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-datastore-reports.html">
+        Rapports sur les datastores
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Rapports vVols"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-what-vasa-provider-reports-do.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-what-vasa-provider-reports-do.html">
+        Rapports vVols
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Résolvez les problèmes via l'appliance virtuelle pour VSC, VASA Provider et SRA"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/concept-troubleshoot-issues-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra-test.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/concept-troubleshoot-issues-with-the-virtual-appliance-for-vsc-vasa-provider-and-sra-test.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/fr-fr/vsc-vasa-provider-sra-97/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Résolvez les problèmes via l'appliance virtuelle pour VSC, VASA Provider et SRA</div>-->
+         Résolvez les problèmes via l'appliance virtuelle pour VSC, VASA Provider et SRA
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Collectez les fichiers journaux"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/task-collect-the-log-files.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/task-collect-the-log-files.html">
+        Collectez les fichiers journaux
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Le provisionnement du datastore VVOL échoue avec un grand nombre de volumes"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-vvol-datastore-provision-fails-with-large-number-of-volumes.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-vvol-datastore-provision-fails-with-large-number-of-volumes.html">
+        Le provisionnement du datastore VVOL échoue avec un grand nombre de volumes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Problème lors de la modification des stratégies de stockage de VM après mise à niveau"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-edit-vm-storage-policies-after-upgrade-throws-error-message.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-edit-vm-storage-policies-after-upgrade-throws-error-message.html">
+        Problème lors de la modification des stratégies de stockage de VM après mise à niveau
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="L'état de VASA Provider s'affiche sous la forme d'un état « hors ligne » dans l'interface graphique de vCenter Server"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-vasa-provider-storage-provider-status-show-offline-in-vcenter-gui.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-vasa-provider-storage-provider-status-show-offline-in-vcenter-gui.html">
+        L'état de VASA Provider s'affiche sous la forme d'un état « hors ligne » dans l'interface graphique de vCenter Server
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erreur lors de l'accès à la page VSC Summary de l'appliance virtuelle"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-error-while-accessing-the-vsc-summary-page-of-virtual-appliance.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-error-while-accessing-the-vsc-summary-page-of-virtual-appliance.html">
+        Erreur lors de l'accès à la page VSC Summary de l'appliance virtuelle
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erreur lors de la suppression d'un datastore après modification des paramètres réseau"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-error-deleting-a-datastore-after-network-settings-are-changed.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-error-deleting-a-datastore-after-network-settings-are-changed.html">
+        Erreur lors de la suppression d'un datastore après modification des paramètres réseau
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="L'approvisionnement de la machine virtuelle échoue avec une erreur non définie"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-vm-provision-fails-with-undefined-error.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-vm-provision-fails-with-undefined-error.html">
+        L'approvisionnement de la machine virtuelle échoue avec une erreur non définie
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Le provisionnement non fin des volumes virtuels échoue pour les systèmes de stockage ONTAP 9.4"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-thick-provision-fails-for-vvol-datastores-on-ontap-9-4.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-thick-provision-fails-for-vvol-datastores-on-ontap-9-4.html">
+        Le provisionnement non fin des volumes virtuels échoue pour les systèmes de stockage ONTAP 9.4
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Le datastore est inaccessible lorsque le statut du volume passe en mode hors ligne"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-datastore-inaccessible-when-volume-status-is-changed-to-offline.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-datastore-inaccessible-when-volume-status-is-changed-to-offline.html">
+        Le datastore est inaccessible lorsque le statut du volume passe en mode hors ligne
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="L'ajout d'un système de stockage avec IPv4 entraîne une erreur d'authentification avec l'état IPv6 dans la grille du système de stockage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-authentication-failure-status-is-displayed-with-ipv6-as-the-cluster-ip-even-if-cluster-is-added-with-ipv4.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-authentication-failure-status-is-displayed-with-ipv6-as-the-cluster-ip-even-if-cluster-is-added-with-ipv4.html">
+        L'ajout d'un système de stockage avec IPv4 entraîne une erreur d'authentification avec l'état IPv6 dans la grille du système de stockage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erreur de création de fichiers lors du provisionnement de machines virtuelles sur les datastores VVol"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-file-creation-error-while-virtual-machine-provisioning-on-vvol-datastore-issue-we-are-unable-to-create-virtual-machine-using-the-default-vs0-svm-caus.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-file-creation-error-while-virtual-machine-provisioning-on-vvol-datastore-issue-we-are-unable-to-create-virtual-machine-using-the-default-vs0-svm-caus.html">
+        Erreur de création de fichiers lors du provisionnement de machines virtuelles sur les datastores VVol
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="L'état incorrect « basculement en cours » est signalé pour SRA dans SRM"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/manage/reference-failover-in-progress-status-is-reported-inappropriately-for-sra.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/fr-fr/vsc-vasa-provider-sra-97/manage/reference-failover-in-progress-status-is-reported-inappropriately-for-sra.html">
+        L'état incorrect « basculement en cours » est signalé pour SRA dans SRM
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Mentions légales"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/qsg.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/fr-fr/vsc-vasa-provider-sra-97/legal-notices.html">
+        Mentions légales
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/fr-fr/vsc-vasa-provider-sra-97"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/fr-fr/vsc-vasa-provider-sra-97"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/fr-fr/vsc-vasa-provider-sra-97/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La version française est une traduction automatique. La version anglaise prévaut sur la française en cas de divergence. </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">Démarrage rapide</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2024-03-21 16:34:46 +0000">03/21/2024</time>
+        
+    
+    
+        <span>Contributeurs
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/fr-fr/vsc-vasa-provider-sra-97/images/discuss-sm.svg" alt="" class="github-icon" />Suggérer des modifications</span>
+        <img src="/fr-fr/vsc-vasa-provider-sra-97/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/fr-fr/vsc-vasa-provider-sra-97/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/vsc-vasa-provider-sra-97.fr-fr/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/fr-fr/vsc-vasa-provider-sra-97/qsg.html&page-title=Démarrage rapide" class="page-nav-contribute-link" role="button">Demander des modifications de la documentation</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/vsc-vasa-provider-sra-97/blob/main/qsg.adoc" class="page-nav-contribute-link" role="button">Modifier cette page</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >En savoir plus sur les contributions</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/fr-fr/vsc-vasa-provider-sra-97/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/fullsite-sidebar/VSC__VASA_Provider_et_SRA_Documentation.pdf" >
+                    <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>Un fichier PDF de toute la documentation</a>
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Déploiement_et_mise_à_niveau.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Déploiement et mise à niveau
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Workflow_de_déploiement_pour_les_nouveaux_utilisateurs_de_l_appliance_virtuelle_VSC__VASA_Provider_et_SRA.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Workflow de déploiement pour les nouveaux utilisateurs de l'appliance virtuelle VSC, VASA Provider et SRA
+          </a>
+          
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Conditions_requises_pour_le_déploiement_de_l_appliance_virtuelle_pour_VSC__VASA_Provider_et_SRA.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Conditions requises pour le déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Déploiement_ou_mise_à_niveau_de_VSC__VASA_Provider_et_SRA.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Déploiement ou mise à niveau de VSC, VASA Provider et SRA
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Déployez_l_appliance_virtuelle_pour_VSC__VASA_Provider_et_SRA.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Déployez l'appliance virtuelle pour VSC, VASA Provider et SRA
+          </a>
+          
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Activez_VASA_Provider_pour_la_configuration_des_datastores_virtuels.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Activez VASA Provider pour la configuration des datastores virtuels
+          </a>
+          
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Activez_Storage_Replication_adapter.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Activez Storage Replication adapter
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configurez_votre_environnement_Virtual_Storage_Console_pour_VMware_vSphere.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configurez votre environnement Virtual Storage Console pour VMware vSphere
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configurer_les_paramètres_de_chemins_d_accès_multiples_et_de_délai_d_attente_du_serveur_ESXi.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configurer les paramètres de chemins d'accès multiples et de délai d'attente du serveur ESXi
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/configurer_les_scripts_des_systèmes_d_exploitation_invités.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            configurer les scripts des systèmes d'exploitation invités
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configurez_les_fichiers_de_préférences_VSC.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configurez les fichiers de préférences VSC
+          </a>
+          
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configurez_la_haute_disponibilité_de_l_appliance_virtuelle_pour_VSC__VASA_Provider_et_SRA.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configurez la haute disponibilité de l'appliance virtuelle pour VSC, VASA Provider et SRA
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configuration_de_l_environnement_Virtual_Storage_Console_pour_VMware_vSphere.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configuration de l'environnement Virtual Storage Console pour VMware vSphere
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/VCenter_Server___fonctionnalités_de_contrôle_d_accès_basé_sur_des_rôles_dans_VSC_pour_VMware_vSphere.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            VCenter Server : fonctionnalités de contrôle d'accès basé sur des rôles dans VSC pour VMware vSphere
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Rôles_standard_regroupés_avec_l_appliance_virtuelle_pour_VSC__VASA_Provider_et_SRA.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Rôles standard regroupés avec l'appliance virtuelle pour VSC, VASA Provider et SRA
+          </a>
+          
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Privilèges_requis_pour_les_tâches_VSC.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Privilèges requis pour les tâches VSC
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configuration_de_Storage_Replication_adapter_pour_la_reprise_après_incident.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configuration de Storage Replication adapter pour la reprise après incident
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Résolvez_les_problèmes_via_l_appliance_virtuelle_pour_VSC__VASA_Provider_et_SRA.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Résolvez les problèmes via l'appliance virtuelle pour VSC, VASA Provider et SRA
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Gérez.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Gérez
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configuration_des_systèmes_de_stockage_pour_VSC__VASA_Provider_et_SRA.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configuration des systèmes de stockage pour VSC, VASA Provider et SRA
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Créer_des_profils_de_capacité_de_stockage.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Créer des profils de capacité de stockage
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configuration_de_datastores_classiques_et_de_machines_virtuelles.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configuration de datastores classiques et de machines virtuelles
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configurez_les_datastores_vvols.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configurez les datastores vvols
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Surveillez_les_datastores_vvols_et_les_machines_virtuelles_à_l_aide_du_tableau_de_bord_vVol.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Surveillez les datastores vvols et les machines virtuelles à l'aide du tableau de bord vVol
+          </a>
+          
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Gérer_la_configuration_de_la_reprise_sur_incident_à_l_aide_de_site_Recovery_Manager.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Gérer la configuration de la reprise sur incident à l'aide de site Recovery Manager
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Configuration_des_ressources_protégées_et_du_site_de_reprise.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Configuration des ressources protégées et du site de reprise
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Gérer_des_datastores_traditionnels_et_vvols.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Gérer des datastores traditionnels et vvols
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Description_des_rapports_de_Virtual_Storage_Console.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Description des rapports de Virtual Storage Console
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/fr-fr/vsc-vasa-provider-sra-97/pdfs/sidebar/Résolvez_les_problèmes_via_l_appliance_virtuelle_pour_VSC__VASA_Provider_et_SRA.pdf" 
+            
+          >
+            <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Résolvez les problèmes via l'appliance virtuelle pour VSC, VASA Provider et SRA
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/fr-fr/vsc-vasa-provider-sra-97/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>Plusieurs fichiers PDF<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Virtual Storage Console (VSC) pour VMware vSphere est un plug-in vCenter Server unique fourni avec les extensions VASA Provider et Storage Replication adapter (SRA). VSC est recommandé pour tous les environnements ONTAP vSphere lors de la configuration des paramètres d'hôte ESXi et du provisionnement du stockage ONTAP en suivant les meilleures pratiques. Il est nécessaire de créer une application VASA Provider pour la prise en charge des volumes virtuels (vvols), et SRA fonctionne avec VMware site Recovery Manager.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="préparation-de-linstallation">Préparation de l'installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous déployez le plug-in en tant qu'appliance virtuelle, ce qui vous permet de réduire les efforts d'installation et d'enregistrement de chaque produit séparément auprès de vCenter Server.</p>
+</div>
+<div class="sect2">
+<h3 id="de-déploiement">De déploiement</h3>
+<div class="paragraph">
+<p>L'appliance virtuelle pour VSC, VASA Provider et SRA peut être utilisée avec Windows vCenter Server ou avec une appliance virtuelle VMware vCenter Server (vCSA). Vous devez déployer l'appliance virtuelle pour VSC, VASA Provider et SRA sur un système ESXi et vSphere pris en charge.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exigences-en-matière-despace-et-de-dimensionnement-des-hôtes">Exigences en matière d'espace et de dimensionnement des hôtes</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Système</th>
+<th class="tableblock halign-left valign-top">Configuration minimale requise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Espace</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>2.1 Go pour les installations à provisionnement fin</p>
+</li>
+<li>
+<p>54.0 Go pour les installations à provisionnement lourd</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Dimensionnement de l'hôte</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Mémoire recommandée : 12 Go</p>
+</li>
+<li>
+<p>CPU recommandés : 2</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="conditions-de-licence">Conditions de licence</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Licence</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>SnapMirror</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>(Facultatif) requis pour les opérations de basculement pour SRA.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FlexClone</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>(Facultatif) requis pour les opérations de test de basculement pour SRA et pour les opérations vVvols de VASA Provider.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="supplémentaires-requise">Supplémentaires requise</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Supplémentaires requise</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>9083</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lorsque cette option est activée, VASA Provider et SRA utilisent ce port pour communiquer avec vCenter Server. Ce port est également requis pour obtenir les paramètres TCP/IP.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>443</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>En fonction de la façon dont vous avez configuré vos informations d'identification, VMware vCenter Server et les systèmes de stockage sont à l'écoute des communications sécurisées sur ce port.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>8143</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>VSC écoute les communications sécurisées sur ce port.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>7</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>VSC envoie une demande d'écho à ONTAP pour vérifier l'accessibilité. Elle n'est requise que lors de l'ajout d'un système de stockage et peut être désactivée par la suite.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Stockage, hôte et applications</th>
+<th class="tableblock halign-left valign-top">Exigences de version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>ONTAP</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>ONTAP 9.1, 9.3, 9.5, 9.6, 9.7.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>VMware vSphere, vCenter Server, hôtes ESXi, site Recovery Manager (SRM), applications de plug-ins et bases de données</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Consultez la matrice d'interopérabilité</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://imt.netapp.com/matrix/imt.jsp?components=97563;&amp;solution=56&amp;isHWU&amp;src=IMT" target="_blank" rel="noopener">"Matrice d'interopérabilité : VSC 9.7.1"</a></p>
+</li>
+<li>
+<p><a href="https://imt.netapp.com/matrix/imt.jsp?components=97564;&amp;solution=376&amp;isHWU&amp;src=IMT" target="_blank" rel="noopener">"Matrice d'interopérabilité : VASA Provider 9.7.1"</a></p>
+</li>
+<li>
+<p><a href="https://imt.netapp.com/matrix/imt.jsp?components=97565;&amp;solution=576&amp;isHWU&amp;src=IMT" target="_blank" rel="noopener">"Matrice d'interopérabilité : SRA 9.7.1"</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="appliance-virtuelle-pour-les-exigences-de-vsc-vasa-provider-et-sra">Appliance virtuelle pour les exigences de VSC, VASA Provider et SRA</h3>
+<div class="paragraph">
+<p>Vous devez avoir :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configuré et configuré votre environnement vCenter Server.</p>
+</li>
+<li>
+<p>A téléchargé le <code>.ova</code> fichier.</p>
+</li>
+<li>
+<p>Les informations d'identification de votre instance de vCenter Server.</p>
+</li>
+<li>
+<p>Déconnexion et fermeture de toutes les sessions de navigateur du client Web vSphere, et suppression du cache du navigateur pour éviter tout problème de cache du navigateur lors du déploiement de l'appliance virtuelle pour VSC, VASA Provider et SRA.</p>
+</li>
+<li>
+<p>Configurez la passerelle par défaut à utiliser par l'appliance virtuelle pour répondre aux requêtes ping ICMP.</p>
+</li>
+<li>
+<p>Nom d'hôte DNS valide pour l'appliance virtuelle.</p>
+</li>
+<li>
+<p>Téléchargé et installé OnCommand API Services pour ONTAP 9.6 ou version antérieure si vous souhaitez visualiser le tableau de bord vvols. Il n'est pas nécessaire d'enregistrer des services d'API OnCommand auprès de VASA Provider si vous utilisez ONTAP 9.7.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exigences-facultatives-pour-sra">Exigences facultatives pour SRA</h3>
+<div class="paragraph">
+<p>Si vous déployez l'appliance virtuelle pour une utilisation avec VMware site Recovery Manager, vous devez disposer des éléments suivants :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A téléchargé le <code>.msi</code> Fichier du plug-in SRA uniquement si vous souhaitez configurer la solution de reprise après incident site Recovery Manager (SRM).</p>
+</li>
+<li>
+<p>A téléchargé le <code>.tar.gz</code> Fichier pour SRA si vous utilisez l'appliance SRM.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="déployez-lappliance-virtuelle-pour-vsc-vasa-provider-et-sra">Déployez l'appliance virtuelle pour VSC, VASA Provider et SRA</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Téléchargez le <code>.ova</code> fichier du <a href="https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab" target="_blank" rel="noopener">"Site de support NetApp"</a> Sur un système vSphere client pour déployer les outils ONTAP.</p>
+<div class="paragraph">
+<p>Vous devez déployer le <code>.ova</code> Fichier sur les sites source et de destination si vous déployez SRA.</p>
+</div>
+</li>
+<li>
+<p>Connectez-vous au client Web vSphere, sélectionnez <span class="menuseq"><b class="menu">Home</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Host &amp; clusters</b></span>.</p>
+</li>
+<li>
+<p>Cliquez avec le bouton droit de la souris sur le centre de données requis, puis cliquez sur <strong>déployer le modèle OVF</strong>.</p>
+</li>
+<li>
+<p>Vous pouvez saisir l'URL pour le <code>.ova</code> ou naviguez jusqu'au dossier où <code>.ova</code> Le fichier est enregistré, puis cliquez sur <strong>Suivant</strong>.</p>
+</li>
+<li>
+<p>Entrez les informations requises pour terminer le déploiement.</p>
+<div class="paragraph">
+<p>Vous pouvez afficher la progression du déploiement à partir de l'onglet <strong>tâches</strong> et attendre la fin du déploiement.</p>
+</div>
+</li>
+<li>
+<p>Vérifiez que les services VSC, VASA Provider et SRA sont exécutés une fois le déploiement terminé.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="déployez-sra-sur-srm">Déployez SRA sur SRM</h3>
+<div class="paragraph">
+<p>Vous pouvez déployer SRA sur le serveur Windows SRM ou sur l'appliance 8.2 SRM.</p>
+</div>
+<div class="sect3">
+<h4 id="installez-sra-sur-le-serveur-windows-srm">Installez SRA sur le serveur Windows SRM</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Téléchargez le <code>.msi</code> Installateur du plug-in SRA accessible depuis le site du support NetApp.</p>
+</li>
+<li>
+<p>Double-cliquez sur le téléchargé <code>.msi</code> Installer le plug-in SRA et suivre les instructions à l'écran.</p>
+</li>
+<li>
+<p>Entrez l'adresse IP et le mot de passe de votre appliance virtuelle déployée pour terminer l'installation du plug-in SRA sur le serveur SRM.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="téléchargez-et-configurez-sra-sur-lappliance-srm">Téléchargez et configurez SRA sur l'appliance SRM</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Téléchargez le <code>.tar.gz</code> fichier du <a href="https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab" target="_blank" rel="noopener">"Site de support NetApp"</a>.</p>
+</li>
+<li>
+<p>Sur l'écran SRM Appliance, cliquez sur <span class="menuseq"><b class="menu">Storage Replication adapter</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">New adapter</b></span>.</p>
+</li>
+<li>
+<p>Téléchargez le <code>.tar.gz</code> Fichier vers SRM.</p>
+</li>
+<li>
+<p>Relancez l'analyse des cartes pour vérifier que les détails sont mis à jour dans la page SRM Storage Replication Adapters.</p>
+</li>
+<li>
+<p>Connectez-vous à l'aide du compte administrateur à l'appliance SRM à l'aide de la fonction putty.</p>
+</li>
+<li>
+<p>Passez à l'utilisateur root : <code>su root</code></p>
+</li>
+<li>
+<p>Dans la commande log location, entrez pour obtenir l'ID docker utilisé par docker SRA : <code>docker ps -l</code></p>
+</li>
+<li>
+<p>Connectez-vous à l'ID de conteneur : <code>docker exec -it -u srm &lt;container id&gt; sh</code></p>
+</li>
+<li>
+<p>Configurer SRM à l'aide de l'adresse IP et du mot de passe des outils ONTAP : `perl command.pl -I &lt;va-IP&gt; administrator &lt;va-password&gt;`Un message de confirmation de la mémorisation des identifiants de stockage s'affiche.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mettez-à-jour-les-informations-didentification-sra">Mettez à jour les informations d'identification SRA</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Supprimez le contenu du répertoire /srm/sra/conf en utilisant :</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>cd /srm/sra/conf</code></p>
+</li>
+<li>
+<p><code>rm -rf *</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Exécutez la commande perl pour configurer SRA avec les nouvelles informations d'identification :</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>cd /srm/sra/</code></p>
+</li>
+<li>
+<p><code>perl command.pl -I &lt;va-IP&gt; administrator &lt;va-password&gt;</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="activez-vasa-provider-et-sra">Activez VASA Provider et SRA</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Connectez-vous au client Web vSphere en utilisant l'adresse IP que vous avez spécifiée lors du déploiement.</p>
+</li>
+<li>
+<p>Cliquez sur l'icône <strong>Virtual Storage Console</strong>, puis entrez le nom d'utilisateur et le mot de passe spécifiés pendant le déploiement. Cliquez sur <strong>connexion</strong>.</p>
+</li>
+<li>
+<p>Dans le volet gauche d'OTV, <span class="menuseq"><b class="menu">Paramètres</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Paramètres d'administration</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">gérer les fonctionnalités</b></span> et activez les fonctionnalités requises.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vsc-vasa-provider-sra-97/images/note.svg" alt="Remarque">
+</td>
+<td class="content">
+Vasa Provider est activé par défaut. Si vous souhaitez utiliser la capacité de réplication pour les datastores vVvols, utilisez le bouton bascule <strong>Activer la réplication vVvols</strong>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Entrez l'adresse IP de l'appliance e virtuelle pour VSC, VASA Provider et SRA, ainsi que le mot de passe d'administrateur, puis cliquez sur <strong>Apply</strong>.</p>
+<div class="paragraph">
+<p>Pour plus d'informations sur la configuration supplémentaire, l'ajout de systèmes de stockage et la configuration du contrôle d'accès basé sur des rôles pour vos objets vSphere, consultez le Guide de déploiement et de configuration de Virtual Storage Console, du fournisseur VASA et de Storage Replication adapter pour VMware vSphere.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="où-trouver-des-informations-complémentaires">Où trouver des informations complémentaires</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.netapp.com/support-and-training/documentation/ontap-tools-for-vmware-vsphere-documentation/?&amp;access=a" target="_blank" rel="noopener">"Page des ressources Virtual Storage Console, VASA Provider et Storage Replication adapter pour VMware vSphere"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/vapp-97/index.jsp" target="_blank" rel="noopener">"Documentation Virtual Storage Console, VASA Provider et Storage Replication adapter pour VMware vSphere"</a></p>
+</li>
+<li>
+<p><a href="https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_config.doc/GUID-B3A49FFF-E3B9-45E3-AD35-093D896596A0.html" target="_blank" rel="noopener">"VMware site Recovery Manager 8.2"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap/" target="_blank" rel="noopener">"Documentation ONTAP 9"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/fr-fr/vsc-vasa-provider-sra-97/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/fr-fr/vsc-vasa-provider-sra-97/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">Sur cette page</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Conditions d'utilisation</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Déclaration de confidentialité</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Déclaration sur les cookies</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Paramètres des cookies</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">Envoyer des commentaires à propos de cette page</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/fr-fr/vsc-vasa-provider-sra-97/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/fr-fr/vsc-vasa-provider-sra-97/js/prism.js'></script>
+      <script type="text/javascript" src='/fr-fr/vsc-vasa-provider-sra-97/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/fr-fr/vsc-vasa-provider-sra-97/js/ie-tabbed-blocks.js'></script>
+    <script src='/fr-fr/vsc-vasa-provider-sra-97/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
