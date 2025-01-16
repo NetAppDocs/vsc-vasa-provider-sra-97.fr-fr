@@ -248,8 +248,7 @@ Pour plus d'informations sur la configuration supplémentaire, l'ajout de systè
 
 == Où trouver des informations complémentaires
 
-* https://www.netapp.com/support-and-training/documentation/ontap-tools-for-vmware-vsphere-documentation/?&access=a["Page des ressources Virtual Storage Console, VASA Provider et Storage Replication adapter pour VMware vSphere"^]
-* https://docs.netapp.com/vapp-97/index.jsp["Documentation Virtual Storage Console, VASA Provider et Storage Replication adapter pour VMware vSphere"^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/index.html["Documentation sur les outils ONTAP pour VMware vSphere"^]
 * https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_config.doc/GUID-B3A49FFF-E3B9-45E3-AD35-093D896596A0.html["VMware site Recovery Manager 8.2"^]
 * https://docs.netapp.com/us-en/ontap/["Documentation ONTAP 9"^]
 
